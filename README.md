@@ -6,3 +6,6 @@ Update 0.0.2
 - RNG test project was added
 - RNG Function was added
 - New/Load game functions added
+
+Update 0.0.3
+- Main Menu is complete (could use refinement)
