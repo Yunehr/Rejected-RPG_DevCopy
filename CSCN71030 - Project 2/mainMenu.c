@@ -1,7 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
+#include "gameFunctions.h"
 #include "mainMenu.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 
 // Matthew Romano - CSCN71030_Section2_Group3 - Main Menu Implenentation
 
@@ -11,27 +13,33 @@ void mainMenu() {
 	int selection = 0;
 
 	printf("THIS IS THE MAIN MENU");
-	printf("\n\nNEW GAME = 1\n\nLOAD GAME = 2\n\nEXIT GAME = 0\n\n");	// base for the menu options
+	printf("\n\nNEW GAME = 1\n\nLOAD GAME = 2\n\nEXIT GAME = 0\n\n");			// base for the menu options
 	do {
 		printf("SELECTION: ");
 		scanf("%d", &selection);
-		if (selection > 2 || selection < 0)								// input validation
-			printf("\n\nINVALID INPUT, PLEASE ENTER NEW ");
-	} while (selection > 2 || selection < 0);
 
+		while (selection > 2 || selection < 0) {								// input validation
+			printf("\n\nINVALID INPUT, PLEASE ENTER NEW SELECTION: ");
+			scanf("%d", &selection);
+		}
+	
 	switch (selection) {
 	case 1:
-		// startGame();
-		// start new game function here
+		// overwrites the old file name if one is present
+		printf("THIS WILL OVERWRITE OLD SAVE FILES,"); 
+		printf("CONTINUE ? (1 = YES, Other Input = NO): ");
+		scanf("%d", &selection);											// selection is good to use again 
+			if (selection == 1)							
+				newGame();	// creates a new game file
+
 		break;
 	case 2:
-		// loadGame();
-		// load game function here
+		loadGame("TempFileName.txt");	// loads old file
 		break;
 	case 0:
-		// clean exit with no error, and closes file (temp for now)
-		fclose("filename.txt");
-		exit(0);
+		// clean exit with no error
+		exit(EXIT_SUCCESS);
 		break;
 	}
+	} while (selection > 2 || selection < 0);
 }
