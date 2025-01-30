@@ -5,24 +5,26 @@
 #include <stdio.h>
 #include <stdbool.h>
 #define STATS_ARRAY 6
-#define NAME_LENGTH	7
+#define MAX_NAME	7
 
 typedef enum type{ROG = 0, WAR = 1, MAG = 2}TYPE;
 
 typedef struct PlayerCharacter {
-	char* name[NAME_LENGTH];	// Warrior, Rogue, or Mage
+	char name[MAX_NAME];	// Warrior, Rogue, or Mage
 	TYPE charclass;
 	int stats[STATS_ARRAY];		// stored in order: Health, Energy (mana), Str, Int, Defence, Speed
 
-}PC;
+}PC, _PC;
 
+// Character Selection Menu
+int CharacterSelectMenu();
 
 // Character Creation
-int CharacterSelect();
-PC SetCharacter(int Selection);
+
+PC SetCharacter(int c);
 
 // Updating stats
-bool UpdateStats(int arr[]);
+bool UpdateStats(PC Player, int arr[]);
 bool TakeDamage(int dmg);
 
 // Combat Movesets
