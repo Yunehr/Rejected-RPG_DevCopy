@@ -24,10 +24,16 @@
 
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gameFunctions.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RNG.h">
     <ClInclude Include="mainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
