@@ -15,7 +15,7 @@ void mainMenu() {
 	do {
 		printf("SELECTION: ");
 		scanf("%d", &selection);
-		if (selection > 2 || selection < 0)							// input validation
+		if (selection > 2 || selection < 0)								// input validation
 			printf("\n\nINVALID INPUT, PLEASE ENTER NEW ");
 	} while (selection > 2 || selection < 0);
 
