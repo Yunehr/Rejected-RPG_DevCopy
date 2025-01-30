@@ -21,13 +21,17 @@ void mainMenu() {
 
 	switch (selection) {
 	case 1:
+		// startGame();
 		// start new game function here
 		break;
 	case 2:
+		// loadGame();
 		// load game function here
 		break;
 	case 0:
-		// exit game function here
+		// clean exit with no error, and closes file (temp for now)
+		fclose("filename.txt");
+		exit(0);
 		break;
 	}
 }
