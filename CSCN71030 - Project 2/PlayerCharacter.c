@@ -4,11 +4,22 @@
 #include <stdio.h>
 
 // Character Creation
-int CharacterSelect();
-PC SetCharacter(int Selection);
+int CharacterSelect() {
 
+}
+PC SetCharacter(int Selection) {
+
+}
+
+// Updating stats
+bool UpdateStats(int arr[]) {
+
+}
+bool TakeDamage(int dmg) {
+
+}
 
 // Combat Movesets
 
 
-// Taking damage
+//Save/Load to/from file

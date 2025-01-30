@@ -3,6 +3,7 @@
 // Ryan Hackabrt - CSCN7130_Section2_Group3 - ADT for Playable Character
 
 #include <stdio.h>
+#include <stdbool.h>
 #define STATS_ARRAY 6
 #define NAME_LENGTH	7
 
@@ -20,10 +21,15 @@ typedef struct PlayerCharacter {
 int CharacterSelect();
 PC SetCharacter(int Selection);
 
+// Updating stats
+bool UpdateStats(int arr[]);
+bool TakeDamage(int dmg);
 
 // Combat Movesets
 
 
-// Taking damage
+//Save/Load to/from file
+
+
 
 
