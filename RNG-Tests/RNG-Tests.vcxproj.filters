@@ -15,19 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="RNG-Tests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-
-    <ClCompile Include="RNG.c">
-    <ClCompile Include="mainMenu.c">
-
+    <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RNG.h">
-    <ClInclude Include="mainMenu.h">
+    <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
