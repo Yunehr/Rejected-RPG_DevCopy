@@ -19,8 +19,9 @@ void mainMenu() {
 	printf(" U   U  N N N    T      I      T    L      EEEE   D   D    RRRR    PPPP   G  GG\n");
 	printf(" U   U  N  NN    T      I      T    L      E      D   D    R  R    P      G   G\n");
 	printf("  UUU   N   N    T    IIIII    T    LLLLL  EEEEE  DDDD     R   R   P       GGG");
-	printf("\n\n1 FOR NEW GAME\n\n2 TO LOAD GAME\n\n3 TO EXIT GAME\n\n");			// base for the menu options
+	printf("\n\n1 FOR NEW GAME\n\n2 TO LOAD GAME\n\n3 TO EXIT GAME\n\n");
 	do {
+		// all scanfs are giving warnings but whatever
 		printf("SELECTION: ");
 		scanf("%d", &selection);
 		while (selection > 2 || selection < 0) {								// input validation
@@ -33,7 +34,7 @@ void mainMenu() {
 		// overwrites the old file name if one is present
 		printf("THIS WILL OVERWRITE OLD SAVE FILES,"); 
 		printf("CONTINUE ? (1 = YES, Other Input = NO): ");
-		scanf("%d", &selection);											// selection is good to use again 
+		scanf("%d", &selection);												// selection is good to use again 
 			if (selection == 1)							
 				newGame();	// creates a new game file
 		break;
