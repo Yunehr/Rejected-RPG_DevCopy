@@ -134,10 +134,12 @@
   <ItemGroup>
     <ClInclude Include="RNG.h" />
     <ClCompile Include="mainMenu.c" />
+    <ClCompile Include="optionsMenu.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gameFunctions.h" />
     <ClInclude Include="mainMenu.h" />
+    <ClInclude Include="optionsMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
