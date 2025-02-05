@@ -4,6 +4,8 @@
 #include <stdlib.h>
 
 // Matthew Romano - CSCN71030_Section2_Group3 - Game Functions Implementation
+// A bunch of useful functions needed in multipule places
+
 
 // all this fucntion does is create the new file
 void newGame() {
@@ -19,6 +21,10 @@ void newGame() {
 
 	// then sends the user to the character creation
 	// createCharacter();
+
+}
+
+void saveGame() {
 
 }
 
