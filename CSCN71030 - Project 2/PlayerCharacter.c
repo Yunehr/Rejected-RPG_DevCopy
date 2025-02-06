@@ -1,9 +1,9 @@
 // Ryan Hackabrt - CSCN7130_Section2_Group3 - PlayerCharacter Implementation
 
 #define _CRT_SECURE_NO_WARNINGS
-
 #include "PlayerCharacter.h"
 #include <stdio.h>
+#include <stdbool.h>
 
 
 // Character Selection Menu
@@ -51,6 +51,7 @@ PC SetCharacter(int c) {
 }
 
 // Updating stats
+
 PC updateStats(PC player, int arr[]) {
 	for (int i = 0; i < STATS_ARRAY; i++) {
 		player.stats[i] = arr[i];

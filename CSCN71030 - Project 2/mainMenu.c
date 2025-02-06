@@ -8,9 +8,7 @@
 // Matthew Romano - CSCN71030_Section2_Group3 - Main Menu Implenentation
 
 // so far not returning anything (should be fine)
-// TODO: file name for the load file must be added into perameters
-// (from argv thingy, just cant remember how to do that rn)
-void mainMenu() {
+void mainMenu() { 
 	// needs three options Exit Game (0), Create New Save File (1), Load Save File (2)
 	int selection = 0;
 
@@ -39,8 +37,8 @@ void mainMenu() {
 				newGame();	// creates a new game file
 		break;
 	case 2:
-		// for the load file we will get the file name from the user (for now)
-		loadGame("TempFileName.txt");	// loads old file
+		// for all file stuff we will us "SaveGame.txt"
+		loadGame("SaveGame.txt");	// loads old file
 		break;
 	case 0:
 		// clean exit with no error

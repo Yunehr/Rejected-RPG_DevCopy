@@ -7,4 +7,4 @@ void newGame();
 // TODO: send info in perameters and make functional
 void saveGame();
 
-void loadGame(char* fileName);
+void loadGame();
