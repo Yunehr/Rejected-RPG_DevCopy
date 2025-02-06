@@ -1,16 +1,15 @@
 #include "Storyline.h"
-#include "Windows.h"
 
 void storyBegins() {
     int userInput;
     printf("          # #### ####  \n");
-    printf("       ### \/#|### |/####\n");
-    printf("      ##\/#/ \||/##/_/##/_#\n");
-    printf("    ###  \/###|/ \/ # ##_###\n");
-    printf("  ##_\_#\_\## | #/###_/_####?#\n");
-    printf(" ## #### # \ #| /  #### ## / ##\n");
+    printf("       ### \\/#|### |/####\n");
+    printf("      ##\\/#/\\||/##/_/##/_#\n");
+    printf("    ### \\/###|/\\/ # ##_###\n");
+    printf("  ##_\\_#\\_\\| #/###_/_####?#\n");
+    printf(" ## #### #\\ #| /  #### ## / ##\n");
     printf("  __#_--###`  |{,###---###-~\n");
-    printf("            \ }{\n");
+    printf("           \\}{{\n");
     printf("             }}{\n");
     printf("             }}{\n");
     printf("             {{}\n");
@@ -56,13 +55,13 @@ void storyBegins() {
 void storyBeginsAgain() {
     int userInput;
     printf("          # #### ####  \n");
-    printf("       ### \/#|### |/####\n");
-    printf("      ##\/#/ \||/##/_/##/_#\n");
-    printf("    ###  \/###|/ \/ # ##_###\n");
-    printf("  ##_\_#\_\## | #/###_/_####?#\n");
-    printf(" ## #### # \ #| /  #### ## / ##\n");
+    printf("       ### \\/#|### |/####\n");
+    printf("      ##\\/#/\\||/##/_/##/_#\n");
+    printf("    ### \\/###|/\\/ # ##_###\n");
+    printf("  ##_\\_#\\_\\| #/###_/_####?#\n");
+    printf(" ## #### #\\ #| /  #### ## / ##\n");
     printf("  __#_--###`  |{,###---###-~\n");
-    printf("            \ }{\n");
+    printf("           \\}{{\n");
     printf("             }}{\n");
     printf("             }}{\n");
     printf("             {{}\n");
