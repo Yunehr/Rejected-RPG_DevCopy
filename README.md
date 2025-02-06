@@ -14,4 +14,5 @@ Update 0.0.3
 - Character creation complete
 - GameFile.txt is the save file name permanantly
 
-Update 0.0.4
+Update 0.1.0
+- Intergrated the main menu and character creation!
