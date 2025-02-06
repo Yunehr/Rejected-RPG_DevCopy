@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="gameFunctions.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="PlayerCharacter.c" />
     <ClCompile Include="RNG.c" />
@@ -135,9 +136,12 @@
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="RNG.h" />
     <ClCompile Include="mainMenu.c" />
+    <ClCompile Include="optionsMenu.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gameFunctions.h" />
     <ClInclude Include="mainMenu.h" />
+    <ClInclude Include="optionsMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
