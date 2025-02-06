@@ -40,7 +40,7 @@ void mainMenu() {
 		break;
 	case 2:
 		// for the load file we will get the file name from the user (for now)
-		loadGame("TempFileName.txt");	// loads old file
+		loadGame("SaveGame.txt");	// loads old file
 		break;
 	case 0:
 		// clean exit with no error

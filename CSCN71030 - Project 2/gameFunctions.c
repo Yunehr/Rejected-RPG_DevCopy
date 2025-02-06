@@ -11,7 +11,7 @@
 void newGame() {
 	FILE* newGameFile;							// creates new file pointer
 
-	newGameFile = fopen("GameFile.txt", "w");				
+	newGameFile = fopen("SaveGame.txt", "w");				
 	if (newGameFile == NULL) {					// checking for null
 		printf("ERROR CREATING FILE");
 		exit(EXIT_FAILURE);
@@ -27,7 +27,7 @@ void newGame() {
 void saveGame() {
 	FILE* newGameFile;							// creates new file pointer
 
-	newGameFile = fopen("GameFile.txt", "w");
+	newGameFile = fopen("SaveGame.txt", "w");
 	if (newGameFile == NULL) {					// checking for null
 		printf("ERROR CREATING FILE");
 		exit(EXIT_FAILURE);
@@ -41,10 +41,10 @@ void saveGame() {
 }
 
 // this function checks for file to load
-void loadGame(char* fileName) {
+void loadGame() {
 	FILE* loadGameFile;						// creates new file
 
-	loadGameFile = fopen(fileName, "r");
+	loadGameFile = fopen(SaveGame.txt, "r");
 	if (loadGameFile == NULL) {				// checking for null
 		printf("EXISTING FILE NOT FOUND");
 		exit(EXIT_FAILURE);
