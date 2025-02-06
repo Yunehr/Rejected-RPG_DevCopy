@@ -10,7 +10,14 @@
 PC characterSelectMenu() {	//TODO: UPDATE Visuals
 	int selection = 0;
 	printf("\nPlease Pick a Character\n");
-	printf("\nROGUE = 1\n\nWARRIOR = 2\n\nMAGE = 3\n\n");
+	printf("Rogue:			Warrior:			Mage:\n");
+	printf("HP:	75		HP:	100			HP:	50\n");
+	printf("MP:	50		MP:	25			MP:	100\n");
+	printf("STR:	15		STR:	20			STR:	10\n");
+	printf("INT:	10		INT:	5			INT:	20\n");
+	printf("DEF:	10		DEF:	15			DEF:	10\n");
+	printf("SPD:	20		SPD:	5			SPD:	5\n");
+	printf("\n1 FOR ROGUE		2 FOR WARRIOR			3 FOR MAGE\n\n");
 	do {
 		printf("SELECTION: ");
 		scanf("%d", &selection);
