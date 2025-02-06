@@ -4,8 +4,9 @@
 
 #include <stdio.h>
 #include <stdbool.h>
-#define STATS_ARRAY 6
-#define MAX_NAME	7
+#define STATS_ARRAY		6
+#define PLAYER_CLASSES	3
+#define MAX_NAME		7
 
 typedef enum type{ROG = 0, WAR = 1, MAG = 2}TYPE;
 
@@ -24,7 +25,7 @@ int CharacterSelectMenu();
 PC SetCharacter(int c);
 
 // Updating stats
-bool UpdateStats(PC Player, int arr[]);
+PC updateStats(PC player, int arr[]);
 bool TakeDamage(int dmg);
 
 // Combat Movesets
