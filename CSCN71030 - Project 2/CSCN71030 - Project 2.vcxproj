@@ -131,12 +131,14 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="PlayerCharacter.c" />
     <ClCompile Include="RNG.c" />
+    <ClCompile Include="Storyline.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="RNG.h" />
     <ClCompile Include="mainMenu.c" />
     <ClCompile Include="optionsMenu.c" />
+    <ClInclude Include="Storyline.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gameFunctions.h" />
