@@ -10,7 +10,7 @@
 int CharacterSelectMenu() {	//TODO: UPDATE Visuals
 	int selection = 0;
 	printf("Please Pick a Character\n");
-	printf("\nROGUE = 1\n\nWARRIOR = 2\n\nMAGE = 3\n\nEXIT TO MAIN MENU = 0\n");
+	printf("\nROGUE = 1\n\nWARRIOR = 2\n\nMAGE = 3\n\n");
 	do {
 		printf("SELECTION: ");
 		scanf("%d", &selection);
@@ -27,12 +27,19 @@ int CharacterSelectMenu() {	//TODO: UPDATE Visuals
 
 PC SetCharacter(int c) {
 	PC newChar = { 0 };
-	int Classes[PLAYER_CLASSES][STATS_ARRAY] = { { 75, 50, 15, 10, 10, 20 }, { 75, 50, 15, 10, 10, 20 }, { 75, 50, 15, 10, 10, 20 } };
-
-
+	int Classes[PLAYER_CLASSES][STATS_ARRAY] = { { 75, 50, 15, 10, 10, 20 }, 
+		{ 100, 25, 20, 5, 15, 5 }, { 50, 100, 10, 20, 10, 5 } };
+	//Stats Order:		
+	//	Health			75,		100,	50
+	//	Energy			50,		25,		100
+	//	Strength		15,		20,		10
+	//	Intelligence	10,		5,		20
+	//  Defence			10,		15,		10
+	//	Speed			20,		5,		5
+		
 	switch (c) {
 	case ROG:
-		strncpy(newChar.name, "Rogue", MAX_NAME);	//TODO: Not finished
+		strncpy(newChar.name, "Rogue", MAX_NAME);	
 		newChar.charclass = ROG;
 		return updateStats(newChar, Classes[c]);
 		//return newChar;
