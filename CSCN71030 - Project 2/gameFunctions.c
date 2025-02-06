@@ -7,11 +7,17 @@
 // A bunch of useful functions needed in multipule places
 
 
-// sends the user to the character creation
-void newGame() {
-	// thanks Ryan :)
-	CharacterSelectMenu()
+// same as the save game but used specifically for new game creat
+bool  newGame() {
+	FILE* newGameFile;							// creates new file pointer
 
+	newGameFile = fopen("SaveGame.txt", "w");
+	if (newGameFile == NULL) {					// checking for null
+		printf("ERROR OVERWRITING FILE");
+		return false:
+	}
+
+	return true;
 }
 
 // saves the player stats to the file
