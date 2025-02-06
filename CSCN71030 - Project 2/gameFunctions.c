@@ -15,6 +15,7 @@ void newGame() {
 
 }
 
+// saves the player stats to the file
 void saveGame() {
 	FILE* newGameFile;							// creates new file pointer
 
@@ -43,6 +44,7 @@ void loadGame() {
 
 	fclose(loadGameFile);
 
-	// sends file to the load character function
+	// is is gonna have to take all of the info
+	// from the file and read it into a character
 
 }
