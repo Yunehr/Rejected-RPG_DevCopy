@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "gameFunctions.h"
+#include "PlayerCharacter.h"
 #include "mainMenu.h"
 #include "PlayerCharacter.h"
 #include <stdio.h>

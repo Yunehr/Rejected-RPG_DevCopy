@@ -1,10 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "gameFunctions.h"
+#include "PlayerCharacter.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 // Matthew Romano - CSCN71030_Section2_Group3 - Game Functions Implementation
 // A bunch of useful functions needed in multipule places
+
 
 
 // same as the save game but used specifically for new game creat

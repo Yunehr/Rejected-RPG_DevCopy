@@ -7,7 +7,7 @@
 
 
 // Character Selection Menu
-int CharacterSelectMenu() {	//TODO: UPDATE Visuals
+PC characterSelectMenu() {	//TODO: UPDATE Visuals
 	int selection = 0;
 	printf("Please Pick a Character\n");
 	printf("\nROGUE = 1\n\nWARRIOR = 2\n\nMAGE = 3\n\n");
@@ -20,12 +20,12 @@ int CharacterSelectMenu() {	//TODO: UPDATE Visuals
 
 	selection--;	//just to make enums and switch case easier to read, not necessary
 	
-	return selection;
+	return setCharacter(selection);
 }
 
 // Character Creation
 
-PC SetCharacter(int c) {
+PC setCharacter(int c) {
 	PC newChar = { 0 };
 	int Classes[PLAYER_CLASSES][STATS_ARRAY] = { { 75, 50, 15, 10, 10, 20 }, 
 		{ 100, 25, 20, 5, 15, 5 }, { 50, 100, 10, 20, 10, 5 } };
