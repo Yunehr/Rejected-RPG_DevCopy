@@ -9,8 +9,15 @@
 // Character Selection Menu
 PC characterSelectMenu() {	//TODO: UPDATE Visuals
 	int selection = 0;
-	printf("Please Pick a Character\n");
-	printf("\nROGUE = 1\n\nWARRIOR = 2\n\nMAGE = 3\n\n");
+	printf("\nPlease Pick a Character\n");
+	printf("Rogue:			Warrior:			Mage:\n");
+	printf("HP:	75		HP:	100			HP:	50\n");
+	printf("MP:	50		MP:	25			MP:	100\n");
+	printf("STR:	15		STR:	20			STR:	10\n");
+	printf("INT:	10		INT:	5			INT:	20\n");
+	printf("DEF:	10		DEF:	15			DEF:	10\n");
+	printf("SPD:	20		SPD:	5			SPD:	5\n");
+	printf("\n1 FOR ROGUE		2 FOR WARRIOR			3 FOR MAGE\n\n");
 	do {
 		printf("SELECTION: ");
 		scanf("%d", &selection);
@@ -31,7 +38,7 @@ PC setCharacter(int c) {
 		{ 100, 25, 20, 5, 15, 5 }, { 50, 100, 10, 20, 10, 5 } };
 	//Stats Order:		
 	//	Health			75,		100,	50
-	//	Energy			50,		25,		100
+	//	Mana			50,		25,		100
 	//	Strength		15,		20,		10
 	//	Intelligence	10,		5,		20
 	//  Defence			10,		15,		10
@@ -72,4 +79,9 @@ bool TakeDamage(int dmg) {
 // Combat Movesets
 
 
-//Save/Load to/from file
+//Other
+void printCharacter(PC player) {	
+	printf("\n%s\n", player.name);
+	printf("Hp:	%d\nMp:	%d\nStr:	%d\nInt:	%d\nDef:	%d\nSpd:	%d\n",
+		player.stats[0], player.stats[1], player.stats[2], player.stats[3], player.stats[4], player.stats[5]);
+}
