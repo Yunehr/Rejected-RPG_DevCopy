@@ -1,0 +1,37 @@
+#pragma once
+
+// Ryan Hackabrt - CSCN7130_Section2_Group3 - ADT for Playable Character
+
+#include <stdio.h>
+#include <stdbool.h>
+#define STATS_ARRAY 6
+#define MAX_NAME	7
+
+typedef enum type{ROG = 0, WAR = 1, MAG = 2}TYPE;
+
+typedef struct PlayerCharacter {
+	char name[MAX_NAME];	// Warrior, Rogue, or Mage
+	TYPE charclass;
+	int stats[STATS_ARRAY];		// stored in order: Health, Energy (mana), Str, Int, Defence, Speed
+
+}PC, _PC;
+
+// Character Selection Menu
+int CharacterSelectMenu();
+
+// Character Creation
+
+PC SetCharacter(int c);
+
+// Updating stats
+bool UpdateStats(PC Player, int arr[]);
+bool TakeDamage(int dmg);
+
+// Combat Movesets
+
+
+//Save/Load to/from file
+
+
+
+

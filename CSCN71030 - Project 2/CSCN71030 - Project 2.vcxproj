@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="gameFunctions.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="PlayerCharacter.c" />
     <ClCompile Include="RNG.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="RNG.h" />
     <ClCompile Include="mainMenu.c" />
     <ClCompile Include="optionsMenu.c" />
