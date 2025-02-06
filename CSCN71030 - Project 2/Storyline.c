@@ -89,15 +89,78 @@ void storyBeginsAgain() {
         Sleep(2000);
         printf("Before you can react, fists and boots drive you back into the dirt.\n");
         Sleep(2000);
-        printf("You wake up in the woods again, battered and bruised. (Lose -2 HP) \n");
+        printf("You wake up in the woods again, battered and bruised. (Lose -2 HP) \n");//Need to add in function to remove health
         Sleep(3000);
         storyBeginsAgain();
     }
 }
 
 void actOne() {
-
+    int userInput;
+    printf("\nThe scent of damp earth and crushed leaves fills the air as you weave through the underbrush.\n");
+    Sleep(2000);
+    printf("Your hands stained with berry juice from picking the small red berries you find in the bushes.\n");
+    Sleep(2000);
+    printf("A cool breeze rustles the trees, whispering secrets you can't quite decipher.\n");
+    Sleep(2000);
+    printf("Up ahead, a small figure sits in the middle of the path. \n");
+    Sleep(2000);
+    printf("       __\n");
+    printf("      / \\`\\         __\n");
+    printf("     |  \\ `\\       /` /\\ \n");
+    printf("      \\_/`\\  \\-\"\"-/`/\\  \\ \n");
+    printf("           |       |  \\  | \n");
+    printf("           (d     b)   \\_/\n");
+    printf("           /       \\ \n");
+    printf("      , -.|.'.\\_/.'.|.-,\n ");
+    printf("     /   /\\' _|_ '/\\   \\ \n");
+    printf("      |  /  '-`-`-'  \\  |\n");
+    printf("      | |             | |\n");
+    printf("      | \\    \\   /    / |\n");
+    printf("       \\ \\    \\ /    / /\n");
+    printf("        `-`\\   :   /'-'\n");
+    printf("            `--`--`\n");
+    Sleep(2000);
+    printf("It's a bunny! White, small, fluffy, and sporting an adorable pair of droopy ears.\n");
+    printf("It tilts its head at you, completely unbothered by your approach. \n");
+    printf("You pause.What do you do ?\n");
+    printf("(1) Offer the bunny a berry or (2) Kick the bunny out of your way: \n");
+    scanf_s("%d", &userInput);
+    if (userInput == 1) {
+        printf("You crouch, extending a berry toward the tiny creature.\n");
+        Sleep(2000);
+        printf("The bunny sniffs, hesitates, then snatches it with a wiggle of its nose.\n");
+        Sleep(2000);
+        printf("Nothing happens except, now you know the berries aren't poisonous.\n");
+        Sleep(2000);
+        printf("A moment later, it hops off the path, disappearing into the underbrush. \n");
+        Sleep(2000);
+        printf("You shake your head, chuckling at the randomness of it all, and keep walking. \n");
+        Sleep(2000);
+        printf("The woods thicken,the path narrows and soon, a figure emerges from the shadows.\n");
+        Sleep(2000);
+        printf("A thief blocks your path, blade drawn. A fight? Just what you've been waiting for.\n");
+        //insert fight function
+        return;
+    }
+    else {
+        printf("You're on an adventure, no time for distractions.\n");
+        Sleep(2000);
+        printf("Your foot swings forward—but the moment your boot makes contact, the world shifts.\n");
+        Sleep(2000);
+        printf("The trees around you contort unnaturally, the air turns heavy.\n");
+        Sleep(2000);
+        printf("the once-innocent bunny erupts into a nightmarish form.\n");
+        Sleep(2000);
+        printf("Its fur blackens, its eyes glow with malice, and the air trembles with an ancient force now awake.\n");
+        Sleep(2000);
+        printf("Final Boss Fight Begins.\n");
+        Sleep(2000);
+        //insert final boss function
+    }
+    return;
 }
+
 void actTwo() {
 
 }
