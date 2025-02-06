@@ -18,11 +18,11 @@ typedef struct PlayerCharacter {
 }PC, _PC;
 
 // Character Selection Menu
-int CharacterSelectMenu();
+PC characterSelectMenu();
 
 // Character Creation
 
-PC SetCharacter(int c);
+PC setCharacter(int c);
 
 // Updating stats
 PC updateStats(PC player, int arr[]);

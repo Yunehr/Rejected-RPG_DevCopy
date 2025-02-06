@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "gameFunctions.h"
+#include "PlayerCharacter.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,8 +11,7 @@
 // sends the user to the character creation
 void newGame() {
 	// thanks Ryan :)
-	CharacterSelectMenu()
-
+	
 }
 
 // saves the player stats to the file

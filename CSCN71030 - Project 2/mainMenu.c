@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "gameFunctions.h"
+#include "PlayerCharacter.h"
 #include "mainMenu.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -33,8 +34,12 @@ void mainMenu() {
 		printf("THIS WILL OVERWRITE OLD SAVE FILES,"); 
 		printf("CONTINUE ? (1 = YES, Other Input = NO): ");
 		scanf("%d", &selection);												// selection is good to use again 
-			if (selection == 1)							
-				newGame();	// creates a new game file
+		if (selection == 1) {
+			newGame();	// creates a new game file
+			PC player = characterSelectMenu();
+			}
+				
+
 		break;
 	case 2:
 		// for all file stuff we will us "SaveGame.txt"
