@@ -9,18 +9,9 @@
 
 // all this fucntion does is create the new file
 void newGame() {
-	FILE* newGameFile;							// creates new file pointer
-
-	newGameFile = fopen("SaveGame.txt", "w");				
-	if (newGameFile == NULL) {					// checking for null
-		printf("ERROR CREATING FILE");
-		exit(EXIT_FAILURE);
-	}
-
-	fclose(newGameFile);
-
 	// then sends the user to the character creation
-	// createCharacter();
+	// thanks Ryan :)
+	CharacterSelectMenu()
 
 }
 
@@ -33,7 +24,7 @@ void saveGame() {
 		exit(EXIT_FAILURE);
 	}
 
-	// we are gonna have to figure out what info to send here
+	// TODO: figure out how to send info here
 	// character stats obv but how is the more important part
 
 	fclose(newGameFile);
@@ -44,7 +35,7 @@ void saveGame() {
 void loadGame() {
 	FILE* loadGameFile;						// creates new file
 
-	loadGameFile = fopen(SaveGame.txt, "r");
+	loadGameFile = fopen("SaveGame.txt", "r");
 	if (loadGameFile == NULL) {				// checking for null
 		printf("EXISTING FILE NOT FOUND");
 		exit(EXIT_FAILURE);
@@ -53,6 +44,5 @@ void loadGame() {
 	fclose(loadGameFile);
 
 	// sends file to the load character function
-	// loadGameFromFile(laodGameFile);
 
 }
