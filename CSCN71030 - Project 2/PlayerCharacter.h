@@ -31,8 +31,8 @@ bool TakeDamage(int dmg);
 // Combat Movesets
 
 
-//Save/Load to/from file
-
+//Other
+void printCharacter(PC player);
 
 
 

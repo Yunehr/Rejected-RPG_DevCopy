@@ -41,6 +41,7 @@ void mainMenu() {
 			else {
 				PC player;
 				player = characterSelectMenu();
+				printCharacter(player);	//testing print player, this will not be used here
 				// startGame(player);
 			}
 		break;
