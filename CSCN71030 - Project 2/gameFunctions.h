@@ -5,7 +5,7 @@
 
 bool newGame();
 
-// TODO: send info in perameters and make functional
+// TODO: make functional
 void saveGame();
 
 void loadGame();

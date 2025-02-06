@@ -10,13 +10,13 @@
 
 
 // same as the save game but used specifically for new game creat
-bool  newGame() {
+bool newGame() {
 	FILE* newGameFile;							// creates new file pointer
 
 	newGameFile = fopen("SaveGame.txt", "w");
 	if (newGameFile == NULL) {					// checking for null
 		printf("ERROR OVERWRITING FILE");
-		return false:
+		return false;
 	}
 
 	return true;

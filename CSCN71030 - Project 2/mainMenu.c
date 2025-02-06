@@ -38,8 +38,11 @@ void mainMenu() {
 		if (selection == 1)
 			if (newGame() == false) // creates a new game file
 				printf("Returned to Main Menu");
-			else
-				CharacterSelectMenu();
+			else {
+				PC player;
+				player = characterSelectMenu();
+				// startGame(player);
+			}
 		break;
 	case 2:
 		// for all file stuff we will us "SaveGame.txt"
