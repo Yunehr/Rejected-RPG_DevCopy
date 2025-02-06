@@ -7,9 +7,8 @@
 // A bunch of useful functions needed in multipule places
 
 
-// all this fucntion does is create the new file
+// sends the user to the character creation
 void newGame() {
-	// then sends the user to the character creation
 	// thanks Ryan :)
 	CharacterSelectMenu()
 
