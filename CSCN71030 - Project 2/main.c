@@ -10,7 +10,8 @@
 int main(void) {
 	srand(time(NULL));	// need this here while testing RNG
 	
-	mainMenu();	// calls main menu function
+
+	//mainMenu();	// calls main menu function
 
 	printf("Testing Random Number Generator:\n");
 	for (int i = 0; i < 10; i++) {
@@ -18,7 +19,8 @@ int main(void) {
 	}
 
 	printf("\n\nTesting Player Creation Menu:\n");
-	CharacterSelect();
+	PC temp = SetCharacter(CharacterSelectMenu()); //temp to test player menu and setCharacter
+	printf("Player class num type is: %d\n", temp.charclass);
 
 	return 0;
 }
