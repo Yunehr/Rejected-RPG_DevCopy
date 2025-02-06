@@ -25,7 +25,19 @@ void newGame() {
 }
 
 void saveGame() {
+	FILE* newGameFile;							// creates new file pointer
 
+	newGameFile = fopen("GameFile.txt", "w");
+	if (newGameFile == NULL) {					// checking for null
+		printf("ERROR CREATING FILE");
+		exit(EXIT_FAILURE);
+	}
+
+	// we are gonna have to figure out what info to send here
+	// character stats obv but how is the more important part
+
+	fclose(newGameFile);
+	// this isnt a final point, can return to the game after
 }
 
 // this function checks for file to load

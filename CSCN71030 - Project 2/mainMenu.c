@@ -19,7 +19,7 @@ void mainMenu() {
 	printf(" U   U  N N N    T      I      T    L      EEEE   D   D    RRRR    PPPP   G  GG\n");
 	printf(" U   U  N  NN    T      I      T    L      E      D   D    R  R    P      G   G\n");
 	printf("  UUU   N   N    T    IIIII    T    LLLLL  EEEEE  DDDD     R   R   P       GGG");
-	printf("\n\n1 FOR NEW GAME\n\n2 TO LOAD GAME\n\n3 TO EXIT GAME\n\n");
+	printf("\n\n1 FOR NEW GAME\n\n2 TO LOAD GAME\n\n0 TO EXIT GAME\n\n");
 	do {
 		// all scanfs are giving warnings but whatever
 		printf("SELECTION: ");
@@ -39,6 +39,7 @@ void mainMenu() {
 				newGame();	// creates a new game file
 		break;
 	case 2:
+		// for the load file we will get the file name from the user (for now)
 		loadGame("TempFileName.txt");	// loads old file
 		break;
 	case 0:

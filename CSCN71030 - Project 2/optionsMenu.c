@@ -7,19 +7,30 @@
 
 void optionsMenu() {
 	int selection = 0;						// variable for selection
-	// dis menu do be basic
+	// dis menu do be basic do
 	printf("\n\n1 BACK TO GAME\n\n2 SAVE GAME\n\n3 LOAD GAME\n\n0 MAIN MENU");
+	do {
+		switch (selection) {
+			case 1:
+				// nothing to see here
+				break;
 
-	switch (selection) {
-		case 1:
-			// nothing to see here
+			case 2:
+				saveGame();
+				break;
 
-			break;
+			case 3:
+				// TODO: either make the file pass here somehow or...
+				// have the user input filename to load from :)
+				// loadGame(fileName);
+				break;
 
-		case 2:
-			//saveGame();
+			case 0:
+				mainMenu();
+				break;
 
-			break;
+		}
 
-	}
+	} while (selection > 3 || selection < 0);
+
 }
