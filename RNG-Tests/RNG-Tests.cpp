@@ -12,37 +12,40 @@ namespace RNGTests
 	public:
 		
 		TEST_METHOD(WithinRange) {	// tests weather RNG function stays within 0 and maxVal for n number of uses
-			int maxVal = 20;
-			int n = 100;
+			int maxVal = 80;
+			int minVal = 40;
+			int n = 1000;
 			bool inRange = true;
 			for (int i = 0; i < n; i++) {
-				int tmp = RNG(maxVal, 0);
-				if (tmp < 0 || maxVal < tmp)
+				int tmp = RNG(maxVal, minVal);
+				if (tmp < minVal || maxVal < tmp)
 					inRange = false;
 			}
 			Assert::IsTrue(inRange);
 		}
-		TEST_METHOD(MinVal01) {	// tests weather RNG function Min value is 0 (if false, but MinVal02 is true then 1 is the minimum value)
+		TEST_METHOD(MaxVal) {	// tests weather RNG function max value is within range
 			int maxVal = 20;
+			int minVal = 0;
 			int n = 1000;	// 1000 attempts makes it more likely to roll the lowest possible number
-			bool minVal = false;
+			bool test = false;
 			for (int i = 0; i < n; i++) {
-				int tmp = RNG(maxVal, 0);
-				if (tmp == 0)
-					minVal = true;
+				int tmp = RNG(maxVal, minVal);
+				if (tmp == maxVal)
+					test = true;
 			}
-			Assert::IsTrue(minVal);
+			Assert::IsTrue(test);
 		}
-		TEST_METHOD(MinVal02) {	// tests weather RNG function Min value is 1
+		TEST_METHOD(MinVal) {	// tests weather RNG function Min value is 1
 			int maxVal = 20;
+			int minVal = 5;
 			int n = 1000;	// 1000 attempts makes it more likely to roll the lowest possible number
-			bool minVal = false;
+			bool test = false;
 			for (int i = 0; i < n; i++) {
-				int tmp = RNG(maxVal, 0);
-				if (tmp == 1)
-					minVal = true;
+				int tmp = RNG(maxVal, minVal);
+				if (tmp == minVal)
+					test = true;
 			}
-			Assert::IsTrue(minVal);
+			Assert::IsTrue(test);
 		}
 	};
 }
