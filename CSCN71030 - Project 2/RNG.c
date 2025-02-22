@@ -9,7 +9,7 @@
 
 
 // this is the function to be used in any "random event" or "Dice Roll"
-int RNG(int maxVal, int mod) {
-	int val = rand() % (maxVal + ONE);
-	return val + mod;
+int RNG(int max, int min) {
+	int val = rand() % (max - min + ONE) + min;
+	return val;
 }
