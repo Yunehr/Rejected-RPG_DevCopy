@@ -36,6 +36,10 @@ From battles to custom characters, we're building an **immersive experience** wi
 ### Update v0.1.0
 - Integrated the main menu and character creation!
 
+### Update v0.1.1
+- Save/Load funcitons working
+- Checkpoints added
+
 # Contributors 
 - Matt Romano (@Mromano06)
 - Leanne Boulton (@Angelchild00)
