@@ -26,11 +26,11 @@ int main(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
+	saveGame(temp); 
+
 	temp = loadGame();
 
 	printCharacter(temp);
-
-	saveGame(temp);
 
 	// save/load files sent as command line arguments
 	fclose(saveFile);

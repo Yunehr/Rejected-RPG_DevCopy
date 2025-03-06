@@ -38,9 +38,9 @@ void saveGame(PC toSave) {
 	fprintf(newGameFile, "%d, ", toSave.stats[2]);
 	fprintf(newGameFile, "%d, ", toSave.stats[3]);
 	fprintf(newGameFile, "%d, ", toSave.stats[4]);
-	fprintf(newGameFile, "%d, ", toSave.stats[5]);
+	fprintf(newGameFile, "%d", toSave.stats[5]);
 
-	fprintf(newGameFile, "Checkpoint:   Temp\n");	// nothing right now but will have the part of story
+	//fprintf(newGameFile, "Checkpoint:   Temp\n");	// nothing right now but will have the part of story
 
 	// character stats obv but how is the more important part
 
@@ -66,7 +66,7 @@ PC loadGame() {
     // Read each line from the file
     while (fgets(line, sizeof(line), loadGameFile)) {
         // Use sscanf to parse the line into the variables
-        if (sscanf(line, "%s, %d, %d, %d, %d, %d, %d,", tempName,
+        if (sscanf(line, "%49[^,], %d, %d, %d, %d, %d, %d", tempName,
             &health, &mana, &str, &itl, &def, &speed) == 7) {
 
             // Copy the name into the player struct
@@ -78,12 +78,6 @@ PC loadGame() {
             player.stats[3] = itl;
             player.stats[4] = def;
             player.stats[5] = speed;
-
-            // Optionally print out the data for debugging
-            printf("Read Name: %s\n", player.name);
-            printf("Read Stats: %d, %d, %d, %d, %d, %d\n",
-                player.stats[0], player.stats[1], player.stats[2],
-                player.stats[3], player.stats[4], player.stats[5]);
         }
     }
 
