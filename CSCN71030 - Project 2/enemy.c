@@ -1,9 +1,10 @@
 // Ryan Hackabrt - CSCN7130_Section2_Group3 - Enemy MOB Implementation
 
 #define _CRT_SECURE_NO_WARNINGS
-#include "enemy.h"
 #include <stdio.h>
 #include <stdbool.h>
+#include "enemy.h"
+#include "PlayerCharacter.h"
 
 
 // enemy creation Creation

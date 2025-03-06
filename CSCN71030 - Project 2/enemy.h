@@ -31,5 +31,5 @@ int thiefMoveset(int combatRound);
 int FinalBossMoveset(int combatRound);
 
 int MovesetDamageMOB(MOB enemy, PC player, int attack);
-int thiefAtkkDmg(MOB enemy, int attack, int defense);
+int thiefAtkkDmg(MOB enemy, int attack, int defense); 
 int finalBossAtkDmg(MOB enemy, int attack, int defense);
