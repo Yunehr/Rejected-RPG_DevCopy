@@ -2,6 +2,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 #include "PlayerCharacter.h"
+#include "enemy.h"
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -116,40 +117,40 @@ int mageMovesetMenu() {
 int MovesetDamagePC(PC player, MOB enemy, int attack) {
 	switch (player.charclass) {
 	case ROG:
-		return rogueAtkkDmg(player, attack, enemy.stats[4]);
+		return rogueAtkkDmg(player, attack, enemy.stats[DEF]);
 	case WAR:
-		return warriorAtkDmg(player, attack, enemy.stats[4]);
+		return warriorAtkDmg(player, attack, enemy.stats[DEF]);
 	case MAG:
-		return mageAtkDmg(player, attack, enemy.stats[4]);
+		return mageAtkDmg(player, attack, enemy.stats[DEF]);
 	}
 }
-int rogueAtkkDmg(PC player, int attack, int defense) {
+int rogueAtkkDmg(PC player, int attack, int defense) {	//TODO: Implement more attacks, and crit chance
 	int damage = 0;
 	int critMod = 1;
 	switch (attack) {
 
 	case 1: // basic attack (stab)
-		damage = (player.stats[2] - defense) * critMod;
+		damage = (player.stats[STR] - defense) * critMod;
 		return damage;
 	}
 }
-int warriorAtkDmg(PC player, int attack, int defense) {
+int warriorAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more attacks, and crit chance
 	int damage = 0;
 	int critMod = 1;
 	switch (attack) {
 
 	case 1: // basic attack (slash)
-		damage = (player.stats[2] - defense) * critMod;
+		damage = (player.stats[STR] - defense) * critMod;
 		return damage;
 	}
 }
-int mageAtkDmg(PC player, int attack, int defense) {
+int mageAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more attacks, and crit chance
 	int damage = 0;
 	int critMod = 1;
 	switch (attack) {
 
 	case 1: // basic attack = (Magic Missile)
-		damage = (player.stats[3] - (defense/2)) * critMod;
+		damage = (player.stats[INT] - (defense/2)) * critMod;
 		return damage;
 	}
 }

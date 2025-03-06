@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include "enemy.h"
 #define STATS_ARRAY		6
 #define PLAYER_CLASSES	3
 #define MAX_NAME		7
@@ -27,6 +28,7 @@ PC setCharacter(int c);
 
 // Updating stats
 PC updateStatsPC(PC player, int arr[]);
+PC increaseStatPC(PC player, STAT type, int mod);
 
 
 // Combat Movesets
