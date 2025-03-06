@@ -72,12 +72,25 @@ PC updateStats(PC player, int arr[]) {
 	}
 	return player;
 }
-bool TakeDamage(int dmg) {
-	return true;
-}
+
 
 // Combat Movesets
+int SelectPlayerMoveset(PC player) {
+	switch (player.charclass)
+	{
+	case WAR:
+		
+		break;
+	}
+}
 
+int MovesetDamagePC(PC player, int attackPC) {
+
+}
+
+int takeDamagePC(_PC player, int damage) {
+	
+}
 
 //Other
 void printCharacter(PC player) {	

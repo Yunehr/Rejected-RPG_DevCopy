@@ -15,7 +15,7 @@ typedef struct PlayerCharacter {
 	TYPE charclass;
 	int stats[STATS_ARRAY];		// stored in order: Health, Energy (mana), Str, Int, Defence, Speed
 
-}PC, _PC;
+}PC, * _PC;
 
 // Character Selection Menu
 PC characterSelectMenu();
@@ -26,10 +26,12 @@ PC setCharacter(int c);
 
 // Updating stats
 PC updateStats(PC player, int arr[]);
-bool TakeDamage(int dmg);
+
 
 // Combat Movesets
-
+int SelectPlayerMoveset(PC player);
+int MovesetDamagePC(PC player, int attackPC);
+int takeDamagePC(_PC player, int damage);
 
 //Other
 void printCharacter(PC player);
