@@ -1,7 +1,20 @@
 #include "Storyline.h"
 
+int checkPoint(int newCheckpoint){
+
+    static int currentCheckPoint = 0;
+
+    if(newCheckpoint > 0){
+        currentCheckPoint = newCheckpoint;
+    }
+
+    return currentCheckPoint;
+}
+
+
 void storyBegins() {
     int userInput;
+    checkPoint(1); //checkpoint
     printf("          # #### ####  \n");
     printf("       ### \\/#|### |/####\n");
     printf("      ##\\/#/\\||/##/_/##/_#\n");
@@ -38,6 +51,7 @@ void storyBegins() {
     scanf_s("%d", &userInput);
     if (userInput == 1) {
         printf("No turning back now. Your adventure begins!\n ");
+        checkPoint(2);
         return;
     }
     else {
@@ -54,6 +68,7 @@ void storyBegins() {
 }
 void storyBeginsAgain() {
     int userInput;
+    checkPoint(100)
     printf("          # #### ####  \n");
     printf("       ### \\/#|### |/####\n");
     printf("      ##\\/#/\\||/##/_/##/_#\n");
@@ -80,6 +95,7 @@ void storyBeginsAgain() {
     scanf_s("%d", &userInput);
     if (userInput == 1) {
         printf("No turning back now. Your adventure begins!\n ");
+        checkPoint (2);
         return;
     }
     else {
@@ -96,6 +112,7 @@ void storyBeginsAgain() {
 
 void actOne() {
     int userInput;
+    checkPoint(3)
     printf("\nThe scent of damp earth and crushed leaves fills the air as you weave through the underbrush.\n");
     Sleep(2000);
     printf("Your hands stained with berry juice from picking the small red berries you find in the bushes.\n");
@@ -145,7 +162,7 @@ void actOne() {
     else {
         printf("You're on an adventure, no time for distractions.\n");
         Sleep(2000);
-        printf("Your foot swings forward—but the moment your boot makes contact, the world shifts.\n");
+        printf("Your foot swings forward but the moment your boot makes contact, the world shifts.\n");
         Sleep(2000);
         printf("The trees around you contort unnaturally, the air turns heavy.\n");
         Sleep(2000);
