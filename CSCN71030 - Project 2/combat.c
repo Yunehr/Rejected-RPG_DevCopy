@@ -15,7 +15,7 @@ int combatLoop(PC player, MOB enemy) {
 		int attackMOB = SelecdMOBMoveset(enemy, combatRound);
 		
 		//Player Moves First
-		if (hitCheck(player)) {
+		if (hitCheckPC(player)) {
 			//roll for damage
 			int damagePC = MovesetDamagePC(player, attackPC);
 			//deal damage
@@ -24,7 +24,7 @@ int combatLoop(PC player, MOB enemy) {
 		}
 
 		//enemy moves second
-		if (hitCheck(enemy)) {
+		if (hitCheckMOB(enemy)) {
 			//roll for damage
 			int damageMOB = MovesetDamageMOB(enemy, attackMOB);
 			//deal damage
@@ -36,4 +36,32 @@ int combatLoop(PC player, MOB enemy) {
 		combatRound++;
 	}
 
+}
+
+bool hitcheckPC{
+	switch (switch_on)
+	{
+		default:
+	break;
+	}
+}
+
+bool attackHitCheck(int speed) {
+	int hit = speed / PHYSICALHITCOEFFICIENT + rand() % (MAXPROBILITY + ONE);
+	if (hit > DEFAULTMISS) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+bool magicHitCheck(int magichit) {
+	int hit = magichit + rand() % (MAXPROBILITY + ONE);
+	if (hit > DEFAULTMISS) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
