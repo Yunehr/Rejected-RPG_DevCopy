@@ -26,6 +26,8 @@ PC characterSelectMenu();
 PC setCharacter(int c);
 
 // Updating stats
+
+
 PC updateStatsPC(PC player, int arr[]);
 PC increaseStatPC(PC player, STAT type, int mod);
 
@@ -40,6 +42,7 @@ int MovesetDamagePC(PC player, int defense, int attackPC);
 int rogueAtkkDmg(PC player, int attack, int defense);
 int warriorAtkDmg(PC player, int attack, int defense);
 int mageAtkDmg(PC player, int attack, int defense);
+
 
 
 //Other

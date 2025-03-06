@@ -6,6 +6,7 @@
 
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 
 // random number generator function
 int RNG(int maxVal, int mod);

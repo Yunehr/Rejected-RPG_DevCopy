@@ -77,12 +77,12 @@ PC updateStatsPC(PC player, int arr[]) {
 	return player;
 }
 
+
 //Update stat function to increase/decrease individual stats easily
 PC increaseStatPC(PC player, STAT type, int mod) {
 	player.stats[type] = player.stats[type] + mod;
 	return player;
 }
-
 
 
 
@@ -139,6 +139,7 @@ int warriorAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more a
 	int critMod = 1;
 	switch (attack) {
 
+
 	case 1: // basic attack (slash)
 		damage = (player.stats[STR] - defense) * critMod;
 		return damage;
@@ -154,6 +155,7 @@ int mageAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more atta
 		return damage;
 	}
 }
+
 
 
 //Other
