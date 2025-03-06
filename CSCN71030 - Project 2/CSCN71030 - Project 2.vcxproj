@@ -127,12 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="combat.c" />
     <ClCompile Include="gameFunctions.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="PlayerCharacter.c" />
     <ClCompile Include="RNG.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="combat.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="RNG.h" />
     <ClCompile Include="mainMenu.c" />
