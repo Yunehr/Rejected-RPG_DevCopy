@@ -12,7 +12,7 @@ int combatLoop(PC player, MOB enemy) {
 	while (player.stats[0] > 0 || enemy.stats[0] > 0) {
 		//Moveset Selection
 		int attackPC = SelectPlayerMoveset(player);
-		int attackMOB = SelecdMOBMoveset(enemy, combatRound);
+		int attackMOB = SelectMOBMoveset(enemy, combatRound);
 		
 		//Player Moves First
 		if (hitCheckPC(player)) {
@@ -38,30 +38,30 @@ int combatLoop(PC player, MOB enemy) {
 
 }
 
-bool hitcheckPC{
-	switch (switch_on)
-	{
-		default:
-	break;
-	}
-}
+//bool hitcheckPC{
+//	switch (switch_on)
+//	{
+//		default:
+//	break;
+//	}
+//}
 
-bool attackHitCheck(int speed) {
-	int hit = speed / PHYSICALHITCOEFFICIENT + rand() % (MAXPROBILITY + ONE);
-	if (hit > DEFAULTMISS) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
-
-bool magicHitCheck(int magichit) {
-	int hit = magichit + rand() % (MAXPROBILITY + ONE);
-	if (hit > DEFAULTMISS) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
+//bool attackHitCheck(int speed) {
+//	int hit = speed / PHYSICALHITCOEFFICIENT + rand() % (MAXPROBILITY + ONE);
+//	if (hit > DEFAULTMISS) {
+//		return true;
+//	}
+//	else {
+//		return false;
+//	}
+//}
+//
+//bool magicHitCheck(int magichit) {
+//	int hit = magichit + rand() % (MAXPROBILITY + ONE);
+//	if (hit > DEFAULTMISS) {
+//		return true;
+//	}
+//	else {
+//		return false;
+//	}
+//}
