@@ -20,7 +20,7 @@ typedef struct enemy {
 }MOB, * _MOB;
 
 // enemy creation Creation
-MOB setEnemy(int c);
+MOB setEnemy(BOSS c);
 
 // Updating stats
 MOB updateStatsMOB(MOB enemy, int arr[]);
