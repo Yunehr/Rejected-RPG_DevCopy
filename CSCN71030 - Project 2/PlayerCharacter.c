@@ -36,7 +36,7 @@ PC setCharacter(int c) {
 	PC newChar = { 0 };
 	int Classes[PLAYER_CLASSES][STATS_ARRAY] = { { 75, 50, 15, 10, 10, 20 }, 
 		{ 100, 25, 20, 5, 15, 5 }, { 50, 100, 10, 20, 10, 5 } };
-	//Stats Order:		
+	//Stats Order:		ROG		WAR		MAG	
 	//	Health			75,		100,	50
 	//	Mana			50,		25,		100
 	//	Strength		15,		20,		10
@@ -48,51 +48,116 @@ PC setCharacter(int c) {
 	case ROG:
 		strncpy(newChar.name, "Rogue", MAX_NAME);	
 		newChar.charclass = ROG;
-		return updateStats(newChar, Classes[c]);
+		return updateStatsPC(newChar, Classes[c]);
 		//return newChar;
 	case WAR:
 		strncpy(newChar.name, "Warrior", MAX_NAME);
 		newChar.charclass = WAR; 
-		return updateStats(newChar, Classes[c]);
+		return updateStatsPC(newChar, Classes[c]);
 		//return newChar;
 	case MAG:
 		strncpy(newChar.name, "Mage", MAX_NAME);
 		newChar.charclass = MAG; 
-		return updateStats(newChar, Classes[c]);
+		return updateStatsPC(newChar, Classes[c]);
 		//return newChar;
 	}
 	return newChar;
 }
 
+
+
 // Updating stats
 
-PC updateStats(PC player, int arr[]) {
+//resets stats to values in an array
+PC updateStatsPC(PC player, int arr[]) {
 	for (int i = 0; i < STATS_ARRAY; i++) {
 		player.stats[i] = arr[i];
 	}
 	return player;
 }
 
+//Update stat function to increase/decrease individual stats easily
+PC increaseStatPC(PC player, STAT type, int mod) {
+	player.stats[type] = player.stats[type] + mod;
+	return player;
+}
 
-// Combat Movesets
+
+
+
+// Combat Integration
+
+//Moveset Menus
 int SelectPlayerMoveset(PC player) {
-	switch (player.charclass)
-	{
+	printf("Please Select an Attack Type:\n");
+	switch (player.charclass){
+	case ROG:
+		return rogueMovesetMenu();
 	case WAR:
-		
-		break;
+		return warriorMovesetMenu();
+	case MAG:
+		return mageMovesetMenu();
+	}
+}
+int rogueMovesetMenu() {	//TODO: ask for user input
+	printf("1 = Basic Attack, etc...\n");
+	return 1;
+}
+int warriorMovesetMenu() {
+	printf("1 = Basic Attack, etc...\n");
+	return 1;
+}
+int mageMovesetMenu() {
+	printf("1 = Basic Attack, etc...\n");
+	return 1;
+}
+
+//Moveset Damage Calculations
+int MovesetDamagePC(PC player, MOB enemy, int attack) {
+	switch (player.charclass) {
+	case ROG:
+		return rogueAtkkDmg(player, attack, enemy.stats[4]);
+	case WAR:
+		return warriorAtkDmg(player, attack, enemy.stats[4]);
+	case MAG:
+		return mageAtkDmg(player, attack, enemy.stats[4]);
+	}
+}
+int rogueAtkkDmg(PC player, int attack, int defense) {
+	int damage = 0;
+	int critMod = 1;
+	switch (attack) {
+
+	case 1: // basic attack (stab)
+		damage = (player.stats[2] - defense) * critMod;
+		return damage;
+	}
+}
+int warriorAtkDmg(PC player, int attack, int defense) {
+	int damage = 0;
+	int critMod = 1;
+	switch (attack) {
+
+	case 1: // basic attack (slash)
+		damage = (player.stats[2] - defense) * critMod;
+		return damage;
+	}
+}
+int mageAtkDmg(PC player, int attack, int defense) {
+	int damage = 0;
+	int critMod = 1;
+	switch (attack) {
+
+	case 1: // basic attack = (Magic Missile)
+		damage = (player.stats[3] - (defense/2)) * critMod;
+		return damage;
 	}
 }
 
-int MovesetDamagePC(PC player, int attackPC) {
-
-}
-
-int takeDamagePC(_PC player, int damage) {
-	
-}
 
 //Other
+
+//Display Current Character Stats on Screen
 void printCharacter(PC player) {	
 	printf("\n%s\n", player.name);
 	printf("Hp:	%d\nMp:	%d\nStr:	%d\nInt:	%d\nDef:	%d\nSpd:	%d\n",

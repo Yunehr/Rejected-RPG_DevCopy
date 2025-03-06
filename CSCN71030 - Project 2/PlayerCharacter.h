@@ -9,6 +9,7 @@
 #define MAX_NAME		7
 
 typedef enum type{ROG = 0, WAR = 1, MAG = 2}TYPE;
+typedef enum stat { HP = 0, MP = 1, STR = 2, INT = 3, DEF = 4, SPD = 5 }STAT;
 
 typedef struct PlayerCharacter {
 	char name[MAX_NAME];	// Warrior, Rogue, or Mage
@@ -25,13 +26,20 @@ PC characterSelectMenu();
 PC setCharacter(int c);
 
 // Updating stats
-PC updateStats(PC player, int arr[]);
+PC updateStatsPC(PC player, int arr[]);
 
 
 // Combat Movesets
 int SelectPlayerMoveset(PC player);
-int MovesetDamagePC(PC player, int attackPC);
-int takeDamagePC(_PC player, int damage);
+int rogueMovesetMenu();
+int warriorMovesetMenu();
+int mageMovesetMenu();
+
+int MovesetDamagePC(PC player, MOB enemy, int attackPC);
+int rogueAtkkDmg(PC player, int attack, int defense);
+int warriorAtkDmg(PC player, int attack, int defense);
+int mageAtkDmg(PC player, int attack, int defense);
+
 
 //Other
 void printCharacter(PC player);
