@@ -30,6 +30,6 @@ int SelectMOBMoveset(MOB enemy, int combatRound);
 int thiefMoveset(int combatRound);
 int FinalBossMoveset(int combatRound);
 
-int MovesetDamageMOB(MOB enemy, PC player, int attack);
+int MovesetDamageMOB(MOB enemy, int defense, int attack);
 int thiefAtkkDmg(MOB enemy, int attack, int defense); 
 int finalBossAtkDmg(MOB enemy, int attack, int defense);

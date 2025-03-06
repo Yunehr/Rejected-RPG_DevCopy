@@ -17,7 +17,7 @@ int combatLoop(PC player, MOB enemy) {
 		//Player Moves First
 		if (hitCheckPC(player)) {
 			//roll for damage
-			int damagePC = MovesetDamagePC(player, attackPC);
+			int damagePC = MovesetDamagePC(player, enemy.stats[DEF], attackPC);
 			//deal damage
 			if (takeDamageMOB(&enemy, damagePC) = 0)
 				return VICTORY;
@@ -26,7 +26,7 @@ int combatLoop(PC player, MOB enemy) {
 		//enemy moves second
 		if (hitCheckMOB(enemy)) {
 			//roll for damage
-			int damageMOB = MovesetDamageMOB(enemy, attackMOB);
+			int damageMOB = MovesetDamageMOB(enemy, player.stats[DEF], attackMOB);
 			//deal damage
 			if (takeDamagePC(&player, damageMOB) = 0)
 				return LOSER;

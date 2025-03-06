@@ -114,14 +114,14 @@ int mageMovesetMenu() {
 }
 
 //Moveset Damage Calculations
-int MovesetDamagePC(PC player, MOB enemy, int attack) {
+int MovesetDamagePC(PC player, int defense, int attack) {
 	switch (player.charclass) {
 	case ROG:
-		return rogueAtkkDmg(player, attack, enemy.stats[DEF]);
+		return rogueAtkkDmg(player, attack, defense);
 	case WAR:
-		return warriorAtkDmg(player, attack, enemy.stats[DEF]);
+		return warriorAtkDmg(player, attack, defense);
 	case MAG:
-		return mageAtkDmg(player, attack, enemy.stats[DEF]);
+		return mageAtkDmg(player, attack, defense);
 	}
 }
 int rogueAtkkDmg(PC player, int attack, int defense) {	//TODO: Implement more attacks, and crit chance

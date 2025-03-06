@@ -62,12 +62,12 @@ int FinalBossMoveset(int combatRound) {	//TODO: change this to randomize attacks
 
 
 //Moveset Damage Calculations
-int MovesetDamageMOB(MOB enemy, PC player, int attack) {
-	switch (player.charclass) {
+int MovesetDamageMOB(MOB enemy, int defense, int attack) {
+	switch (enemy.type) {
 	case ROG:
-		return thiefAtkkDmg(enemy, attack, player.stats[DEF]);
+		return thiefAtkkDmg(enemy, attack, defense);
 	case WAR:
-		return finalBossAtkDmg(enemy, attack, player.stats[DEF]);
+		return finalBossAtkDmg(enemy, attack, defense);
 	}
 }
 int thiefAtkkDmg(MOB enemy, int attack, int defense) {		//TODO: Implement more attacks, and crit chance
