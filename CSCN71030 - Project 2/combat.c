@@ -21,7 +21,7 @@ int combatLoop(PC player, MOB enemy) {
 			//roll for damage
 			int damagePC = MovesetDamagePC(player, attackPC);
 			//deal damage
-			enemyHP = enemyHP - damagePC;
+			enemyHP = enemyHP - damagePC; //this replaced takeDamage()
 			if ( enemyHP <= 0)
 				return VICTORY;
 		}
