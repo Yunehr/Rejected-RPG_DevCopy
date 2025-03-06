@@ -8,8 +8,10 @@
 
 int combatLoop(PC player, MOB enemy) {
 	int combatRound = 1;
+	int playerHP = player.stats[0];
+	int enemyHP = enemy.stats[0];
 
-	while (player.stats[0] > 0 || enemy.stats[0] > 0) {
+	while () {
 		//Moveset Selection
 		int attackPC = SelectPlayerMoveset(player);
 		int attackMOB = SelecdMOBMoveset(enemy, combatRound);
@@ -19,7 +21,8 @@ int combatLoop(PC player, MOB enemy) {
 			//roll for damage
 			int damagePC = MovesetDamagePC(player, attackPC);
 			//deal damage
-			if (takeDamageMOB(&enemy, damagePC) = 0)
+			enemyHP = enemyHP - damagePC;
+			if ( enemyHP <= 0)
 				return VICTORY;
 		}
 
@@ -28,7 +31,7 @@ int combatLoop(PC player, MOB enemy) {
 			//roll for damage
 			int damageMOB = MovesetDamageMOB(enemy, attackMOB);
 			//deal damage
-			if (takeDamagePC(&player, damageMOB) = 0)
+			if (takeDamagePC(&playerHP, damageMOB) = 0)
 				return LOSER;
 		}
 
@@ -38,30 +41,36 @@ int combatLoop(PC player, MOB enemy) {
 
 }
 
-bool hitcheckPC{
-	switch (switch_on)
+bool hitcheckPC(PC player){
+	int hit;
+	switch (player.charclass)
 	{
+	case ROG:
+		hit = player.stats[5] / 10 + RNG(100, 1);
+		if (hit > 10) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	case WAR:
+		hit = player.stats[5] / 10 + RNG(100, 1);
+		if (hit > 10) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	case MAG:
+		hit = 1 + RNG(100, 1);
+		if (hit > 10) {
+			return true;
+		}
+		else {
+			return false;
+		}
 		default:
 	break;
 	}
 }
 
-bool attackHitCheck(int speed) {
-	int hit = speed / PHYSICALHITCOEFFICIENT + rand() % (MAXPROBILITY + ONE);
-	if (hit > DEFAULTMISS) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
-
-bool magicHitCheck(int magichit) {
-	int hit = magichit + rand() % (MAXPROBILITY + ONE);
-	if (hit > DEFAULTMISS) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}

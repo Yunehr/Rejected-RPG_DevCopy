@@ -73,6 +73,9 @@ PC updateStats(PC player, int arr[]) {
 	return player;
 }
 
+int takeDamagePC(_PC player, int damage) {
+
+}
 
 // Combat Movesets
 int SelectPlayerMoveset(PC player) {
@@ -88,9 +91,8 @@ int MovesetDamagePC(PC player, int attackPC) {
 
 }
 
-int takeDamagePC(_PC player, int damage) {
-	
-}
+
+
 
 //Other
 void printCharacter(PC player) {	
