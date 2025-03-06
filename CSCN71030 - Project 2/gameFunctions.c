@@ -23,16 +23,25 @@ bool newGame() {
 }
 
 // saves the player stats to the file
-void saveGame() {
+void saveGame(PC toSave) {
 	FILE* newGameFile;							// creates new file pointer
 
 	newGameFile = fopen("SaveGame.txt", "w");
 	if (newGameFile == NULL) {					// checking for null
-		printf("ERROR CREATING FILE");
+		printf("ERROR OPENING FILE");
 		exit(EXIT_FAILURE);
 	}
+	fprintf(newGameFile, "%s, ", toSave.name);
 
-	// TODO: figure out how to send info here
+	fprintf(newGameFile, "%d, ", toSave.stats[0]);
+	fprintf(newGameFile, "%d, ", toSave.stats[1]);
+	fprintf(newGameFile, "%d, ", toSave.stats[2]);
+	fprintf(newGameFile, "%d, ", toSave.stats[3]);
+	fprintf(newGameFile, "%d, ", toSave.stats[4]);
+	fprintf(newGameFile, "%d", toSave.stats[5]);
+
+	//fprintf(newGameFile, "Checkpoint:   Temp\n");	// nothing right now but will have the part of story
+
 	// character stats obv but how is the more important part
 
 	fclose(newGameFile);
@@ -40,18 +49,39 @@ void saveGame() {
 }
 
 // this function checks for file to load
-void loadGame() {
-	FILE* loadGameFile;						// creates new file
+PC loadGame() {
+    FILE* loadGameFile;                      // Creates new file
+    PC player;
+    char line[200];                          // Buffer to store each line from the file
+    char tempName[MAX_NAME];
+    int health = 0, mana = 0, str = 0,
+        itl = 0, def = 0, speed = 0;
 
-	loadGameFile = fopen("SaveGame.txt", "r");
-	if (loadGameFile == NULL) {				// checking for null
-		printf("EXISTING FILE NOT FOUND");
-		exit(EXIT_FAILURE);
-	}
+    loadGameFile = fopen("SaveGame.txt", "r");
+    if (loadGameFile == NULL) {               // Checking for null
+        printf("EXISTING FILE NOT FOUND");
+        exit(EXIT_FAILURE);
+    }
 
-	fclose(loadGameFile);
+    // Read each line from the file
+    while (fgets(line, sizeof(line), loadGameFile)) {
+        // Use sscanf to parse the line into the variables
+        if (sscanf(line, "%49[^,], %d, %d, %d, %d, %d, %d", tempName,
+            &health, &mana, &str, &itl, &def, &speed) == 7) {
 
-	// is is gonna have to take all of the info
-	// from the file and read it into a character
+            // Copy the name into the player struct
+            strncpy(player.name, tempName, MAX_NAME);
+            // Store the stats in the player struct
+            player.stats[0] = health;
+            player.stats[1] = mana;
+            player.stats[2] = str;
+            player.stats[3] = itl;
+            player.stats[4] = def;
+            player.stats[5] = speed;
+        }
+    }
 
+    fclose(loadGameFile);
+
+    return player;
 }
