@@ -16,7 +16,8 @@ void optionsMenu() {
 				break;
 
 			case 2:
-				saveGame();
+				// TODO: make file pass into optionsMenu() to pass here, as well as story point
+				// saveGame(player);
 				break;
 
 			case 3:

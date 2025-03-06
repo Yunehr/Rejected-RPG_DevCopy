@@ -2,7 +2,6 @@
 #include "gameFunctions.h"
 #include "PlayerCharacter.h"
 #include "mainMenu.h"
-#include "PlayerCharacter.h"
 #include <stdio.h>
 #include <stdlib.h>
 
