@@ -67,7 +67,7 @@ void storyBegins() {
     Sleep(2000);
     printf("Which way do you go?\n");
     printf("(1) To the forest! or (2) To the Village: ");
-    int userInput = getUserChoice(1,2);
+    userInput = getUserChoice(1,2);
     if (userInput == 1) {
         printf("No turning back now. Your adventure begins!\n ");
         checkPoint(2);
@@ -111,7 +111,7 @@ void storyBeginsAgain() {
     printf("To your left, the woods grow darker and denser, the path uncertain.\n");
     printf("Which way do you go?");
     printf("(1) To the forest! or (2) To the Village: ");
-    int userInput = getUserChoice(1,2);
+    userInput = getUserChoice(1,2);
     if (userInput == 1) {
         printf("No turning back now. Your adventure begins!\n ");
         checkPoint (2);
@@ -160,7 +160,7 @@ void actOne() {
     printf("It tilts its head at you, completely unbothered by your approach. \n");
     printf("You pause.What do you do ?\n");
     printf("(1) Offer the bunny a berry or (2) Kick the bunny out of your way: \n");
-    int userInput = getUserChoice(1,2);
+    userInput = getUserChoice(1,2);
     if (userInput == 1) {
         checkPoint(4);
         printf("You crouch, extending a berry toward the tiny creature.\n");
