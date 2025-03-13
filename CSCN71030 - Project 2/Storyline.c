@@ -229,15 +229,15 @@ void actTwo(PC *player) {
     userInput = getUserChoice(1,3);
 
     if (userInput == 1) {
-        increaseStatPC(player, STRENGTH, 3);
+        increaseStatPC(player, STR, 3);
         printf("Confidence surges through you!(+3 STR) The cloaked figure nods at you and vanishes.\n");
     }
     else if (userInput == 2) {
-        increaseStatPC(player, INTELLIGENCE, 3);
+        increaseStatPC(player, INTEL, 3);
         printf("A deep hum fills the air. The stranger steps closer and whispers forgotten knowledge into your mind before vanishing.(+3 INT)\n");
     }
     else {
-        increaseStatPC(player, HEALTH, -5);
+        increaseStatPC(player, HP, -5);
         printf("The moment you move, your vision blurs. You're slammed backward by an unseen force, gasping for breath. (-5 HP) \n");
         printf("The figure simply vanishes, leaving you alone.\n");
     }
@@ -257,21 +257,21 @@ void actTwo(PC *player) {
                 printf("You stumble upon a crystal-clear pool. Its waters shimmer as you kneel, and the moment you drink, warmth floods your veins.\n");
                 int poolEffect = getRandomEvent(3);
                 if (poolEffect == 1) {
-                    increaseStatPC(player, DEFENSE, 3);
+                    increaseStatPC(player, DEF, 3);
                     printf("A warm sensation spreads through your body. You feel unbreakable. (+3 DEF)\n");
                 }
                 else if (poolEffect == 2) {
-                    increaseStatPC(player, STRENGTH, 3);
+                    increaseStatPC(player, STR, 3);
                     printf("Your blood burns with newfound strength. You feel unstoppable. (+3 STR)\n");
                 }
                 else {
-                    increaseStatPC(player, INTELLIGENCE, 3);
+                    increaseStatPC(player,INTEL, 3);
                     printf("Your thoughts sharpen. Patterns emerge in the chaos. (+3 INT)\n");
                 }
                 break;
 
             case 2:
-                increaseStatPC(player, HEALTH, -5);
+                increaseStatPC(player, HP, -5);
                 printf("A dart shoots from the wall, piercing your arm. Poison burns your veins (-5 HP)\n");
                 printf("You stumble out of the cave and run down the path.\n");
                 break;
@@ -291,10 +291,10 @@ void actTwo(PC *player) {
         actThree();  
     }
 }
-void actThree() {
+void actThree(PC *player) {
 
 }
-void finalBoss() {
+void finalBoss(PC *player) {
 
     checkPoint(101);
 }
