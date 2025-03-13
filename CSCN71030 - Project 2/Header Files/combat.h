@@ -7,3 +7,5 @@
 
 
 int combatLoop(PC player, MOB enemy);
+bool hitCheckPC(PC player);
+bool hitCheckMOB(MOB enemy);

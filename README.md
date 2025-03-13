@@ -40,6 +40,10 @@ From battles to custom characters, we're building an **immersive experience** wi
 - Save/Load funcitons working
 - Checkpoints added
 
+### Update v0.1.2
+- Integrated combat and character modules
+- Enemy characters added to character module
+
 # Contributors 
 - Matt Romano (@Mromano06)
 - Leanne Boulton (@Angelchild00)
