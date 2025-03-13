@@ -11,7 +11,8 @@ int combatLoop(PC player, MOB enemy) {
 	int playerHP = player.stats[0];
 	int enemyHP = enemy.stats[0];
 
-	while () {
+	//Combat Loop
+	while (combatRound <= 20) {		//while neither player nor enemy is dead (HP > 0) && combatRound <= 20
 		//Moveset Selection
 		int attackPC = SelectPlayerMoveset(player);
 		int attackMOB = SelectMOBMoveset(enemy, combatRound);
@@ -31,7 +32,8 @@ int combatLoop(PC player, MOB enemy) {
 			//roll for damage
 			int damageMOB = MovesetDamageMOB(enemy, player.stats[DEF], attackMOB);
 			//deal damage
-			if (takeDamagePC(&playerHP, damageMOB) = 0)
+			playerHP = playerHP - damageMOB; //this replaced takeDamage()
+			if (playerHP <= 0)
 				return LOSER;
 		}
 
