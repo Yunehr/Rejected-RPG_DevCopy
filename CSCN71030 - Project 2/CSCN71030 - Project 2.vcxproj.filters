@@ -9,6 +9,8 @@
     <ClCompile Include="optionsMenu.c" />
     <ClCompile Include="combat.c" />
     <ClCompile Include="enemy.c" />
+    <ClCompile Include="Storyline.c" />
+    <ClCompile Include="gameFunctions-Tests.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PlayerCharacter.h" />
@@ -18,5 +20,7 @@
     <ClInclude Include="optionsMenu.h" />
     <ClInclude Include="combat.h" />
     <ClInclude Include="enemy.h" />
+    <ClInclude Include="Storyline.h" />
+    <ClInclude Include="gameFunction-Tests.h" />
   </ItemGroup>
 </Project>

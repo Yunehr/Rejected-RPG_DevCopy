@@ -8,7 +8,7 @@
 bool newGame();
 
 // saves the game
-bool saveGame(PC toSave);
+bool saveGame(PC* toSave);
 
 // loads a game
 PC loadGame();

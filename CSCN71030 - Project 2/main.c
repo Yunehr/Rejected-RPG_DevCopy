@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	saveGame(temp); 
+	saveGame(&temp); 
 
 	temp = loadGame();
 

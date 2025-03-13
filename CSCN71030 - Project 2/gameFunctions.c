@@ -23,7 +23,7 @@ bool newGame() {
 }
 
 // saves the player stats to the file
-bool saveGame(PC toSave) {
+bool saveGame(PC* toSave) {
 	FILE* newGameFile;							// creates new file pointer
 
 	newGameFile = fopen("SaveGame.txt", "w");
@@ -32,14 +32,14 @@ bool saveGame(PC toSave) {
 		exit(EXIT_FAILURE);
         return false;
 	}
-	fprintf(newGameFile, "%s, ", toSave.name);
+	fprintf(newGameFile, "%s, ", toSave->name);
 
-	fprintf(newGameFile, "%d, ", toSave.stats[0]);
-	fprintf(newGameFile, "%d, ", toSave.stats[1]);
-	fprintf(newGameFile, "%d, ", toSave.stats[2]);
-	fprintf(newGameFile, "%d, ", toSave.stats[3]);
-	fprintf(newGameFile, "%d, ", toSave.stats[4]);
-	fprintf(newGameFile, "%d", toSave.stats[5]);
+	fprintf(newGameFile, "%d, ", toSave->stats[0]);
+	fprintf(newGameFile, "%d, ", toSave->stats[1]);
+	fprintf(newGameFile, "%d, ", toSave->stats[2]);
+	fprintf(newGameFile, "%d, ", toSave->stats[3]);
+	fprintf(newGameFile, "%d, ", toSave->stats[4]);
+	fprintf(newGameFile, "%d", toSave->stats[5]);
 
 	//fprintf(newGameFile, "Checkpoint:   Temp\n");	// nothing right now but will have the part of story
 
