@@ -48,7 +48,7 @@ bool hitcheckPC(PC player){
 	switch (player.charclass)
 	{
 	case ROG:
-		hit = player.stats[5] / 10 + RNG(100, 1);
+		hit = player.stats[SPD] / 10 + RNG(100, 1);
 		if (hit > 10) {
 			return true;
 		}
@@ -56,7 +56,7 @@ bool hitcheckPC(PC player){
 			return false;
 		}
 	case WAR:
-		hit = player.stats[5] / 10 + RNG(100, 1);
+		hit = player.stats[SPD] / 10 + RNG(100, 1);
 		if (hit > 10) {
 			return true;
 		}
@@ -73,5 +73,15 @@ bool hitcheckPC(PC player){
 		}
 		default:
 	break;
+	}
+}
+
+bool hitCheckMOB(MOB enemy) {
+	int hit = enemy.stats[SPD] / 10 + RNG(100, 1); //roll for hit
+	if (hit > 10) {
+		return true;
+	}
+	else {
+		return false;
 	}
 }
