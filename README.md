@@ -31,7 +31,7 @@ From battles to custom characters, we're building an **immersive experience** wi
 - Argv/argc is fully implemented
 - Options menu is complete (could use a visual upgrade)
 - Character creation complete
-- 'GameFile.txt'  is permanently set as the save file name
+- 'GameFile.txt'  is permanently set as the save file name (stop the cap)
 
 ### Update v0.1.0
 - Integrated the main menu and character creation!
@@ -43,6 +43,11 @@ From battles to custom characters, we're building an **immersive experience** wi
 ### Update v0.1.2
 - Integrated combat and character modules
 - Enemy characters added to character module
+
+### Update v0.1.3
+- Save, Load, and New game functions fully tested
+- RNG function fully tested, both unit and integration
+- "SaveGame.txt" is the actaul save files name (past me is an idiot)
 
 # Contributors 
 - Matt Romano (@Mromano06)
