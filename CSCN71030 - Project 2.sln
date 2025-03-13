@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSCN71030 - Project 2", "CS
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RNG-Tests", "RNG-Tests\RNG-Tests.vcxproj", "{30D2A6BF-C5D9-478E-932C-5A83D9D99574}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameFunctions-Tests", "GameFunctions-Tests\GameFunctions-Tests.vcxproj", "{78592A6D-D24E-569B-19E6-57567B33BB52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{30D2A6BF-C5D9-478E-932C-5A83D9D99574}.Release|x64.Build.0 = Release|x64
 		{30D2A6BF-C5D9-478E-932C-5A83D9D99574}.Release|x86.ActiveCfg = Release|Win32
 		{30D2A6BF-C5D9-478E-932C-5A83D9D99574}.Release|x86.Build.0 = Release|Win32
+		{78592A6D-D24E-569B-19E6-57567B33BB52}.Debug|x64.ActiveCfg = Debug|x64
+		{78592A6D-D24E-569B-19E6-57567B33BB52}.Debug|x64.Build.0 = Debug|x64
+		{78592A6D-D24E-569B-19E6-57567B33BB52}.Debug|x86.ActiveCfg = Debug|Win32
+		{78592A6D-D24E-569B-19E6-57567B33BB52}.Debug|x86.Build.0 = Debug|Win32
+		{78592A6D-D24E-569B-19E6-57567B33BB52}.Release|x64.ActiveCfg = Release|x64
+		{78592A6D-D24E-569B-19E6-57567B33BB52}.Release|x64.Build.0 = Release|x64
+		{78592A6D-D24E-569B-19E6-57567B33BB52}.Release|x86.ActiveCfg = Release|Win32
+		{78592A6D-D24E-569B-19E6-57567B33BB52}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

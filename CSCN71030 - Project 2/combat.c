@@ -48,7 +48,7 @@ bool hitcheckPC(PC player){
 	switch (player.charclass)
 	{
 	case ROG:
-		hit = player.stats[SPD] / 10 + RNG(100, 1);
+		hit = player.stats[5] / 10 + RNG(100, 1);
 		if (hit > 10) {
 			return true;
 		}
@@ -56,7 +56,7 @@ bool hitcheckPC(PC player){
 			return false;
 		}
 	case WAR:
-		hit = player.stats[SPD] / 10 + RNG(100, 1);
+		hit = player.stats[5] / 10 + RNG(100, 1);
 		if (hit > 10) {
 			return true;
 		}
@@ -73,30 +73,5 @@ bool hitcheckPC(PC player){
 		}
 		default:
 	break;
-	}
-}
-
-bool hitCheckMOB(MOB enemy) {
-	int hit;
-	switch (enemy.type)
-	{
-	case FIN:
-		hit = 5 + RNG(100, 1);	//Final Boss has a 5% chance to miss
-		if (hit > 10) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	case THIEF:
-		hit = 1 + RNG(100, 1); //Thief has a 10% chance to miss
-		if (hit > 10) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	default:
-		break;
 	}
 }
