@@ -11,4 +11,4 @@ void actThree();
 void finalBoss();
 int checkPoint(int newCheckpoint);
 int getUserChoice(int min, int max);
-void handleRandomEvent();
+void handleRandomEvent(int numEvents);

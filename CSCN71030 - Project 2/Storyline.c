@@ -1,4 +1,7 @@
 #include "Storyline.h"
+#include "PlayerCharacter.h"
+#include "RNG.h"
+
 
 int checkPoint(int newCheckpoint){
 
@@ -27,9 +30,10 @@ int getUserChoice(int min, int max) {
     return choice;
 }
 
-void handleRandomEvent(){
-
-}
+void handleRandomEvent(int numEvents){ 
+       return RNG(1, numEvents); // Returns a random event ID from 1 to numEvents
+    }
+    
 
 void storyBegins() {
     int userInput;
@@ -180,7 +184,7 @@ void actOne() {
         return;
     }
     else {
-        checkPoint(99)
+        checkPoint(99);
         printf("You're on an adventure, no time for distractions.\n");
         Sleep(2000);
         printf("Your foot swings forward but the moment your boot makes contact, the world shifts.\n");
@@ -205,5 +209,5 @@ void actThree() {
 
 }
 void finalBoss() {
-checkPoint(101)
+checkPoint(101);
 }
