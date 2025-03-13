@@ -4,9 +4,11 @@
 
 // Matthew Romano - CSCN71030_Section2_Group3 - Load/Start game header file
 
+// starts a new game
 bool newGame();
 
-// TODO: make functional
-void saveGame(PC toSave);
+// saves the game
+bool saveGame(PC toSave);
 
+// loads a game
 PC loadGame();

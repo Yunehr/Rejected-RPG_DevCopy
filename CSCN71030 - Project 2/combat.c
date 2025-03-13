@@ -18,7 +18,7 @@ int combatLoop(PC player, MOB enemy) {
 		int attackMOB = SelectMOBMoveset(enemy, combatRound);
 		
 		//Player Moves First
-		if (hitCheckPC(player)) {
+		if (hitCheckPC(player)==true) {
 			//roll for damage
 			int damagePC = MovesetDamagePC(player, enemy.stats[DEF], attackPC);
 			//deal damage
@@ -28,7 +28,7 @@ int combatLoop(PC player, MOB enemy) {
 		}
 
 		//enemy moves second
-		if (hitCheckMOB(enemy)) {
+		if (hitCheckMOB(enemy)==true) {
 			//roll for damage
 			int damageMOB = MovesetDamageMOB(enemy, player.stats[DEF], attackMOB);
 			//deal damage
@@ -43,7 +43,7 @@ int combatLoop(PC player, MOB enemy) {
 
 }
 
-bool hitcheckPC(PC player){
+bool hitCheckPC(PC player){
 	int hit;
 	switch (player.charclass)
 	{

@@ -10,7 +10,7 @@
 #define MAX_NAME		7
 
 typedef enum type{ROG = 0, WAR = 1, MAG = 2}TYPE;
-typedef enum stat { HP = 0, MP = 1, STR = 2, INT = 3, DEF = 4, SPD = 5 }STAT;
+typedef enum stat { HP = 0, MP = 1, STR = 2, INTEL = 3, DEF = 4, SPD = 5 }STAT;
 
 typedef struct PlayerCharacter {
 	char name[MAX_NAME];	// Warrior, Rogue, or Mage

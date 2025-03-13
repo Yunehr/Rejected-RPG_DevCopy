@@ -209,5 +209,6 @@ void actThree() {
 
 }
 void finalBoss() {
-checkPoint(101);
+
+    checkPoint(101);
 }
