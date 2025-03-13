@@ -1,6 +1,5 @@
 #include "Storyline.h"
-#include "PlayerCharacter.h"
-#include "RNG.h"
+
 
 
 int checkPoint(int newCheckpoint){
@@ -15,27 +14,23 @@ int checkPoint(int newCheckpoint){
 }
 int getUserChoice(int min, int max) {
     int choice;
-    int validInput;
-    
-    do {
+    while (1) {
         printf("Enter your choice (%d-%d): ", min, max);
-        validInput = scanf_s("%d", &choice);
-
-        if (validInput != 1 || choice < min || choice > max) {
-            printf("Invalid choice. Please enter a number between %d and %d.\n", min, max);
-            while (getchar() != '\n'); // Clear invalid input
+        if (scanf("%d", &choice) == 1 && choice >= min && choice <= max) {
+            return choice; // Valid input, return choice
         }
-    } while (choice < min || choice > max);
-
-    return choice;
+        // Flush invalid input
+        printf("Invalid choice. Please enter a number between %d and %d.\n", min, max);
+        while (getchar() != '\n');
+    }
 }
 
-void handleRandomEvent(int numEvents){ 
+int handleRandomEvent(int numEvents){ 
        return RNG(1, numEvents); // Returns a random event ID from 1 to numEvents
     }
     
 
-void storyBegins() {
+void storyBegins(PC *player) {
     int userInput;
     checkPoint(1); //checkpoint
     printf("          # #### ####  \n");
@@ -86,10 +81,10 @@ void storyBegins() {
         Sleep(2000);
         printf("You wake up in the woods again, battered and bruised. (Lose -2 HP) \n");
         Sleep(3000);
-        storyBeginsAgain();
+        storyBeginsAgain(player);
     }
 }
-void storyBeginsAgain() {
+void storyBeginsAgain(PC *player) {
     int userInput;
     checkPoint(100);
     printf("          # #### ####  \n");
@@ -133,7 +128,7 @@ void storyBeginsAgain() {
     }
 }
 
-void actOne() {
+void actOne(PC *player) {
     int userInput;
     checkPoint(3);
     printf("\nThe scent of damp earth and crushed leaves fills the air as you weave through the underbrush.\n");
@@ -202,8 +197,99 @@ void actOne() {
     return;
 }
 
-void actTwo() {
+void actTwo(PC *player) {
+    int userInput; 
+    checkPoint(5);
+    printf("The trees close in around you, their gnarled branches reaching like skeletal fingers toward the sky.\n");
+    printf("The path beneath your feet is uneven, soft, like something is shifting beneath the surface.\n");
+    printf ("A thick mist creeps in, swirling at your ankles.\n");
+    printf("        ..-+#@@@@@@+@@#=..                                                    ..::.-*##*-..        \n");
+    printf("     ..:-*@@@@@@@@@@@@@@@@@#+-...                                     ....-++@@@@@@@@@@@@@@@*:..   \n");
+    printf("    ....-=-::...:-=*@@@@@@@@@@@#*-..                             ...-*#@@@@@@@@@@+*==-==+**-...   \n");
+    printf("                      .:#@@@@@@@@@@@@@*:...::           ...   ..:*@@@@@@@@@@@@+-..                 \n");
+    printf("                       ..:*+@@@@@@@@@@@@@++-           .+==*@@@@@@@@@@@@@@*:.                     \n");
+    printf("                            ..-*@@@@@@@@@@@@-           .*@@@@@@@@@@@@@#=:..                       \n");
+    printf("                             ...=+@@@@@@@=           .*@@@@@@@@@#:..                         \n");
+    printf("           .....:--======--:....     .....-*-           .*+#*=:....    ...--=+*###*=-:..        \n");
+    printf("     .::..+=-#++@@@@@@@@@@@@@@@#+..                     ...        ..-*+@@@@@@@@@@@@@@@#*+..-:...  \n");
+    printf("   ::.++++-*@@@+*@@@@@@@#...-+:#@@+-.                           ..-+@@*+@@@@@@+-...+:*@@@@@+:=+-.-.\n");
+    printf("  ...*#*@@@@@+..*@@@@@@=*:..-*:...++@-..                      ..=+#-..=@@@@@@**=..:*-..:#@@@@#++=..\n");
+    printf("  .:###@@@@#:. .*@@@@@@@@@@@@#:.  ..-++-.                   ..+@*:.. .=@@@@@@@@@@@@@-. ..+@@@@+*#+.\n");
+    printf("     .+@@@@+.   :+@@@@@@@@@@@=.      .=-:.                 .:*+..     .#@@@@@@@@@@@*.    .+@@@@=.  \n");
+    printf("      ....... ....#@@@@@@@@+-. ..                                   ....*@@@@@@@@@+. .. .......    \n");
+    printf("             ..-+=-=*++#+:.:==:.                                   ..-=+-=*+++*-..-=:.            \n");
+    printf("                 ..=#@@@@++...                                         ..=#@@@@@*:..              \n");
+    printf("\n");
+    printf("Something… no, someone is watching you.\n");
+    printf("A cloaked figure steps from the shadows, their face completely hidden beneath their hood. \n");
+    printf("The cloaked stranger asks: Do you know who you truly are?\n ");
+    printf("(1) - Yes! I know exactly who I am!\n");
+    printf("(2) - No, tell me the truth! \n");
+    printf("(3) - You talk too much! *attacks the figure* \n");
+    userInput = getUserChoice(1,3);
 
+    if (userInput == 1) {
+        increaseStatPC(player, STRENGTH, 3);
+        printf("Confidence surges through you!(+3 STR) The cloaked figure nods at you and vanishes.\n");
+    }
+    else if (userInput == 2) {
+        increaseStatPC(player, INTELLIGENCE, 3);
+        printf("A deep hum fills the air. The stranger steps closer and whispers forgotten knowledge into your mind before vanishing.(+3 INT)\n");
+    }
+    else {
+        increaseStatPC(player, HEALTH, -5);
+        printf("The moment you move, your vision blurs. You're slammed backward by an unseen force, gasping for breath. (-5 HP) \n");
+        printf("The figure simply vanishes, leaving you alone.\n");
+    }
+
+    printf("You glance ahead. Two distinct paths emerge: \n");
+    printf("(1) - Enter the cave\n");
+    printf("(2) - Continue down the forest path\n");
+    userInput = getUserChoice(1,2);
+
+    if (userInput == 1) {
+        printf("The air inside is heavy, thick with the scent of wet stone and something ancient.\n");
+        printf("The walls pulse faintly, as if the cave itself is alive. \n");
+
+        int eventID = getRandomEvent(3);
+        switch(eventID) {
+            case 1:
+                printf("You stumble upon a crystal-clear pool. Its waters shimmer as you kneel, and the moment you drink, warmth floods your veins.\n");
+                int poolEffect = getRandomEvent(3);
+                if (poolEffect == 1) {
+                    increaseStatPC(player, DEFENSE, 3);
+                    printf("A warm sensation spreads through your body. You feel unbreakable. (+3 DEF)\n");
+                }
+                else if (poolEffect == 2) {
+                    increaseStatPC(player, STRENGTH, 3);
+                    printf("Your blood burns with newfound strength. You feel unstoppable. (+3 STR)\n");
+                }
+                else {
+                    increaseStatPC(player, INTELLIGENCE, 3);
+                    printf("Your thoughts sharpen. Patterns emerge in the chaos. (+3 INT)\n");
+                }
+                break;
+
+            case 2:
+                increaseStatPC(player, HEALTH, -5);
+                printf("A dart shoots from the wall, piercing your arm. Poison burns your veins (-5 HP)\n");
+                printf("You stumble out of the cave and run down the path.\n");
+                break;
+
+            case 3:
+                printf("A shadow lunges at you from the dark! You barely raise your arms before the fight begins.\n");
+                // Insert combat function
+                break;
+        }
+
+        actThree();
+    }
+    else {
+        printf("You press forward, leaving the cave behind.\n");
+        printf("The forest around you shifts, the trees twisting in unnatural angles.\n");
+        printf("Ahead, the path ends abruptly. A small hut stands before you.\n");
+        actThree();  
+    }
 }
 void actThree() {
 
