@@ -1,57 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="gameFunctions.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="optionsMenu.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="mainMenu.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerCharacter.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RNG.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Storyline.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClCompile Include="gameFunctions.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="PlayerCharacter.c" />
+    <ClCompile Include="RNG.c" />
+    <ClCompile Include="mainMenu.c" />
+    <ClCompile Include="optionsMenu.c" />
+    <ClCompile Include="combat.c" />
+    <ClCompile Include="enemy.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Storyline.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerCharacter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="optionsMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gameFunctions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mainMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RNG.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{2d71a99b-66af-460e-a598-621199bc10ae}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{a40c8337-842c-475a-bc20-6816af8a3a58}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{ce213d20-e158-4483-ae84-087c68814366}</UniqueIdentifier>
-    </Filter>
+    <ClInclude Include="PlayerCharacter.h" />
+    <ClInclude Include="RNG.h" />
+    <ClInclude Include="gameFunctions.h" />
+    <ClInclude Include="mainMenu.h" />
+    <ClInclude Include="optionsMenu.h" />
+    <ClInclude Include="combat.h" />
+    <ClInclude Include="enemy.h" />
   </ItemGroup>
 </Project>
