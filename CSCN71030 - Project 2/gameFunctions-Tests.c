@@ -40,5 +40,22 @@ bool loadGameTest() {
 
 // general function to call all tests
 void gameFunctionTests() {
+	// checks new game
+	if (newGameTests() == true)
+		printf("\nnewGame() Test: PASSED\n");
+	else 
+		printf("\nnewGame() Test: FAILED\n");
+
+	// checks save game
+	if (saveGameTests() == true)
+		printf("\nsaveGame() Test: PASSED\n");
+	else
+		printf("\nsaveGame() Test: FAILED\n");
+
+	// checks load game
+	if (loadGameTests() == true)
+		printf("\nloadeGame() Test: PASSED\n");
+	else
+		printf("\nloadGame() Test: FAILED\n");
 
 }
