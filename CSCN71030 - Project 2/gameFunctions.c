@@ -23,13 +23,14 @@ bool newGame() {
 }
 
 // saves the player stats to the file
-void saveGame(PC toSave) {
+bool saveGame(PC toSave) {
 	FILE* newGameFile;							// creates new file pointer
 
 	newGameFile = fopen("SaveGame.txt", "w");
 	if (newGameFile == NULL) {					// checking for null
 		printf("ERROR OPENING FILE");
 		exit(EXIT_FAILURE);
+        return false;
 	}
 	fprintf(newGameFile, "%s, ", toSave.name);
 
@@ -46,6 +47,8 @@ void saveGame(PC toSave) {
 
 	fclose(newGameFile);
 	// this isnt a final point, can return to the game after
+
+    return true;
 }
 
 // this function checks for file to load

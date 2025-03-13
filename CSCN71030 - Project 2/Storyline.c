@@ -180,7 +180,7 @@ void actOne() {
         return;
     }
     else {
-        checkPoint(99)
+        checkPoint(99);
         printf("You're on an adventure, no time for distractions.\n");
         Sleep(2000);
         printf("Your foot swings forward but the moment your boot makes contact, the world shifts.\n");
