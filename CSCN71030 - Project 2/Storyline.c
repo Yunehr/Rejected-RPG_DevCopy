@@ -87,7 +87,7 @@ void storyBegins() {
 }
 void storyBeginsAgain() {
     int userInput;
-    checkPoint(100)
+    checkPoint(100);
     printf("          # #### ####  \n");
     printf("       ### \\/#|### |/####\n");
     printf("      ##\\/#/\\||/##/_/##/_#\n");
@@ -131,7 +131,7 @@ void storyBeginsAgain() {
 
 void actOne() {
     int userInput;
-    checkPoint(3)
+    checkPoint(3);
     printf("\nThe scent of damp earth and crushed leaves fills the air as you weave through the underbrush.\n");
     Sleep(2000);
     printf("Your hands stained with berry juice from picking the small red berries you find in the bushes.\n");
@@ -162,7 +162,7 @@ void actOne() {
     printf("(1) Offer the bunny a berry or (2) Kick the bunny out of your way: \n");
     int userInput = getUserChoice(1,2);
     if (userInput == 1) {
-        checkPoint(4)
+        checkPoint(4);
         printf("You crouch, extending a berry toward the tiny creature.\n");
         Sleep(2000);
         printf("The bunny sniffs, hesitates, then snatches it with a wiggle of its nose.\n");
