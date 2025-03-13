@@ -37,7 +37,7 @@ From battles to custom characters, we're building an **immersive experience** wi
 - Integrated the main menu and character creation!
 
 ### Update v0.1.1
-- Save/Load funcitons working
+- Save/Load functions working
 - Checkpoints added
 
 ### Update v0.1.2
@@ -47,7 +47,7 @@ From battles to custom characters, we're building an **immersive experience** wi
 ### Update v0.1.3
 - Save, Load, and New game functions fully tested
 - RNG function fully tested, both unit and integration
-- "SaveGame.txt" is the actaul save files name (past me is an idiot)
+- "SaveGame.txt" is the actual save files name
 
 # Contributors 
 - Matt Romano (@Mromano06)
