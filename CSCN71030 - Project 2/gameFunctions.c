@@ -40,14 +40,11 @@ bool saveGame(PC* toSave) {
 	fprintf(newGameFile, "%d, ", toSave->stats[3]);
 	fprintf(newGameFile, "%d, ", toSave->stats[4]);
 	fprintf(newGameFile, "%d", toSave->stats[5]);
-
-	//fprintf(newGameFile, "Checkpoint:   Temp\n");	// nothing right now but will have the part of story
-
-	// character stats obv but how is the more important part
+    fprintf(newGameFile, "%d", checkPoint(0));       // hopefully this works
 
 	fclose(newGameFile);
 	// this isnt a final point, can return to the game after
-
+    // for now it is tf am i on
     return true;
 }
 
@@ -83,6 +80,9 @@ PC loadGame() {
             player.stats[5] = speed;
         }
     }
+
+    // TODO: make a continue game that starts the story form given checkpoint
+    // with given character struct from the file
 
     fclose(loadGameFile);
 
