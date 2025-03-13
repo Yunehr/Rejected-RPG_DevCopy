@@ -151,7 +151,7 @@ int mageAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more atta
 	switch (attack) {
 
 	case 1: // basic attack = (Magic Missile)
-		damage = (player.stats[INT] - (defense/2)) * critMod;
+		damage = (player.stats[INTEL] - (defense/2)) * critMod;
 		return damage;
 	}
 }
