@@ -48,6 +48,8 @@ From battles to custom characters, we're building an **immersive experience** wi
 - Save, Load, and New game functions fully tested
 - RNG function fully tested, both unit and integration
 - "SaveGame.txt" is the actual save files name
+- Added menu functionality
+- Added random event generation and input module
 
 # Contributors 
 - Matt Romano (@Mromano06)
