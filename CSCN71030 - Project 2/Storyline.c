@@ -1,4 +1,7 @@
 #include "Storyline.h"
+#include "PlayerCharacter.h"
+#include "RNG.h"
+
 
 int checkPoint(int newCheckpoint){
 
@@ -27,9 +30,10 @@ int getUserChoice(int min, int max) {
     return choice;
 }
 
-void handleRandomEvent(){
-
-}
+void handleRandomEvent(int numEvents){ 
+       return RNG(1, numEvents); // Returns a random event ID from 1 to numEvents
+    }
+    
 
 void storyBegins() {
     int userInput;
@@ -205,5 +209,6 @@ void actThree() {
 
 }
 void finalBoss() {
+
     checkPoint(101);
 }
