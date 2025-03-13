@@ -39,12 +39,10 @@ From battles to custom characters, we're building an **immersive experience** wi
 ### Update v0.1.1
 - Save/Load functions working
 - Checkpoints added
-
-### Update v0.1.2
 - Integrated combat and character modules
 - Enemy characters added to character module
 
-### Update v0.1.3
+### Update v0.1.2
 - Save, Load, and New game functions fully tested
 - RNG function fully tested, both unit and integration
 - "SaveGame.txt" is the actual save files name
