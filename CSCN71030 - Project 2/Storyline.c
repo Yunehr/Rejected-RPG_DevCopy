@@ -325,9 +325,18 @@ printf("The trees are taller, stretching impossibly high.\n");
 printf("The ground feels wrong, like something is moving beneath it.\n");
 printf("And then… you see it. Sitting perfectly still. Watching\n");
 printf("The bunny has been waiting for you....\n")
+printf("The trees around you contort unnaturally, the air turns heavy.\n");
+Sleep(2000);
+printf("the once-innocent bunny erupts into a nightmarish form.\n");
+Sleep(2000);
+printf("Its fur blackens, its eyes glow with malice, and the air trembles with an ancient force now awake.\n");
+Sleep(2000);
+printf("Final Boss Fight Begins.\n");
+Sleep(2000);
 finalBoss(PC*player);
 }
 void finalBoss(PC *player) {
-
     checkPoint(101);
+    printf("The earth splits beneath your feet. The sky darkens. The final confrontation begins. \n");
+    //insert combat function
 }
