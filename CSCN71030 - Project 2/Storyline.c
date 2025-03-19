@@ -157,7 +157,7 @@ void actOne(PC *player) {
     Sleep(2000);
     printf("It's a bunny! White, small, fluffy, and sporting an adorable pair of droopy ears.\n");
     printf("It tilts its head at you, completely unbothered by your approach. \n");
-    printf("You pause.What do you do ?\n");
+    printf("You pause. What do you do?\n");
     printf("(1) Offer the bunny a berry or (2) Kick the bunny out of your way: \n");
     userInput = getUserChoice(1,2);
     if (userInput == 1) {
@@ -292,7 +292,40 @@ void actTwo(PC *player) {
     }
 }
 void actThree(PC *player) {
+int userInput;
+checkPoint(7);
+printf("The forest is dense, suffocatingly quiet.\n");
+printf("The mist thickens, curling around your ankles like unseen hands.\n");
+printf("Then… through the trees, you see it.\n");
+printf("A small wooden hut stands in the middle of the clearing. Smoke curls from the chimney… as if someone has been expecting you\n");
+printf("You enter the hut. The fire crackles, shadows dancing across the wooden walls, and a tall mirror stands in the corner\n");
+printf("The figure does not move. The air feels heavier");
+printf("You consider what your next move should be:\n");
+printf("(1) Approach the figure\n");
+printf("(2) Look into the mirror\n");
+printf("(3) Search the hut for answers\n");
+printf("Which will you choose?\n");
+userInput = getUserChoice(1,2,3);
+if( userInput == 1){
+    printf("You step closer to the figure, and for a moment, you see your own face beneath the hood… before they vanish into smoke.(+3 INT)");
+    increaseStatPC(player, INTEL, 3);
+}
+else if( userInput == 2){
+    printf("Your reflection distorts. It smiles when you do not. The room twists and tilts before you stumble back, gasping.(-3 HP)");
+    increaseStatPC(player, HP, -5);
+}
+else{
+    printf("You find markings carved deep into the walls, symbols of protection, of warning. You press your hand to one, and strength surges through you.(+3 STR)\n")
+    increaseStatPC(player, STR, 3);
+}
 
+printf("The air shifts. The hut creaks, groaning as if it is alive. The door swings open on its own, leading back into the forest.\n");
+printf("The moment you step outside, the world is not the same\n");
+printf("The trees are taller, stretching impossibly high.\n");
+printf("The ground feels wrong, like something is moving beneath it.\n");
+printf("And then… you see it. Sitting perfectly still. Watching\n");
+printf("The bunny has been waiting for you....\n")
+finalBoss(PC*player);
 }
 void finalBoss(PC *player) {
 
