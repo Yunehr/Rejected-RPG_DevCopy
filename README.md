@@ -49,6 +49,9 @@ From battles to custom characters, we're building an **immersive experience** wi
 - Added menu functionality
 - Added random event generation and input module
 
+- ### Update v0.1.3
+- Story fully complete
+
 # Contributors 
 - Matt Romano (@Mromano06)
 - Leanne Boulton (@Angelchild00)
