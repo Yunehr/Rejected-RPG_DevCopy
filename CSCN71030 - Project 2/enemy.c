@@ -70,7 +70,7 @@ int MovesetDamageMOB(MOB enemy, int defense, int attack) {
 		return finalBossAtkDmg(enemy, attack, defense);
 	}
 }
-int thiefAtkkDmg(MOB enemy, int attack, int defense) {		//TODO: Implement more attacks, and crit chance
+int thiefAtkkDmg(MOB enemy, int attack, int defense) {	
 	int damage = 0;
 	int critMod = 1;
 	switch (attack) {
@@ -83,7 +83,7 @@ int thiefAtkkDmg(MOB enemy, int attack, int defense) {		//TODO: Implement more a
 		return damage;
 	}
 }
-int finalBossAtkDmg(MOB enemy, int attack, int defense) {	//TODO: Implement more attacks, and crit chance
+int finalBossAtkDmg(MOB enemy, int attack, int defense) {
 	int damage = 0;
 	int critMod = 1;
 	switch (attack) {
