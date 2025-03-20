@@ -1,6 +1,6 @@
 #pragma once
 #include <stdio.h>
-#include "Windows.h" 
+#include "windows.h" 
 #include "gameFunctions.h"
 #include "PlayerCharacter.h"
 #include "RNG.h"

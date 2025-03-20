@@ -39,8 +39,8 @@ bool saveGame(PC* toSave) {
 	fprintf(newGameFile, "%d, ", toSave->stats[2]);
 	fprintf(newGameFile, "%d, ", toSave->stats[3]);
 	fprintf(newGameFile, "%d, ", toSave->stats[4]);
-	fprintf(newGameFile, "%d", toSave->stats[5]);
-    fprintf(newGameFile, "%d", checkPoint(0));       // hopefully this works
+	fprintf(newGameFile, "%d, ", toSave->stats[5]);
+    fprintf(newGameFile, "%d", toSave->playerCheckpoint);       // hopefully this works
 
 	fclose(newGameFile);
 	// this isnt a final point, can return to the game after
@@ -55,7 +55,7 @@ PC loadGame() {
     char line[200];                          // Buffer to store each line from the file
     char tempName[MAX_NAME];
     int health = 0, mana = 0, str = 0,
-        itl = 0, def = 0, speed = 0;
+        itl = 0, def = 0, speed = 0, check = 0;
 
     loadGameFile = fopen("SaveGame.txt", "r");
     if (loadGameFile == NULL) {               // Checking for null
@@ -66,8 +66,8 @@ PC loadGame() {
     // Read each line from the file
     while (fgets(line, sizeof(line), loadGameFile)) {
         // Use sscanf to parse the line into the variables
-        if (sscanf(line, "%49[^,], %d, %d, %d, %d, %d, %d", tempName,
-            &health, &mana, &str, &itl, &def, &speed) == 7) {
+        if (sscanf(line, "%49[^,], %d, %d, %d, %d, %d, %d, %d", tempName,
+            &health, &mana, &str, &itl, &def, &speed, &check) == 8) {
 
             // Copy the name into the player struct
             strncpy(player.name, tempName, MAX_NAME);
@@ -78,6 +78,7 @@ PC loadGame() {
             player.stats[3] = itl;
             player.stats[4] = def;
             player.stats[5] = speed;
+            player.playerCheckpoint = check;
         }
     }
 
