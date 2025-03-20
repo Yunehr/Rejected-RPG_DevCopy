@@ -10,8 +10,7 @@
 // enemy creation Creation
 MOB setEnemy(BOSS c) {		//these current stats are based on character stats since we do not have stats designed yet	TODO: Update stats to properly represent MOB stats
 	MOB newMOB = { 0 };
-	int Enemies[ENEMY_TYPES][STATS_ARRAY] = { { 75, 50, 15, 10, 10, 20 },
-		{ 100, 25, 20, 5, 15, 5 } };
+	int Enemies[ENEMY_TYPES][STATS_ARRAY] = { { 100, 25, 20, 5, 15, 5 }, { 75, 50, 15, 10, 10, 20 } };
 	//Stats Order:		THIEF	FIN			
 	//	Health			75,		100
 	//	Mana			50,		25
