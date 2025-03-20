@@ -1,9 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "Storyline.h"
 
-
-#include "header.h"
-
 int checkPoint(int newCheckpoint) {
 
     static int currentCheckPoint = 0;
