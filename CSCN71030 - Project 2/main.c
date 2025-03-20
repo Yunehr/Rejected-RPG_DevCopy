@@ -3,6 +3,7 @@
 #include "PlayerCharacter.h"
 #include "gameFunctions.h"
 #include "RNG.h"
+#include "screens.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,6 +11,11 @@
 // main menu is the start function
 // might add a start() function to make it look better
 int main(int argc, char* argv[]) {
+
+	gameWin();
+	gameLose();
+
+	/*
 	FILE* saveFile;
 	PC mc;
 	
@@ -57,6 +63,6 @@ int main(int argc, char* argv[]) {
 	//printf("\n\nTesting Player Creation Menu:\n");
 	//PC temp = setCharacter(characterSelectMenu()); //temp to test player menu and setCharacter
 	//printf("Player class num type is: %d\n", temp.charclass);
-
+	*/
 	return 0;
 }
