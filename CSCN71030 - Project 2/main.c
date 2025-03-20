@@ -58,6 +58,7 @@ int main(int argc, char* argv[]) {
 		default:
 			exit(EXIT_FAILURE); // exit due to error
 			break;
+		}
 	}
 	else if (startCheck = 0) {
 		exit(EXIT_SUCCESS);
