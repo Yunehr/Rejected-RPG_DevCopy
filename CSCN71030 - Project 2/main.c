@@ -33,10 +33,30 @@ int main(int argc, char* argv[]) {
 
 	// checks for main menu selection
 	if (startCheck == 1)
-		newGame();
+		if (newGame())
+			storyBegins();
 	else if (startCheck == 2) {
 		mc = loadGame("SaveGame.txt");
-		checkPoint(mc.playerCheckpoint);
+		int checkCheck = mc.playerCheckpoint;
+		switch (checkCheck) {
+		case 1:
+			storyBegins(mc);	// load start of game
+			break;
+		case 2:
+			actOne(mc);			// load act one
+			break;
+		case 3:
+			actTwo(mc);			// load act two
+			break;
+		case 4:
+			actThree(mc);		// load act three
+			break;
+		case 5:
+			actFour(mc);		// load act four
+			break;
+		default:
+			exit(EXIT_FAILURE); // exit due to error
+			break;
 	}
 	else if (startCheck = 0) {
 		exit(EXIT_SUCCESS);
