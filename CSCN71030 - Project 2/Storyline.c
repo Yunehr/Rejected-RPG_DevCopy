@@ -69,8 +69,7 @@ void storyBegins(PC *player) {
     userInput = getUserChoice(1,2);
     if (userInput == 1) {
         printf("No turning back now. Your adventure begins!\n ");
-        checkPoint(2);
-        return;
+        actOne(PC *player);
     }
     else {
         printf("The villagers recognize you the moment you step foot inside.\n");
@@ -81,7 +80,7 @@ void storyBegins(PC *player) {
         Sleep(2000);
         printf("You wake up in the woods again, battered and bruised. (Lose -2 HP) \n");
         Sleep(3000);
-        storyBeginsAgain(player);
+        storyBeginsAgain(PC *player); 
     }
 }
 void storyBeginsAgain(PC *player) {
@@ -130,7 +129,7 @@ void storyBeginsAgain(PC *player) {
 
 void actOne(PC *player) {
     int userInput;
-    checkPoint(3);
+    checkPoint(2);
     printf("\nThe scent of damp earth and crushed leaves fills the air as you weave through the underbrush.\n");
     Sleep(2000);
     printf("Your hands stained with berry juice from picking the small red berries you find in the bushes.\n");
@@ -179,7 +178,6 @@ void actOne(PC *player) {
         return;
     }
     else {
-        checkPoint(99);
         printf("You're on an adventure, no time for distractions.\n");
         Sleep(2000);
         printf("Your foot swings forward but the moment your boot makes contact, the world shifts.\n");
@@ -192,14 +190,14 @@ void actOne(PC *player) {
         Sleep(2000);
         printf("Final Boss Fight Begins.\n");
         Sleep(2000);
-        //insert final boss function
+        finalBoss(PC *player);
     }
     return;
 }
 
 void actTwo(PC *player) {
     int userInput; 
-    checkPoint(5);
+    checkPoint(3);
     printf("The trees close in around you, their gnarled branches reaching like skeletal fingers toward the sky.\n");
     Sleep(2000);
     printf("The path beneath your feet is uneven, soft, like something is shifting beneath the surface.\n");
@@ -251,6 +249,7 @@ void actTwo(PC *player) {
     printf("You glance ahead. Two distinct paths emerge: \n");
     printf("(1) - Enter the cave\n");
     printf("(2) - Continue down the forest path\n");
+    printf("Which do you choose: \n"); 
     userInput = getUserChoice(1,2);
 
     if (userInput == 1) {
@@ -298,12 +297,13 @@ void actTwo(PC *player) {
         printf("The forest around you shifts, the trees twisting in unnatural angles.\n");
         Sleep(2000);
         printf("Ahead, the path ends abruptly. A small hut stands before you.\n");
-        actThree();  
+        return;  
     }
+    actThree(PC *player);
 }
 void actThree(PC *player) {
 int userInput;
-checkPoint(7);
+checkPoint(4);
 printf("The forest is dense, suffocatingly quiet.\n");
 Sleep(2000);
 printf("The mist thickens, curling around your ankles like unseen hands.\n");
