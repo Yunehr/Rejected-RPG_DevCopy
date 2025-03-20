@@ -51,6 +51,7 @@ From battles to custom characters, we're building an **immersive experience** wi
 
 - ### Update v0.1.3
 - Story fully complete
+- Save/Load complete for now
 
 # Contributors 
 - Matt Romano (@Mromano06)
