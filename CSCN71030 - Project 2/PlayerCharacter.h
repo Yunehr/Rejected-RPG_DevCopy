@@ -44,7 +44,7 @@ int rogueAtkkDmg(PC player, int attack, int defense);
 int warriorAtkDmg(PC player, int attack, int defense);
 int mageAtkDmg(PC player, int attack, int defense);
 
-
+int critHitPC(int chance, int multi);
 
 //Other
 void printCharacter(PC player);
