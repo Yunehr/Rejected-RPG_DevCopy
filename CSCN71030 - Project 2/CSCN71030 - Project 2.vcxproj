@@ -134,6 +134,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="PlayerCharacter.c" />
     <ClCompile Include="RNG.c" />
+    <ClCompile Include="screens.c" />
     <ClCompile Include="Storyline.c" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="RNG.h" />
     <ClCompile Include="mainMenu.c" />
     <ClCompile Include="optionsMenu.c" />
+    <ClInclude Include="screens.h" />
     <ClInclude Include="Storyline.h" />
   </ItemGroup>
   <ItemGroup>
