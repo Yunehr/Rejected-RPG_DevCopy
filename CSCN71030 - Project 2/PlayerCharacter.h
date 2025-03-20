@@ -16,6 +16,7 @@ typedef struct PlayerCharacter {
 	char name[MAX_NAME];	// Warrior, Rogue, or Mage
 	TYPE charclass;
 	int stats[STATS_ARRAY];		// stored in order: Health, Energy (mana), Str, Int, Defence, Speed
+	int playerCheckpoint;
 }PC, * _PC;
 
 // Character Selection Menu

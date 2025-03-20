@@ -11,9 +11,7 @@
 // might add a start() function to make it look better
 int main(int argc, char* argv[]) {
 	FILE* saveFile;
-	PC temp;
-	
-	temp = setCharacter(2);
+	PC mc;
 	
 	// THE FILE NAME FOR SAVING AND LOADING IS "SaveGame.txt"
 	if (argc == 2)
@@ -26,11 +24,21 @@ int main(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	saveGame(&temp); 
+	// setup for character
+	mc = characterSelectMenu()
 
-	temp = loadGame();
+	// starting the game
+	int startCheck = mainMenu(mc);
 
-	printCharacter(temp);
+	// checks for main menu selection
+	if (startCheck == 1)
+		newGame();
+	else if (startCheck == 2) {
+		loadGame("SaveGame.txt");
+	}
+	else if (startCheck = 0) {
+		exit(EXIT_SUCCESS);
+	}
 
 	// save/load files sent as command line arguments
 	fclose(saveFile);

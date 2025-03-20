@@ -9,7 +9,7 @@
 // Matthew Romano - CSCN71030_Section2_Group3 - Main Menu Implenentation
 
 // so far not returning anything (should be fine)
-void mainMenu() { 
+int mainMenu() { 
 	// needs three options Exit Game (0), Create New Save File (1), Load Save File (2)
 	int selection = 0;
 
@@ -30,27 +30,13 @@ void mainMenu() {
 	
 	switch (selection) {
 	case 1:
-		// overwrites the old file name if one is present
-		printf("THIS WILL OVERWRITE OLD SAVE FILES,"); 
-		printf("CONTINUE ? (1 = YES, Other Input = NO): ");
-		scanf("%d", &selection);												// selection is good to use again 
-		if (selection == 1)
-			if (newGame() == false) // creates a new game file
-				printf("Returned to Main Menu");
-			else {
-				PC player;
-				player = characterSelectMenu();
-				printCharacter(player);	//testing print player, this will not be used here
-				// startGame(player);
-			}
+		return 1;	// new game
 		break;
 	case 2:
-		// for all file stuff we will us "SaveGame.txt"
-		loadGame("SaveGame.txt");	// loads old file
+		return 2;	// load game
 		break;
 	case 0:
-		// clean exit with no error
-		exit(EXIT_SUCCESS);
+		return 0;	// exit game
 		break;
 	}
 	} while (selection > 2 || selection < 0);
