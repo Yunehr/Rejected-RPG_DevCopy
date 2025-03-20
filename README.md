@@ -53,6 +53,9 @@ From battles to custom characters, we're building an **immersive experience** wi
 - Story fully complete
 - Save/Load complete for now
 
+- ### Update v0.2.0
+- Game over/win screens added
+
 # Contributors 
 - Matt Romano (@Mromano06)
 - Leanne Boulton (@Angelchild00)
