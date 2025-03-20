@@ -79,9 +79,8 @@ PC updateStatsPC(PC player, int arr[]) {
 
 
 //Update stat function to increase/decrease individual stats easily
-PC increaseStatPC(PC player, STAT type, int mod) {
-	player.stats[type] = player.stats[type] + mod;
-	return player;
+void increaseStatPC(PC* player, STAT type, int mod) {
+	player->stats[type] += mod;
 }
 
 
