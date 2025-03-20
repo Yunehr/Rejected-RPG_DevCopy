@@ -70,22 +70,28 @@ int MovesetDamageMOB(MOB enemy, int defense, int attack) {
 		return finalBossAtkDmg(enemy, attack, defense);
 	}
 }
-int thiefAtkkDmg(MOB enemy, int attack, int defense) {		//TODO: Implement more attacks, and crit chance
+int thiefAtkkDmg(MOB enemy, int attack, int defense) {	
 	int damage = 0;
 	int critMod = 1;
 	switch (attack) {
 
 	case 1: // basic attack (stab)
+		critMod = critHit(10, 2); //10% crit chance, multiplies damage by 2
+		if (critMod > 1)
+			printf("CRITICAL HIT!\n");
 		damage = (enemy.stats[STR] - defense) * critMod;
 		return damage;
 	}
 }
-int finalBossAtkDmg(MOB enemy, int attack, int defense) {	//TODO: Implement more attacks, and crit chance
+int finalBossAtkDmg(MOB enemy, int attack, int defense) {
 	int damage = 0;
 	int critMod = 1;
 	switch (attack) {
 
 	case 1: // basic attack (stab)
+		critMod = critHit(10, 1.5); //10% crit chance, multiplies damage by 1.5
+		if (critMod > 1)
+			printf("CRITICAL HIT!\n");
 		damage = (enemy.stats[STR] - defense) * critMod;
 		return damage;
 	}

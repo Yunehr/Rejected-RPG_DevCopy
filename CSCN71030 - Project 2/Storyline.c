@@ -1,4 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
+#include "Storyline.h"
+
 
 #include "header.h"
 
@@ -279,6 +281,27 @@ void actTwo(PC* player) {
                 printf("Your thoughts sharpen. Patterns emerge in the chaos. (+3 INT)\n");
             }
             break;
+            
+        switch(eventID) {
+            case 1:
+                printf("You stumble upon a crystal-clear pool. Its waters shimmer as you kneel, and the moment you drink, warmth floods your veins.\n");
+                int poolEffect = handleRandomEvent(3);
+                if (poolEffect == 1) {
+                    increaseStatPC(player, DEF, 3);
+                    printf("A warm sensation spreads through your body. You feel unbreakable. (+3 DEF)\n");
+                    return;
+                }
+                else if (poolEffect == 2) {
+                    increaseStatPC(player, STR, 3);
+                    printf("Your blood burns with newfound strength. You feel unstoppable. (+3 STR)\n");
+                    return;
+                }
+                else {
+                    increaseStatPC(player,INTEL, 3);
+                    printf("Your thoughts sharpen. Patterns emerge in the chaos. (+3 INT)\n");
+                    return;
+                }
+                break;
 
         case 2:
             increaseStatPC(player, HP, -5);
