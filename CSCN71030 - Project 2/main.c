@@ -11,16 +11,10 @@
 // main menu is the start function
 // might add a start() function to make it look better
 int main(int argc, char* argv[]) {
-
-	gameWin();
-	gameOver();
-	mainMenu();
-
-	/*
 	FILE* saveFile;
 	PC mc;
 	
-	// THE FILE NAME FOR SAVING AND LOADING IS "SaveGame.txt"
+	/* THE FILE NAME FOR SAVING AND LOADING IS "SaveGame.txt"
 	if (argc == 2)
 		saveFile = fopen(argv[1], "w");
 	else
@@ -29,7 +23,7 @@ int main(int argc, char* argv[]) {
 	if (saveFile == NULL) {
 		printf("Error opening file");
 		exit(EXIT_FAILURE);
-	}
+	} */
 
 	// setup for character
 	mc = characterSelectMenu();
@@ -38,22 +32,39 @@ int main(int argc, char* argv[]) {
 	int startCheck = mainMenu(mc);
 
 	// checks for main menu selection
-	if (startCheck == 1)
-		newGame();
+	if (startCheck == 1) {
+		if (newGame())
+			storyBegins();
+	}
 	else if (startCheck == 2) {
-		loadGame("SaveGame.txt");
+		mc = loadGame("SaveGame.txt");
+		int checkCheck = mc.playerCheckpoint;
+		switch (checkCheck) {
+		case 1:
+			storyBegins(mc);	// load start of game
+			break;
+		case 2:
+			actOne(mc);			// load act one
+			break;
+		case 3:
+			actTwo(mc);			// load act two
+			break;
+		case 4:
+			actThree(mc);		// load act three
+			break;
+		case 5:
+			actFour(mc);		// load act four
+			break;
+		default:
+			exit(EXIT_FAILURE); // exit due to error
+			break;
+		}
 	}
 	else if (startCheck = 0) {
 		exit(EXIT_SUCCESS);
 	}
 
-	// save/load files sent as command line arguments
-	fclose(saveFile);
-
-	// srand(time(NULL));	// need this here while testing RNG
-	
-
-	// mainMenu();	// calls main menu function
+	//fclose(saveFile);
 
 	//personal tests
 	//printf("Testing Random Number Generator:\n");
@@ -64,6 +75,5 @@ int main(int argc, char* argv[]) {
 	//printf("\n\nTesting Player Creation Menu:\n");
 	//PC temp = setCharacter(characterSelectMenu()); //temp to test player menu and setCharacter
 	//printf("Player class num type is: %d\n", temp.charclass);
-	*/
 	return 0;
 }
