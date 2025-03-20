@@ -28,7 +28,7 @@ int getUserChoice(int min, int max) {
 }
 
 int handleRandomEvent(int numEvents) {
-    return RNG(1, numEvents); // Returns a random event ID from 1 to numEvents
+    return RNG(numEvents, 1); // Returns a random event ID from 1 to numEvents
 }
 
 
