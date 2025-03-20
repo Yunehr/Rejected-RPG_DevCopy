@@ -258,7 +258,7 @@ void actTwo(PC *player) {
         Sleep(2000);
         printf("The walls pulse faintly, as if the cave itself is alive. \n");
 
-        int eventID = getRandomEvent(3);
+        int eventID = handleRandomEvent(3);
         switch(eventID) {
             case 1:
                 printf("You stumble upon a crystal-clear pool. Its waters shimmer as you kneel, and the moment you drink, warmth floods your veins.\n");
