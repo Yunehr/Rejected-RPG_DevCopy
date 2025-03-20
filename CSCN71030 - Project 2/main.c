@@ -32,9 +32,10 @@ int main(int argc, char* argv[]) {
 	int startCheck = mainMenu(mc);
 
 	// checks for main menu selection
-	if (startCheck == 1)
+	if (startCheck == 1) {
 		if (newGame())
 			storyBegins();
+	}
 	else if (startCheck == 2) {
 		mc = loadGame("SaveGame.txt");
 		int checkCheck = mc.playerCheckpoint;
