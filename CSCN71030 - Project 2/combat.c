@@ -17,7 +17,7 @@ int combatLoop(PC player, MOB enemy) {
 		int attackMOB = SelectMOBMoveset(enemy, combatRound);
 
 		//Player Moves First
-		if (hitcheckPC(player)) {
+		if (hitCheckPC(player)) {
 			//roll for damage
 			int damagePC = MovesetDamagePC(player, enemy.stats[DEF], attackPC);
 			printf("%s attack the %s, deal %d damage!\n", player.name, enemy.name, damagePC);
