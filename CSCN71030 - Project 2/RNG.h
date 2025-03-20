@@ -9,4 +9,4 @@
 #include <stdbool.h>
 
 // random number generator function
-int RNG(int maxVal, int mod);
+int RNG(int max, int min);

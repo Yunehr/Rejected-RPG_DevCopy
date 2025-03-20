@@ -30,7 +30,7 @@ PC setCharacter(int c);
 
 
 PC updateStatsPC(PC player, int arr[]);
-PC increaseStatPC(PC player, STAT type, int mod);
+void increaseStatPC(PC* player, STAT type, int mod);
 
 
 // Combat Movesets
@@ -44,7 +44,7 @@ int rogueAtkkDmg(PC player, int attack, int defense);
 int warriorAtkDmg(PC player, int attack, int defense);
 int mageAtkDmg(PC player, int attack, int defense);
 
-
+int critHit(int chance, int multi);
 
 //Other
 void printCharacter(PC player);

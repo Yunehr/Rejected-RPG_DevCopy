@@ -134,16 +134,18 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="PlayerCharacter.c" />
     <ClCompile Include="RNG.c" />
+    <ClCompile Include="screens.c" />
     <ClCompile Include="Storyline.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="combat.h" />
     <ClInclude Include="enemy.h" />
-    <ClInclude Include="gameFunction-Tests.h" />
+    <ClInclude Include="gameFunctions-Tests.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="RNG.h" />
     <ClCompile Include="mainMenu.c" />
     <ClCompile Include="optionsMenu.c" />
+    <ClInclude Include="screens.h" />
     <ClInclude Include="Storyline.h" />
   </ItemGroup>
   <ItemGroup>

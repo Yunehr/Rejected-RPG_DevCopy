@@ -79,9 +79,8 @@ PC updateStatsPC(PC player, int arr[]) {
 
 
 //Update stat function to increase/decrease individual stats easily
-PC increaseStatPC(PC player, STAT type, int mod) {
-	player.stats[type] = player.stats[type] + mod;
-	return player;
+void increaseStatPC(PC* player, STAT type, int mod) {
+	player->stats[type] += mod;
 }
 
 
@@ -100,17 +99,44 @@ int SelectPlayerMoveset(PC player) {
 		return mageMovesetMenu();
 	}
 }
-int rogueMovesetMenu() {	//TODO: ask for user input
-	printf("1 = Basic Attack, etc...\n");
-	return 1;
+int rogueMovesetMenu() {
+	while (1) {
+		int choice;
+        printf("1 = Basic Attack, etc...\nEnter Your Choice: ");
+        if (scanf("%d", &choice) == 1) {
+            return choice; // Valid input, return choice
+        }
+        // Flush invalid input
+        printf("Invalid choice. Please enter a number that corresponds to the attack you want to use.\n");
+        while (getchar() != '\n');
+    }
+	return 1; //default return, should never reach this
 }
 int warriorMovesetMenu() {
-	printf("1 = Basic Attack, etc...\n");
-	return 1;
+	while (1) {
+		int choice;
+        printf("1 = Basic Attack, etc...\nEnter Your Choice: ");
+        if (scanf("%d", &choice) == 1) {
+            return choice; // Valid input, return choice
+        }
+        // Flush invalid input
+        printf("Invalid choice. Please enter a number that corresponds to the attack you want to use.\n");
+        while (getchar() != '\n');
+    }
+	return 1; //default return, should never reach this
 }
 int mageMovesetMenu() {
-	printf("1 = Basic Attack, etc...\n");
-	return 1;
+	while (1) {
+		int choice;
+        printf("1 = Basic Attack, etc...\nEnter Your Choice: ");
+        if (scanf("%d", &choice) == 1) {
+            return choice; // Valid input, return choice
+        }
+        // Flush invalid input
+        printf("Invalid choice. Please enter a number that corresponds to the attack you want to use.\n");
+        while (getchar() != '\n');
+    }
+	return 1; //default return, should never reach this
 }
 
 //Moveset Damage Calculations
@@ -130,6 +156,9 @@ int rogueAtkkDmg(PC player, int attack, int defense) {	//TODO: Implement more at
 	switch (attack) {
 
 	case 1: // basic attack (stab)
+		critMod = critHit(10, 2); //10% crit chance, multiplies damage by 2
+		if (critMod > 1)
+			printf("CRITICAL HIT!\n");
 		damage = (player.stats[STR] - defense) * critMod;
 		return damage;
 	}
@@ -139,8 +168,10 @@ int warriorAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more a
 	int critMod = 1;
 	switch (attack) {
 
-
 	case 1: // basic attack (slash)
+		critMod = critHit(10, 1.5); //10% crit chance, multiplies damage by 1.5
+		if (critMod > 1)
+			printf("CRITICAL HIT!\n");
 		damage = (player.stats[STR] - defense) * critMod;
 		return damage;
 	}
@@ -151,12 +182,23 @@ int mageAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more atta
 	switch (attack) {
 
 	case 1: // basic attack = (Magic Missile)
+		critMod = critHit(5, 2.2); //5% crit chance, multiplies damage by 2.2
+		if (critMod > 1)
+			printf("CRITICAL HIT!\n");
 		damage = (player.stats[INTEL] - (defense/2)) * critMod;
 		return damage;
 	}
 }
 
-
+int critHit(int chance, int multi) { //insert the % chance of a crit occuring and the resulting multiplier as an argument
+	int crit = RNG(100, 1);
+	if (crit > (100-chance)) { //10% crit chance
+		return 1*multi;
+	}
+	else {
+		return 1;
+	}
+}
 
 //Other
 
