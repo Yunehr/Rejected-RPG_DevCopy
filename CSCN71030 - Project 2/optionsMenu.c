@@ -9,30 +9,21 @@
 void optionsMenu(PC player) {
 	int selection = 0;						// variable for selection
 	// dis menu do be basic do
-	printf("\n\n1 BACK TO GAME\n\n2 SAVE GAME\n\n3 LOAD GAME\n\n0 MAIN MENU");
+	printCharacter(player); // shows ur stats
+	printf("\n\n1 BACK TO GAME\n\n2 SAVE GAME\n\n0 EXIT GAME");
 	do {
 		switch (selection) {
 			case 1:
-				// nothing to see here
+				// just returns to game 
 				break;
-
 			case 2:
-				// saves player to file
-				if (saveGame(&player) == 1)
+				if (saveGame(&player) == 1)		// saves player to file
 				break;
-
-			case 3:
-				// saves file into player
-				//TODO: this wont be here later, or at least not this exactally
-				player = loadGame();
-				break;
-
 			case 0:
-				mainMenu();
+				exit(EXIT_SUCCESS);				// exits game
 				break;
-
 		}
 
-	} while (selection > 3 || selection < 0);
+	} while (selection > 2 || selection < 0);
 
 }

@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	// setup for character
-	mc = characterSelectMenu()
+	mc = characterSelectMenu();
 
 	// starting the game
 	int startCheck = mainMenu(mc);
