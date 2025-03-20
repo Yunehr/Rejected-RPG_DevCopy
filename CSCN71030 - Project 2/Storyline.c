@@ -69,7 +69,8 @@ void storyBegins(PC *player) {
     userInput = getUserChoice(1,2);
     if (userInput == 1) {
         printf("No turning back now. Your adventure begins!\n ");
-        actOne(PC *player);
+        actOne(player);
+        return; 
     }
     else {
         printf("The villagers recognize you the moment you step foot inside.\n");
@@ -80,7 +81,8 @@ void storyBegins(PC *player) {
         Sleep(2000);
         printf("You wake up in the woods again, battered and bruised. (Lose -2 HP) \n");
         Sleep(3000);
-        storyBeginsAgain(PC *player); 
+        storyBeginsAgain(player);
+        return; 
     }
 }
 void storyBeginsAgain(PC *player) {
@@ -123,7 +125,8 @@ void storyBeginsAgain(PC *player) {
         Sleep(2000);
         printf("You wake up in the woods again, battered and bruised. (Lose -2 HP) \n");//Need to add in function to remove health
         Sleep(3000);
-        storyBeginsAgain();
+        storyBeginsAgain(player); 
+        return;
     }
 }
 
@@ -190,7 +193,7 @@ void actOne(PC *player) {
         Sleep(2000);
         printf("Final Boss Fight Begins.\n");
         Sleep(2000);
-        finalBoss(PC *player);
+        finalBoss(player);
     }
     return;
 }
@@ -265,14 +268,17 @@ void actTwo(PC *player) {
                 if (poolEffect == 1) {
                     increaseStatPC(player, DEF, 3);
                     printf("A warm sensation spreads through your body. You feel unbreakable. (+3 DEF)\n");
+                    return;
                 }
                 else if (poolEffect == 2) {
                     increaseStatPC(player, STR, 3);
                     printf("Your blood burns with newfound strength. You feel unstoppable. (+3 STR)\n");
+                    return;
                 }
                 else {
                     increaseStatPC(player,INTEL, 3);
                     printf("Your thoughts sharpen. Patterns emerge in the chaos. (+3 INT)\n");
+                    return;
                 }
                 break;
 
@@ -289,7 +295,7 @@ void actTwo(PC *player) {
                 break;
         }
 
-        actThree();
+        actThree(player);
     }
     else {
         printf("You press forward, leaving the cave behind.\n");
@@ -299,7 +305,7 @@ void actTwo(PC *player) {
         printf("Ahead, the path ends abruptly. A small hut stands before you.\n");
         return;  
     }
-    actThree(PC *player);
+    actThree(player);
 }
 void actThree(PC *player) {
 int userInput;
@@ -348,7 +354,7 @@ Sleep(2000);
 printf("The ground feels wrong, like something is moving beneath it.\n");
 Sleep(2000);
 printf("And then… you see it. Sitting perfectly still. Watching\n");
-printf("The bunny has been waiting for you....\n")
+printf("The bunny has been waiting for you....\n");
 Sleep(2000);
 printf("The trees around you contort unnaturally, the air turns heavy.\n");
 Sleep(2000);
@@ -358,10 +364,13 @@ printf("Its fur blackens, its eyes glow with malice, and the air trembles with a
 Sleep(2000);
 printf("Final Boss Fight Begins.\n");
 Sleep(2000);
-finalBoss(PC* player);
+finalBoss(player);
+return;
 }
+
 void finalBoss(PC *player) {
     checkPoint(101);
     printf("The earth splits beneath your feet. The sky darkens. The final confrontation begins. \n");
     //insert combat function
+    return;
 }
