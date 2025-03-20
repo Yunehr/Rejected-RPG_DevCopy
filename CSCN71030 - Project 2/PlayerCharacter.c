@@ -8,7 +8,7 @@
 
 
 // Character Selection Menu
-PC characterSelectMenu() {	//TODO: UPDATE Visuals
+PC characterSelectMenu() {
 	int selection = 0;
 	printf("\nPlease Pick a Character\n");
 	printf("Rogue:			Warrior:			Mage:\n");
