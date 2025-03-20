@@ -1,6 +1,6 @@
-#include "PlayerCharacter.h"
 #include "gameFunctions.h"
-#include "gameFunction-Tests.h"
+#include "gameFunctions-Tests.h"
+#include <stdbool.h>
 #include <stdio.h>
 
 // mattr - group3 - project2
@@ -41,19 +41,19 @@ bool loadGameTest() {
 // general function to call all tests
 void gameFunctionTests() {
 	// checks new game
-	if (newGameTests() == true)
+	if (newGameTest() == true)
 		printf("\nnewGame() Test: PASSED\n");
 	else 
 		printf("\nnewGame() Test: FAILED\n");
 
 	// checks save game
-	if (saveGameTests() == true)
+	if (saveGameTest() == true)
 		printf("\nsaveGame() Test: PASSED\n");
 	else
 		printf("\nsaveGame() Test: FAILED\n");
 
 	// checks load game
-	if (loadGameTests() == true)
+	if (loadGameTest() == true)
 		printf("\nloadeGame() Test: PASSED\n");
 	else
 		printf("\nloadGame() Test: FAILED\n");

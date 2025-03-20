@@ -22,7 +22,7 @@
     <ClInclude Include="combat.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="Storyline.h" />
-    <ClInclude Include="gameFunction-Tests.h" />
+    <ClInclude Include="gameFunctions-Tests.h" />
     <ClInclude Include="screens.h" />
   </ItemGroup>
 </Project>
