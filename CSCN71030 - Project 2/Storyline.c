@@ -201,8 +201,11 @@ void actTwo(PC *player) {
     int userInput; 
     checkPoint(5);
     printf("The trees close in around you, their gnarled branches reaching like skeletal fingers toward the sky.\n");
+    Sleep(2000);
     printf("The path beneath your feet is uneven, soft, like something is shifting beneath the surface.\n");
+    Sleep(2000);
     printf ("A thick mist creeps in, swirling at your ankles.\n");
+    Sleep(2000);
     printf("        ..-+#@@@@@@+@@#=..                                                    ..::.-*##*-..        \n");
     printf("     ..:-*@@@@@@@@@@@@@@@@@#+-...                                     ....-++@@@@@@@@@@@@@@@*:..   \n");
     printf("    ....-=-::...:-=*@@@@@@@@@@@#*-..                             ...-*#@@@@@@@@@@+*==-==+**-...   \n");
@@ -221,8 +224,11 @@ void actTwo(PC *player) {
     printf("                 ..=#@@@@++...                                         ..=#@@@@@*:..              \n");
     printf("\n");
     printf("Something… no, someone is watching you.\n");
+    Sleep(2000);
     printf("A cloaked figure steps from the shadows, their face completely hidden beneath their hood. \n");
+    Sleep(2000);
     printf("The cloaked stranger asks: Do you know who you truly are?\n ");
+    Sleep(2000);
     printf("(1) - Yes! I know exactly who I am!\n");
     printf("(2) - No, tell me the truth! \n");
     printf("(3) - You talk too much! *attacks the figure* \n");
@@ -249,6 +255,7 @@ void actTwo(PC *player) {
 
     if (userInput == 1) {
         printf("The air inside is heavy, thick with the scent of wet stone and something ancient.\n");
+        Sleep(2000);
         printf("The walls pulse faintly, as if the cave itself is alive. \n");
 
         int eventID = getRandomEvent(3);
@@ -273,6 +280,7 @@ void actTwo(PC *player) {
             case 2:
                 increaseStatPC(player, HP, -5);
                 printf("A dart shoots from the wall, piercing your arm. Poison burns your veins (-5 HP)\n");
+                Sleep(2000);
                 printf("You stumble out of the cave and run down the path.\n");
                 break;
 
@@ -286,7 +294,9 @@ void actTwo(PC *player) {
     }
     else {
         printf("You press forward, leaving the cave behind.\n");
+        Sleep(2000);
         printf("The forest around you shifts, the trees twisting in unnatural angles.\n");
+        Sleep(2000);
         printf("Ahead, the path ends abruptly. A small hut stands before you.\n");
         actThree();  
     }
@@ -295,15 +305,25 @@ void actThree(PC *player) {
 int userInput;
 checkPoint(7);
 printf("The forest is dense, suffocatingly quiet.\n");
+Sleep(2000);
 printf("The mist thickens, curling around your ankles like unseen hands.\n");
+Sleep(2000);
 printf("Then… through the trees, you see it.\n");
+Sleep(2000);
 printf("A small wooden hut stands in the middle of the clearing. Smoke curls from the chimney… as if someone has been expecting you\n");
+Sleep(2000);
 printf("You enter the hut. The fire crackles, shadows dancing across the wooden walls, and a tall mirror stands in the corner\n");
+Sleep(2000);
 printf("The figure does not move. The air feels heavier");
+Sleep(2000);
 printf("You consider what your next move should be:\n");
+Sleep(2000);
 printf("(1) Approach the figure\n");
+Sleep(2000);
 printf("(2) Look into the mirror\n");
+Sleep(2000);
 printf("(3) Search the hut for answers\n");
+Sleep(2000);
 printf("Which will you choose?\n");
 userInput = getUserChoice(1,2,3);
 if( userInput == 1){
@@ -320,11 +340,16 @@ else{
 }
 
 printf("The air shifts. The hut creaks, groaning as if it is alive. The door swings open on its own, leading back into the forest.\n");
+Sleep(2000);
 printf("The moment you step outside, the world is not the same\n");
+Sleep(2000);
 printf("The trees are taller, stretching impossibly high.\n");
+Sleep(2000);
 printf("The ground feels wrong, like something is moving beneath it.\n");
+Sleep(2000);
 printf("And then… you see it. Sitting perfectly still. Watching\n");
 printf("The bunny has been waiting for you....\n")
+Sleep(2000);
 printf("The trees around you contort unnaturally, the air turns heavy.\n");
 Sleep(2000);
 printf("the once-innocent bunny erupts into a nightmarish form.\n");
@@ -333,7 +358,7 @@ printf("Its fur blackens, its eyes glow with malice, and the air trembles with a
 Sleep(2000);
 printf("Final Boss Fight Begins.\n");
 Sleep(2000);
-finalBoss(PC*player);
+finalBoss(PC* player);
 }
 void finalBoss(PC *player) {
     checkPoint(101);
