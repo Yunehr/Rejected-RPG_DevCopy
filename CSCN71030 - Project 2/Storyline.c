@@ -264,7 +264,7 @@ void actTwo(PC *player) {
         switch(eventID) {
             case 1:
                 printf("You stumble upon a crystal-clear pool. Its waters shimmer as you kneel, and the moment you drink, warmth floods your veins.\n");
-                int poolEffect = getRandomEvent(3);
+                int poolEffect = handleRandomEvent(3);
                 if (poolEffect == 1) {
                     increaseStatPC(player, DEF, 3);
                     printf("A warm sensation spreads through your body. You feel unbreakable. (+3 DEF)\n");
