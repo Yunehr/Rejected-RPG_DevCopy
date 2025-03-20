@@ -112,7 +112,7 @@ void storyBeginsAgain(PC *player) {
     userInput = getUserChoice(1,2);
     if (userInput == 1) {
         printf("No turning back now. Your adventure begins!\n ");
-        checkPoint (2);
+        checkPoint(2);
         return;
     }
     else {
@@ -257,7 +257,7 @@ void actTwo(PC *player) {
         Sleep(2000);
         printf("The walls pulse faintly, as if the cave itself is alive. \n");
 
-        int eventID = getRandomEvent(3);
+        int eventID = handleRandomEvent(3);
         switch(eventID) {
             case 1:
                 printf("You stumble upon a crystal-clear pool. Its waters shimmer as you kneel, and the moment you drink, warmth floods your veins.\n");
@@ -314,7 +314,7 @@ printf("A small wooden hut stands in the middle of the clearing. Smoke curls fro
 Sleep(2000);
 printf("You enter the hut. The fire crackles, shadows dancing across the wooden walls, and a tall mirror stands in the corner\n");
 Sleep(2000);
-printf("The figure does not move. The air feels heavier");
+printf("The figure does not move. The air feels heavier\n");
 Sleep(2000);
 printf("You consider what your next move should be:\n");
 Sleep(2000);
@@ -325,17 +325,17 @@ Sleep(2000);
 printf("(3) Search the hut for answers\n");
 Sleep(2000);
 printf("Which will you choose?\n");
-userInput = getUserChoice(1,2,3);
+userInput = getUserChoice(1,3);
 if( userInput == 1){
-    printf("You step closer to the figure, and for a moment, you see your own face beneath the hood… before they vanish into smoke.(+3 INT)");
+    printf("You step closer to the figure, and for a moment, you see your own face beneath the hood… before they vanish into smoke.(+3 INT)\n");
     increaseStatPC(player, INTEL, 3);
 }
 else if( userInput == 2){
-    printf("Your reflection distorts. It smiles when you do not. The room twists and tilts before you stumble back, gasping.(-3 HP)");
+    printf("Your reflection distorts. It smiles when you do not. The room twists and tilts before you stumble back, gasping.(-3 HP)\n");
     increaseStatPC(player, HP, -5);
 }
 else{
-    printf("You find markings carved deep into the walls, symbols of protection, of warning. You press your hand to one, and strength surges through you.(+3 STR)\n")
+    printf("You find markings carved deep into the walls, symbols of protection, of warning. You press your hand to one, and strength surges through you.(+3 STR)\n");
     increaseStatPC(player, STR, 3);
 }
 
