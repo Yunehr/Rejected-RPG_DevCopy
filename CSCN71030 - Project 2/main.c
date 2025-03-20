@@ -4,6 +4,7 @@
 #include "gameFunctions.h"
 #include "RNG.h"
 #include "screens.h"
+#include "Storyline.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -13,6 +14,7 @@
 int main(int argc, char* argv[]) {
 	FILE* saveFile;
 	PC mc;
+	int startCheck;
 	
 	/* THE FILE NAME FOR SAVING AND LOADING IS "SaveGame.txt"
 	if (argc == 2)
@@ -25,35 +27,32 @@ int main(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	} */
 
-	// setup for character
-	mc = characterSelectMenu();
-
 	// starting the game
-	int startCheck = mainMenu(mc);
+	startCheck = mainMenu();
 
 	// checks for main menu selection
 	if (startCheck == 1) {
-		if (newGame())
-			storyBegins();
+		if (newGame()) {
+			// setup for character
+			mc = characterSelectMenu();
+			storyBegins(&mc);
+		}
 	}
 	else if (startCheck == 2) {
 		mc = loadGame("SaveGame.txt");
 		int checkCheck = mc.playerCheckpoint;
 		switch (checkCheck) {
 		case 1:
-			storyBegins(mc);	// load start of game
+			storyBegins(&mc);	// load start of game
 			break;
 		case 2:
-			actOne(mc);			// load act one
+			actOne(&mc);			// load act one
 			break;
 		case 3:
-			actTwo(mc);			// load act two
+			actTwo(&mc);			// load act two
 			break;
 		case 4:
-			actThree(mc);		// load act three
-			break;
-		case 5:
-			actFour(mc);		// load act four
+			actThree(&mc);		// load act three
 			break;
 		default:
 			exit(EXIT_FAILURE); // exit due to error

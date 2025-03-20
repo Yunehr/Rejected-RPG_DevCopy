@@ -278,8 +278,8 @@ void actTwo(PC* player) {
                 printf("Your thoughts sharpen. Patterns emerge in the chaos. (+3 INT)\n");
             }
             break;
-            
-        switch(eventID) {
+
+            switch (eventID) {
             case 1:
                 printf("You stumble upon a crystal-clear pool. Its waters shimmer as you kneel, and the moment you drink, warmth floods your veins.\n");
                 int poolEffect = handleRandomEvent(3);
@@ -294,23 +294,24 @@ void actTwo(PC* player) {
                     return;
                 }
                 else {
-                    increaseStatPC(player,INTEL, 3);
+                    increaseStatPC(player, INTEL, 3);
                     printf("Your thoughts sharpen. Patterns emerge in the chaos. (+3 INT)\n");
                     return;
                 }
                 break;
 
-        case 2:
-            increaseStatPC(player, HP, -5);
-            printf("A dart shoots from the wall, piercing your arm. Poison burns your veins (-5 HP)\n");
-            Sleep(2000);
-            printf("You stumble out of the cave and run down the path.\n");
-            break;
+            case 2:
+                increaseStatPC(player, HP, -5);
+                printf("A dart shoots from the wall, piercing your arm. Poison burns your veins (-5 HP)\n");
+                Sleep(2000);
+                printf("You stumble out of the cave and run down the path.\n");
+                break;
 
-        case 3:
-            printf("A shadow lunges at you from the dark! You barely raise your arms before the fight begins.\n");
-            // Insert combat function
-            break;
+            case 3:
+                printf("A shadow lunges at you from the dark! You barely raise your arms before the fight begins.\n");
+                // Insert combat function
+                break;
+            }
         }
     }
     else {
