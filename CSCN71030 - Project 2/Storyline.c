@@ -28,7 +28,7 @@ int getUserChoice(int min, int max) {
 }
 
 int handleRandomEvent(int numEvents) {
-    return RNG(1, numEvents); // Returns a random event ID from 1 to numEvents
+    return RNG(numEvents, 1); // Returns a random event ID from 1 to numEvents
 }
 
 
@@ -222,7 +222,7 @@ void actTwo(PC* player) {
     printf("                 ..=#@@@@++...                                         ..=#@@@@@*:..              \n");
     printf("\n");
     Sleep(2000);
-    printf("Something… no, someone is watching you.\n");
+    printf("Something...no, someone is watching you.\n");
     Sleep(2000);
     printf("A cloaked figure steps from the shadows, their face completely hidden beneath their hood. \n");
     Sleep(2000);
