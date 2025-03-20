@@ -14,6 +14,7 @@ int main(int argc, char* argv[]) {
 
 	gameWin();
 	gameOver();
+	mainMenu();
 
 	/*
 	FILE* saveFile;

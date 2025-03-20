@@ -13,11 +13,11 @@ int mainMenu() {
 	// needs three options Exit Game (0), Create New Save File (1), Load Save File (2)
 	int selection = 0;
 
-	printf(" U   U  N   N  TTTTT  IIIII  TTTTT  L      EEEEE  DDDD     RRRR    PPPP    GGG \n");
-	printf(" U   U  NN  N    T      I      T    L      E      D   D    R   R   P   P  G   \n");
-	printf(" U   U  N N N    T      I      T    L      EEEE   D   D    RRRR    PPPP   G  GG\n");
-	printf(" U   U  N  NN    T      I      T    L      E      D   D    R  R    P      G   G\n");
-	printf("  UUU   N   N    T    IIIII    T    LLLLL  EEEEE  DDDD     R   R   P       GGG");
+	printf("  RRRRR   EEEEE   JJJJJ  EEEEE  CCCCC  TTTTT  EEEEE  DDDD     RRRRR   PPPP    GGG\n");
+	printf("  R    R  E         J    E     C         T    E      D   D    R    R  P   P  G\n");
+	printf("  RRRRR   EEEE      J    EEEE  C         T    EEEE   D   D    RRRRR   PPPP   G  GG\n");
+	printf("  R   R   E      J  J    E     C         T    E      D   D    R   R   P      G   G\n");
+	printf("  R    R  EEEEE   JJ     EEEEE  CCCCC    T    EEEEE  DDDD     R    R  P       GGG");
 	printf("\n\n1 FOR NEW GAME\n\n2 TO LOAD GAME\n\n0 TO EXIT GAME\n\n");
 	do {
 		// all scanfs are giving warnings but whatever
