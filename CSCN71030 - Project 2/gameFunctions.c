@@ -33,7 +33,8 @@ bool saveGame(PC* toSave) {
         return false;
 	}
 
-	fprintf(newGameFile, "%s, ", toSave->name);
+    // doesnt print name but it is uneeded 
+    fprintf(newGameFile, "%d, ", toSave->charclass);
 	fprintf(newGameFile, "%d, ", toSave->stats[0]);
 	fprintf(newGameFile, "%d, ", toSave->stats[1]);
 	fprintf(newGameFile, "%d, ", toSave->stats[2]);
@@ -51,10 +52,9 @@ bool saveGame(PC* toSave) {
 // this function checks for file to load
 PC loadGame() {
     FILE* loadGameFile;                      // Creates new file
-    PC player;
+    PC player = { 0 };
     char line[200];                          // Buffer to store each line from the file
-    char tempName[MAX_NAME];
-    int health = 0, mana = 0, str = 0,
+    int health = 0, cClass = 0, mana = 0, str = 0,
         itl = 0, def = 0, speed = 0, check = 0;
 
     loadGameFile = fopen("SaveGame.txt", "r");
@@ -65,13 +65,12 @@ PC loadGame() {
 
     // Read each line from the file
     while (fgets(line, sizeof(line), loadGameFile)) {
-        // Use sscanf to parse the line into the variables
-        if (sscanf(line, "%49[^,], %d, %d, %d, %d, %d, %d, %d", tempName,
+        // Use sscanf to copy the line into the variables
+        if (sscanf(line, "%d, %d, %d, %d, %d, %d, %d, %d", &cClass,
             &health, &mana, &str, &itl, &def, &speed, &check) == 8) {
 
-            // Copy the name into the player struct
-            strncpy(player.name, tempName, MAX_NAME);
-            // Store the stats in the player struct
+            // Store the stats/class in the player struct
+            player.charclass = cClass;
             player.stats[0] = health;
             player.stats[1] = mana;
             player.stats[2] = str;
@@ -81,9 +80,16 @@ PC loadGame() {
             player.playerCheckpoint = check;
         }
     }
-
-    // TODO: make a continue game that starts the story form given checkpoint
-    // with given character struct from the file
+    // ROG = 0, WAR = 1, MAG = 2
+    if (player.charclass == ROG) {
+        strcpy(player.name, "Rouge");
+    }
+    else if (player.charclass == WAR) {
+        strcpy(player.name, "Warrior");
+    }
+    else if (player.charclass == MAG) {
+        strcpy(player.name, "Mage");
+    }
 
     fclose(loadGameFile);
 

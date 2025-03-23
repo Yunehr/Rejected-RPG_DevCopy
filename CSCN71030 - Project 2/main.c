@@ -47,10 +47,12 @@ int main(int argc, char* argv[]) {
 		if (newGame()) {
 			// setup for character
 			mc = characterSelectMenu();
+			printf("\n\n\n\n\n\n"); // makes it look nicer
 			storyBegins(&mc);
 		}
 	}
 	else if (startCheck == 2) {
+		printf("\n\n\n\n\n\n");		// makes it look nicer also
 		mc = loadGame("SaveGame.txt");
 		int checkCheck = mc.playerCheckpoint;
 		switch (checkCheck) {
