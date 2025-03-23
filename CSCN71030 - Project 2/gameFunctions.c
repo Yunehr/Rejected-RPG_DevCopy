@@ -32,8 +32,8 @@ bool saveGame(PC* toSave) {
 		exit(EXIT_FAILURE);
         return false;
 	}
-	fprintf(newGameFile, "%s, ", toSave->name);
 
+	fprintf(newGameFile, "%s, ", toSave->name);
 	fprintf(newGameFile, "%d, ", toSave->stats[0]);
 	fprintf(newGameFile, "%d, ", toSave->stats[1]);
 	fprintf(newGameFile, "%d, ", toSave->stats[2]);

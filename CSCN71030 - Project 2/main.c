@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define NUMBER_OF_ACTS		4	// this can change
+
 // CSCN71030_Section2_Group3 - Main class
 // main menu is the start function
 // might add a start() function to make it look better
@@ -15,17 +17,27 @@ int main(int argc, char* argv[]) {
 	FILE* saveFile;
 	PC mc;
 	int startCheck;
-	
-	/* THE FILE NAME FOR SAVING AND LOADING IS "SaveGame.txt"
-	if (argc == 2)
-		saveFile = fopen(argv[1], "w");
-	else
-		saveFile = NULL;
 
-	if (saveFile == NULL) {
-		printf("Error opening file");
+	// checks for CLA
+	if (argc != 2) {
+		printf("Missing command line arg");
 		exit(EXIT_FAILURE);
-	} */
+	}
+
+	// read file from CLA
+	saveFile = fopen(argv[1], "r");
+
+	// now if the file doesnt exist it makes a new one
+	if (saveFile == NULL) {
+		printf("No save file present, new file created");
+		saveFile = fopen(argv[1], "w");
+		if (saveFile == NULL) {
+			printf("Error creating new file");
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	fclose(saveFile);
 
 	// starting the game
 	startCheck = mainMenu();
@@ -46,10 +58,10 @@ int main(int argc, char* argv[]) {
 			storyBegins(&mc);	// load start of game
 			break;
 		case 2:
-			actOne(&mc);			// load act one
+			actOne(&mc);		// load act one
 			break;
 		case 3:
-			actTwo(&mc);			// load act two
+			actTwo(&mc);		// load act two
 			break;
 		case 4:
 			actThree(&mc);		// load act three
@@ -63,7 +75,18 @@ int main(int argc, char* argv[]) {
 		exit(EXIT_SUCCESS);
 	}
 
-	//fclose(saveFile);
+	// do, while loop to go throgh the story
+	do {
+		if (checkPoint(0) == 1) {
+			actOne(&mc);
+		}
+		else if (checkPoint(0) == 2) {
+			actTwo(&mc);
+		}
+		else if (checkPoint(0) == 3) {
+			actThree(&mc);
+		}
+	} while (checkPoint(0) <= NUMBER_OF_ACTS);
 
 	//personal tests
 	//printf("Testing Random Number Generator:\n");
@@ -74,5 +97,6 @@ int main(int argc, char* argv[]) {
 	//printf("\n\nTesting Player Creation Menu:\n");
 	//PC temp = setCharacter(characterSelectMenu()); //temp to test player menu and setCharacter
 	//printf("Player class num type is: %d\n", temp.charclass);
+
 	return 0;
 }

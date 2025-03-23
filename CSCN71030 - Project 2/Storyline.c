@@ -158,7 +158,6 @@ void actOne(PC* player) {
     printf("(1) Offer the bunny a berry or (2) Kick the bunny out of your way: \n");
     userInput = getUserChoice(1, 2);
     if (userInput == 1) {
-        checkPoint(4);
         printf("You crouch, extending a berry toward the tiny creature.\n");
         Sleep(2000);
         printf("The bunny sniffs, hesitates, then snatches it with a wiggle of its nose.\n");
@@ -330,9 +329,9 @@ void actThree(PC* player) {
     Sleep(2000);
     printf("The mist thickens, curling around your ankles like unseen hands.\n");
     Sleep(2000);
-    printf("Then… through the trees, you see it.\n");
+    printf("Then... through the trees, you see it.\n");
     Sleep(2000);
-    printf("A small wooden hut stands in the middle of the clearing. Smoke curls from the chimney… as if someone has been expecting you\n");
+    printf("A small wooden hut stands in the middle of the clearing. Smoke curls from the chimney... as if someone has been expecting you\n");
     Sleep(2000);
     printf("You enter the hut. The fire crackles, shadows dancing across the wooden walls, and a tall mirror stands in the corner\n");
     Sleep(2000);
@@ -349,7 +348,7 @@ void actThree(PC* player) {
     printf("Which will you choose?\n");
     userInput = getUserChoice(1, 3);
     if (userInput == 1) {
-        printf("You step closer to the figure, and for a moment, you see your own face beneath the hood… before they vanish into smoke.(+3 INT)\n");
+        printf("You step closer to the figure, and for a moment, you see your own face beneath the hood... before they vanish into smoke.(+3 INT)\n");
         increaseStatPC(player, INTEL, 3);
     }
     else if (userInput == 2) {
