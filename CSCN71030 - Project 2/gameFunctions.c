@@ -7,8 +7,6 @@
 // Matthew Romano - CSCN71030_Section2_Group3 - Game Functions Implementation
 // A bunch of useful functions needed in multipule places
 
-
-
 // same as the save game but used specifically for new game creat
 bool newGame() {
 	FILE* newGameFile;							// creates new file pointer
@@ -41,7 +39,12 @@ bool saveGame(PC* toSave) {
 	fprintf(newGameFile, "%d, ", toSave->stats[3]);
 	fprintf(newGameFile, "%d, ", toSave->stats[4]);
 	fprintf(newGameFile, "%d, ", toSave->stats[5]);
-    fprintf(newGameFile, "%d", toSave->playerCheckpoint);       // hopefully this works
+
+    // plus 1 because of placemnet in main
+    if (toSave->playerCheckpoint < 4)
+      fprintf(newGameFile, "%d", toSave->playerCheckpoint + 1);
+    else
+        fprintf(newGameFile, "%d", toSave->playerCheckpoint); // cant go past 4
 
 	fclose(newGameFile);
 	// this isnt a final point, can return to the game after

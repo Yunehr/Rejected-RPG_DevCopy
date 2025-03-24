@@ -47,12 +47,12 @@ int main(int argc, char* argv[]) {
 		if (newGame()) {
 			// setup for character
 			mc = characterSelectMenu();
-			printf("\n\n\n\n\n\n"); // makes it look nicer
+			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"); // makes it look nicer
 			storyBegins(&mc);
 		}
 	}
 	else if (startCheck == 2) {
-		printf("\n\n\n\n\n\n");		// makes it look nicer also
+		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"); // makes it look nicer also
 		mc = loadGame("SaveGame.txt");
 		int checkCheck = mc.playerCheckpoint;
 		switch (checkCheck) {
@@ -76,9 +76,6 @@ int main(int argc, char* argv[]) {
 	else if (startCheck = 0) {
 		exit(EXIT_SUCCESS);
 	}
-
-	if (optionsMenu(mc) != 1)
-		exit(EXIT_FAILURE);
 
 	// do, while loop to go throgh the story
 	do {
