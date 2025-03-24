@@ -27,11 +27,10 @@ From battles to custom characters, we're building an **immersive experience** wi
 - New/Load game functions added
 
 ### Update v0.0.3
-- Main Menu is complete (could use refinement)
+- Main Menu is complete
 - Argv/argc is fully implemented
-- Options menu is complete (could use a visual upgrade)
+- Options menu is complete
 - Character creation complete
-- 'GameFile.txt'  is permanently set as the save file name (stop the cap)
 
 ### Update v0.1.0
 - Integrated the main menu and character creation!
@@ -59,7 +58,9 @@ From battles to custom characters, we're building an **immersive experience** wi
 
 ### Update v0.2.1
 - Fixed an error with reading character name
-- Main/Options menu fully tested
+- Main/Options menu fully tested\
+- Options menu fully implemented
+- Minor bug fixes
 
 # Contributors 
 - Matt Romano (@Mromano06)
