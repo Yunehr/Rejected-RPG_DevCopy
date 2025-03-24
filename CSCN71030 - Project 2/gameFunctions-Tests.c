@@ -16,7 +16,7 @@ bool mainMenuNewGame() {
 	if (result == 1) // upon new game selection return value is 1
 		return true;
 	
-	return false
+	return false;
 }
 
 // choses load game option within main menu, none, return 2
@@ -25,7 +25,7 @@ bool mainMenuLoadGame() {
 	if (result == 2) // upon load game selection return value is 1
 		return true;
 
-	return false
+	return false;
 }
 
 // choses exit option within main menu, none, return 0
@@ -34,16 +34,16 @@ bool mainMenuExit() {
 	if (result == 0) // upon exit selection value is 0
 		return true;
 
-	return false
+	return false;
 }
 
 // runs options menu, none, return 1
 bool optionsMenuTest() {
-	int result = optionsMenu();
+	int result = optionsMenu(setCharacter(WAR));
 	if (result == 1) // upon successful process return value is 1
 		return true;
 
-	return false
+	return false;
 }
 
 // runs new game, no perams, expected true
