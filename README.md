@@ -49,11 +49,11 @@ From battles to custom characters, we're building an **immersive experience** wi
 - Added menu functionality
 - Added random event generation and input module
 
-- ### Update v0.1.3
+### Update v0.1.3
 - Story fully complete
 - Save/Load complete for now
 
-- ### Update v0.2.0
+### Update v0.2.0
 - Game over/win screens added
 - Save/Load, Menus, Story are all fully implemented
 - Fixed an error with reading character name
