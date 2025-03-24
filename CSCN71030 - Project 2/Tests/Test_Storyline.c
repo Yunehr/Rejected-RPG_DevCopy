@@ -1,5 +1,4 @@
-#include "unity.h"
-#include "unity_internals.h"
+#include "Unity/unity.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
