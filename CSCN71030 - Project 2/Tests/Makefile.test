@@ -1,0 +1,15 @@
+# tests/Makefile.test
+CC = gcc
+CFLAGS = -I../ -I.
+
+SRC = ../Storyline.c ../PlayerCharacter.c ../RNG.c
+TEST = Test_Storyline.c unity.c
+
+all: test
+
+test:
+	$(CC) $(CFLAGS) $(SRC) $(TEST) -o test_runner
+	./test_runner
+
+clean:
+	rm -f test_runner test_output.txt test_input.txt
