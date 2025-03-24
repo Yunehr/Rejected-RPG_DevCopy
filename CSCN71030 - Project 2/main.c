@@ -49,12 +49,12 @@ int main(int argc, char* argv[]) {
 		if (newGame()) {
 			// setup for character
 			mc = characterSelectMenu();
-			printf("\n\n\n\n\n\n"); // makes it look nicer
+			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"); // makes it look nicer
 			storyBegins(&mc);
 		}
 	}
 	else if (startCheck == 2) {
-		printf("\n\n\n\n\n\n");		// makes it look nicer also
+		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"); // makes it look nicer also
 		mc = loadGame("SaveGame.txt");
 		int checkCheck = mc.playerCheckpoint;
 		switch (checkCheck) {
@@ -90,6 +90,11 @@ int main(int argc, char* argv[]) {
 		else if (checkPoint(0) == 3) {
 			actThree(&mc);
 		}
+
+		// for now this menu runs after each act
+		if (optionsMenu(mc) != 1)
+			exit(EXIT_FAILURE); // error if menu doesnt return 1
+
 	} while (checkPoint(0) <= NUMBER_OF_ACTS);
 
 	//personal tests
