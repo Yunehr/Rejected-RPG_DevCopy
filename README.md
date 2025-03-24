@@ -56,7 +56,10 @@ From battles to custom characters, we're building an **immersive experience** wi
 ### Update v0.2.0
 - Game over/win screens added
 - Save/Load, Menus, Story are all fully implemented
+
+### Update v0.2.1
 - Fixed an error with reading character name
+- Main/Options menu fully tested
 
 # Contributors 
 - Matt Romano (@Mromano06)
