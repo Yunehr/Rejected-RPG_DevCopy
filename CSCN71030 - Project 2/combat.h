@@ -3,6 +3,7 @@
 // Ryan Hackabrt & Luis Changyuan Lu - CSCN7130_Section2_Group3 - Combat Module
 #include <stdio.h>
 #include <stdbool.h>
+#include <windows.h>
 #include "PlayerCharacter.h"
 #include "enemy.h"
 

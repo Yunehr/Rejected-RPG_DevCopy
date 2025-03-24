@@ -1,6 +1,5 @@
 // Ryan Hackabrt & Luis Changyuan Lu - CSCN7130_Section2_Group3 - Combat Module
 
-#include <stdio.h>
 #include "combat.h"
 
 #define VICTORY 1
@@ -10,37 +9,45 @@ int combatLoop(PC player, MOB enemy) {
 	int combatRound = 1;
 	int playerHP = player.stats[0];
 	int enemyHP = enemy.stats[0];
-
-	//Combat Loop
-	while (combatRound <= 20) {		//while neither player nor enemy is dead (HP > 0) && combatRound <= 20
+	printf("The Combat Begin!\n");
+	Sleep(1000);
+	while (combatRound <= 20) {
 		//Moveset Selection
 		int attackPC = SelectPlayerMoveset(player);
 		int attackMOB = SelectMOBMoveset(enemy, combatRound);
-		
+
 		//Player Moves First
-		if (hitCheckPC(player)==true) {
+		if (hitCheckPC(player)) {
 			//roll for damage
 			int damagePC = MovesetDamagePC(player, enemy.stats[DEF], attackPC);
+			printf("%s attack the %s, deal %d damage!\n", player.name, enemy.name, damagePC);
 			//deal damage
 			enemyHP = enemyHP - damagePC; //this replaced takeDamage()
-			if ( enemyHP <= 0)
+			if (enemyHP <= 0) {
+				printf("The %s was defeated!\n", enemy.name);
 				return VICTORY;
+			}
 		}
-
+		Sleep(1000);
 		//enemy moves second
-		if (hitCheckMOB(enemy)==true) {
+		if (hitCheckMOB(enemy)) {
 			//roll for damage
 			int damageMOB = MovesetDamageMOB(enemy, player.stats[DEF], attackMOB);
+			printf("%s attack the %s, deal %d damage!\n", enemy.name, player.name, damageMOB);
 			//deal damage
 			playerHP = playerHP - damageMOB; //this replaced takeDamage()
-			if (playerHP <= 0)
+			if (playerHP <= 0) {
+				printf("The %s was defeated!\n", player.name);
 				return LOSER;
+			}
 		}
-
+		Sleep(1000);
 		//if you get here, there is no victor or loser yet
 		combatRound++;
-	}
 
+	}
+	printf("The %s was not defeated!\n", enemy.name);
+	return LOSER;
 }
 
 bool hitCheckPC(PC player){
