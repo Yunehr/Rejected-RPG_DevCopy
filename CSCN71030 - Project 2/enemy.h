@@ -5,10 +5,11 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "PlayerCharacter.h"
+#include "globals.h"
 
-#define STATS_ARRAY		6
+
 #define ENEMY_TYPES		2
-#define MAX_NAME		15
+
 
 typedef enum boss { FIN = 0, THIEF = 1 }BOSS;
 

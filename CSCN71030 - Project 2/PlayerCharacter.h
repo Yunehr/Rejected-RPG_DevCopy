@@ -3,15 +3,12 @@
 // Ryan Hackabrt - CSCN7130_Section2_Group3 - ADT for Playable Character
 
 #include <stdio.h>
-#include <stdbool.h>
 #include "enemy.h"
-#include "string.h"
-#include "RNG.h"
-#define STATS_ARRAY		6
-#define PLAYER_CLASSES	3
-#define MAX_NAME		7
+#include "globals.h"
 
-typedef enum type{ROG = 0, WAR = 1, MAG = 2}TYPE;
+#define PLAYER_CLASSES	3
+
+typedef enum type { ROG = 0, WAR = 1, MAG = 2 }TYPE;
 typedef enum stat { HP = 0, MP = 1, STR = 2, INTEL = 3, DEF = 4, SPD = 5 }STAT;
 
 typedef struct PlayerCharacter {
@@ -50,6 +47,7 @@ int critHit(int chance, int multi);
 
 //Other
 void printCharacter(PC player);
+
 
 
 
