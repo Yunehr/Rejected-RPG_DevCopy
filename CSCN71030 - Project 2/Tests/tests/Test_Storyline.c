@@ -4,6 +4,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#ifdef MAX_NAME
+#undef MAX_NAME
+#endif
+#define MAX_NAME 15
+
 #include "../../Storyline.h"
 #include "../../PlayerCharacter.h"
 #include "../../RNG.h"
@@ -20,7 +25,7 @@ static char output_buffer[2048];
 
 void setUp(void) {
     // Redirect stdout to capture output
-    test_output = freopen("test_output.txt", "w", stdout);
+   // test_output = freopen("test_output.txt", "w", stdout);
     memset(output_buffer, 0, sizeof(output_buffer));
 }
 
@@ -59,20 +64,27 @@ void test_checkPoint_updates_and_ignores_zero(void) {
 // STORY-003: storyBegins() output
 void test_storyBegins_outputs_correctly(void) {
     PC testPlayer = setCharacter(0);
+
+    // Simulate user input
     test_input = freopen("test_input.txt", "w", stdin);
     fprintf(test_input, "1\n");
     fclose(test_input);
     test_input = freopen("test_input.txt", "r", stdin);
 
-    storyBegins(&testPlayer);
+    // Redirect output BEFORE calling the function
+    test_output = freopen("test_output.txt", "w", stdout);
+    storyBegins(&testPlayer); // this now writes to test_output.txt
 
+    //Reopen output file to read what was written
     freopen("test_output.txt", "r", test_output);
     fread(output_buffer, 1, sizeof(output_buffer), test_output);
 
+    //Now the assertions can see the output
     TEST_ASSERT_NOT_NULL(strstr(output_buffer, "You wake up in the middle of the woods"));
     TEST_ASSERT_NOT_NULL(strstr(output_buffer, "Which way do you go?"));
     TEST_ASSERT_NOT_NULL(strstr(output_buffer, "Your adventure begins!"));
 }
+
 
 // STORY-004: storyBeginsAgain recursion check
 void test_storyBeginsAgain_avoids_infinite_recursion(void) {
