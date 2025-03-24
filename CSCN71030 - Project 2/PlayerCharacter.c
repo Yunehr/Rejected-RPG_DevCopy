@@ -1,10 +1,14 @@
 // Ryan Hackabrt - CSCN7130_Section2_Group3 - PlayerCharacter Implementation
 
 #define _CRT_SECURE_NO_WARNINGS
-#include "PlayerCharacter.h"
-#include "enemy.h"
+
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
+
+#include "PlayerCharacter.h"
+#include "enemy.h"
+#include "RNG.h"
 
 
 // Character Selection Menu

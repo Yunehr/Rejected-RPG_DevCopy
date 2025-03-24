@@ -141,6 +141,7 @@
     <ClInclude Include="combat.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="gameFunctions-Tests.h" />
+    <ClInclude Include="globals.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="RNG.h" />
     <ClCompile Include="mainMenu.c" />
