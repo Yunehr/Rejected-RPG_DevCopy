@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "enemy.h"
+#include "string.h"
+#include "RNG.h"
 #define STATS_ARRAY		6
 #define PLAYER_CLASSES	3
 #define MAX_NAME		7
