@@ -91,6 +91,10 @@ PC loadGame() {
         strcpy(player.name, "Mage");
     }
 
+    // need to make sure player checkpoint doesnt equal 0
+    if (player.playerCheckpoint <= 0)
+        player.playerCheckpoint = 1;
+
     fclose(loadGameFile);
 
     return player;

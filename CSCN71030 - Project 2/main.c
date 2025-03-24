@@ -77,6 +77,9 @@ int main(int argc, char* argv[]) {
 		exit(EXIT_SUCCESS);
 	}
 
+	if (optionsMenu(mc) != 1)
+		exit(EXIT_FAILURE);
+
 	// do, while loop to go throgh the story
 	do {
 		if (checkPoint(0) == 1) {
@@ -88,6 +91,11 @@ int main(int argc, char* argv[]) {
 		else if (checkPoint(0) == 3) {
 			actThree(&mc);
 		}
+
+		// for now this menu runs after each act
+		if (optionsMenu(mc) != 1)
+			exit(EXIT_FAILURE); // error if menu doesnt return 1
+
 	} while (checkPoint(0) <= NUMBER_OF_ACTS);
 
 	//personal tests
