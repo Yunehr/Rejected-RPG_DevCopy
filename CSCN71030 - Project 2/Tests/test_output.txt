@@ -1,0 +1,24 @@
+          # #### ####  
+       ### \/#|### |/####
+      ##\/#/\||/##/_/##/_#
+    ### \/###|/\/ # ##_###
+  ##_\_#\_\| #/###_/_####?#
+ ## #### #\ #| /  #### ## / ##
+  __#_--###`  |{,###---###-~
+           \}{{
+             }}{
+             }}{
+             {{}
+        , -=-~{ .-^- _
+You wake up in the middle of the woods, with your head pounding.
+The damp earth clings to your clothes, and the scent of pine and decay lingers in the air.
+Shadows stretch between the trees as a cold breeze cuts through the silence.
+Your body aches, but nothing seems broken. Your weapons and supplies are gone, but your gear remains.
+It's as if someone wanted you alive, but defenseless...
+You have no memory of how you got here. 
+Through the trees to your right, you see the distant glow of lanterns.
+It is a small village, quiet but eerily familiar.
+To your left, the woods grow darker and denser, the path uncertain.
+Which way do you go?
+(1) To the forest! or (2) To the Village: Enter your choice (1-2): No turning back now. Your adventure begins!
+ 
