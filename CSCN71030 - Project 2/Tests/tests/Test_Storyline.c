@@ -1,12 +1,12 @@
-#include "Unity/unity.h"
+#include "Unity/src/unity.h"
+#include "Unity/src/unity_internals.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-
-#include "../Storyline.h"
-#include "../PlayerCharacter.h"
-#include "../RNG.h"
+#include "../../Storyline.h"
+#include "../../PlayerCharacter.h"
+#include "../../RNG.h"
 
 // Mock Sleep to avoid actual delay
 #define Sleep(x) ((void)0)
