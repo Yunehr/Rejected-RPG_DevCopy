@@ -2,10 +2,10 @@
 #include "mainMenu.h"
 #include "PlayerCharacter.h"
 #include "gameFunctions.h"
-#include "gameFunctions-Tests.h"
 #include "RNG.h"
 #include "screens.h"
 #include "Storyline.h"
+#include "optionsMenu.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,7 +15,6 @@
 // main menu is the start function
 // might add a start() function to make it look better
 int main(int argc, char* argv[]) {
-	gameFunctionTests();
 	FILE* saveFile;
 	PC mc;
 	int startCheck;

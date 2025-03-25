@@ -171,7 +171,7 @@ void actOne(PC* player) {
         printf("The woods thicken,the path narrows and soon, a figure emerges from the shadows.\n");
         Sleep(2000);
         printf("A thief blocks your path, blade drawn. A fight? Just what you've been waiting for.\n");
-        //insert fight function
+        combatLoop(*player, setEnemy(THIEF));
     }
     else {
         printf("You're on an adventure, no time for distractions.\n");

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "enemy.h"
 #include "globals.h"
+#include <string.h>
 
 #define PLAYER_CLASSES	3
 
