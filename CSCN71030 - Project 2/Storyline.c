@@ -370,5 +370,6 @@ void finalBoss(PC* player) {
     checkPoint(101);
     printf("The earth splits beneath your feet. The sky darkens. The final confrontation begins. \n");
     //insert combat function
+    combatLoop(*player, setEnemy(FIN));
     return;
 }
