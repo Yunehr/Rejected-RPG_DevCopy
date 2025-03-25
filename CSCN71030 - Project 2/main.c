@@ -20,9 +20,11 @@ int main(int argc, char* argv[]) {
 	PC mc;
 	int startCheck;
 
+	srand(time(NULL));	//seeding rand so that RNG works properly
+
 	// checks for CLA
 	if (argc != 2) {
-		printf("Missing command line arg");
+		printf("Missing command line arg\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -31,7 +33,7 @@ int main(int argc, char* argv[]) {
 
 	// now if the file doesnt exist it makes a new one
 	if (saveFile == NULL) {
-		printf("No save file present, new file created");
+		printf("No save file present, new file created\n");
 		saveFile = fopen(argv[1], "w");
 		if (saveFile == NULL) {
 			printf("Error creating new file");
