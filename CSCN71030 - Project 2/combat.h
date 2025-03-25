@@ -6,6 +6,7 @@
 #include <windows.h>
 #include "PlayerCharacter.h"
 #include "enemy.h"
+#include "RNG.h"
 
 
 int combatLoop(PC player, MOB enemy);
