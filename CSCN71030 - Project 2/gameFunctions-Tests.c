@@ -92,32 +92,32 @@ void gameFunctionTests() {
 
 	// checks load game
 	if (loadGameTest() == true)
-		printf("\nloadeGame() Test: PASSED\n");
+		printf("\nloadGame() Test: PASSED\n");
 	else
 		printf("\nloadGame() Test: FAILED\n");
 
 	// checks main menu's new game option
 	if (mainMenuNewGame() == true)
-		printf("\nloadeGame() Test: PASSED\n");
+		printf("\nmainMenuNewGame() Test: PASSED\n");
 	else
-		printf("\nloadGame() Test: FAILED\n");
+		printf("\nmainMenuNewGame() Test: FAILED\n");
 
 	// checks main menu's load game option
 	if (mainMenuLoadGame() == true)
-		printf("\nloadeGame() Test: PASSED\n");
+		printf("\nmainMenuLoadGame() Test: PASSED\n");
 	else
-		printf("\nloadGame() Test: FAILED\n");
+		printf("\nmainMenuLoadGame() Test: FAILED\n");
 
 	// checks main menu's exit option
 	if (mainMenuExit() == true)
-		printf("\nloadeGame() Test: PASSED\n");
+		printf("\nmainMenuExit() Test: PASSED\n");
 	else
-		printf("\nloadGame() Test: FAILED\n");
+		printf("\nmainMenuExit() Test: FAILED\n");
 
 	// checks main menu's exit option
 	if (optionsMenuTest() == true)
-		printf("\nloadeGame() Test: PASSED\n");
+		printf("\noptionsMenuTest() Test: PASSED\n");
 	else
-		printf("\nloadGame() Test: FAILED\n");
+		printf("\noptionsMenuTest() Test: FAILED\n");
 
 }
