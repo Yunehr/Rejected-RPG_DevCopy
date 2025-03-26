@@ -60,6 +60,7 @@ bool hitCheckPC(PC player){
 			return true;
 		}
 		else {
+			printf("Player Attack missed!\n");
 			return false;
 		}
 	case WAR:
@@ -68,6 +69,7 @@ bool hitCheckPC(PC player){
 			return true;
 		}
 		else {
+			printf("Player Attack missed!\n");
 			return false;
 		}
 	case MAG:
@@ -76,6 +78,7 @@ bool hitCheckPC(PC player){
 			return true;
 		}
 		else {
+			printf("Player Attack missed!\n");
 			return false;
 		}
 		default:
@@ -89,6 +92,7 @@ bool hitCheckMOB(MOB enemy) {
 		return true;
 	}
 	else {
+		printf("%s Attack missed!\n", enemy.name);
 		return false;
 	}
 }
