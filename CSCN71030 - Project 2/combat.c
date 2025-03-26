@@ -2,21 +2,21 @@
 
 #include "combat.h"
 
-#define VICTORY 1
-#define LOSER	2
+#define VICTORY 0
+#define LOSER	1
 
 int combatLoop(PC player, MOB enemy) {
 	//Create a const multi-dimensional array to save the actions of three classes.
-	const char* battleMoves[PLAYER_CLASSES][STATS_ARRAY] = {
+	/*const char* battleMoves[PLAYER_CLASSES][STATS_ARRAY] = {
 		{ "You strike from the shadows and ", "You rapidly stab the enemy multiple times and ",
 		"You attack with a venom-coated dagger and ","Rogue attack 4 and ","Rogue attack 5 and ","Rogue attack 6 and "},
 		{ "You swing a greatsword with berserk force and ", "You slam the enemy with your shield and ",
-		"You deliver a powerful strike that weakens the enemy¡¯s defense and ",
+		"You deliver a powerful strike that weakens the enemy's defense and ",
 		"Warrior attack 4 and ","Warrior attack 5 and ","Warrior attack 6 and "},
 		{ "You unleashe a fiery blast, scorching enemy and ",
-		"You summon freezing frost, slowing the enemy¡¯s movement and ", "You call down lightning to strike the enemy and ",
+		"You summon freezing frost, slowing the enemy's movement and ", "You call down lightning to strike the enemy and ",
 		"Mage attack 4 and ","Mage attack 5 and ","Mage attack 6 and " }
-	};
+	};*/
 	int combatRound = 1;
 	int playerHP = player.stats[0];
 	int enemyHP = enemy.stats[0];
@@ -31,8 +31,9 @@ int combatLoop(PC player, MOB enemy) {
 		if (hitCheckPC(player)) {
 			//roll for damage
 			int damagePC = MovesetDamagePC(player, enemy.stats[DEF], attackPC);
+
 			//Choose an attack action of the 6 based on the player character.
-			printf(battleMoves[player.charclass][RNG(5, 0)]);
+			//printf(battleMoves[player.charclass][RNG(5, 0)]);
 			printf("deal %d damage!\n", damagePC);
 			//deal damage
 			enemyHP = enemyHP - damagePC; //this replaced takeDamage()
