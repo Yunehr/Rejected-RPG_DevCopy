@@ -351,7 +351,7 @@ void actThree(PC* player) {
     Sleep(2000);
     printf("The ground feels wrong, like something is moving beneath it.\n");
     Sleep(2000);
-    printf("And then… you see it. Sitting perfectly still. Watching\n");
+    printf("And then... you see it. Sitting perfectly still. Watching\n");
     printf("The bunny has been waiting for you....\n");
     Sleep(2000);
     printf("The trees around you contort unnaturally, the air turns heavy.\n");
