@@ -6,7 +6,7 @@
 #define VICTORY 0
 #define LOSER	1
 
-int combatLoop(PC player, MOB enemy) {
+int combatLoop(PC* player, MOB enemy) {
 	//Create a const multi-dimensional array to save the actions of three classes.
 	/*const char* battleMoves[PLAYER_CLASSES][STATS_ARRAY] = {
 		{ "You strike from the shadows and ", "You rapidly stab the enemy multiple times and ",
@@ -19,26 +19,26 @@ int combatLoop(PC player, MOB enemy) {
 		"Mage attack 4 and ","Mage attack 5 and ","Mage attack 6 and " }
 	};*/
 	int combatRound = 1;
-	double playerHP = player.stats[0];
+	double playerHP = player->stats[0];
 	double enemyHP = enemy.stats[0];
 	printf("The Combat Begin!\n");
 	Sleep(1000);
 	while (combatRound <= 20) {
 		//Moveset Selection
-		int attackPC = SelectPlayerMoveset(player);
+		int attackPC = SelectPlayerMoveset(*player);
 		int attackMOB = SelectMOBMoveset(enemy, combatRound);
 		
 		//mage ultimate check
-		if (player.charclass == MAG && attackPC == 4) {
-			double missingHP = player.stats[HP] - playerHP;
+		if (player->charclass == MAG && attackPC == 4) {
+			double missingHP = player->stats[HP] - playerHP;
 			printf("Although you could only do it once... You used half your Mana and heal yourself by %f", (missingHP/2));
 			playerHP += missingHP / 2;	// heal HP in combat by 50% missing hp
 		}
 
 		//Player Moves First
-		if (hitCheckPC(player)) {
+		if (hitCheckPC(*player)) {
 			//roll for damage
-			double damagePC = MovesetDamagePC(&player, &enemy, attackPC);
+			double damagePC = MovesetDamagePC(player, &enemy, attackPC);
 
 			//Choose an attack action of the 6 based on the player character.
 			//printf(battleMoves[player.charclass][RNG(5, 0)]);
@@ -54,12 +54,12 @@ int combatLoop(PC player, MOB enemy) {
 		//enemy moves second
 		if (hitCheckMOB(enemy)) {
 			//roll for damage
-			double damageMOB = MovesetDamageMOB(enemy, player.stats[DEF], attackMOB);
-			printf("%s attack the %s, deal %f damage!\n", enemy.name, player.name, damageMOB);
+			double damageMOB = MovesetDamageMOB(enemy, player->stats[DEF], attackMOB);
+			printf("%s attack the %s, deal %f damage!\n", enemy.name, player->name, damageMOB);
 			//deal damage
 			playerHP = playerHP - damageMOB; //this replaced takeDamage()
 			if (playerHP <= 0) {
-				printf("The %s was defeated!\n", player.name);
+				printf("The %s was defeated!\n", player->name);
 				return LOSER;
 			}
 		}

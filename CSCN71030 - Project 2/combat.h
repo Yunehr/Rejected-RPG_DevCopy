@@ -9,7 +9,7 @@
 #include "RNG.h"
 
 
-int combatLoop(PC player, MOB enemy);
+int combatLoop(PC* player, MOB enemy);
 
 bool hitCheckPC(PC player);
 bool hitCheckMOB(MOB enemy);
