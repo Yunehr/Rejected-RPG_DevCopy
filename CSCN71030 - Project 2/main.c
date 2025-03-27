@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
 			storyBegins(&mc);
 		}
 	}
-	else if (startCheck == 2) {
+	if (startCheck == 2) {
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"); // makes it look nicer also
 		mc = loadGame("SaveGame.txt");
 		int checkCheck = mc.playerCheckpoint;
@@ -76,7 +76,7 @@ int main(int argc, char* argv[]) {
 			break;
 		}
 	}
-	else if (startCheck = 0) {
+	if (startCheck == 0) {
 		exit(EXIT_SUCCESS);
 	}
 
