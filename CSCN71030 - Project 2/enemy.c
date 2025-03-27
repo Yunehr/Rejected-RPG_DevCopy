@@ -90,8 +90,8 @@ int MovesetDamageMOB(MOB enemy, int defense, int attack) {
 	}
 }
 int thiefAtkkDmg(MOB enemy, int attack, int defense) {	
-	int damage = 0;
-	int critMod = 1;
+	double damage = 0;
+	double critMod = 1;
 	switch (attack) {
 
 	case 1: // basic attack (stab)
@@ -103,8 +103,8 @@ int thiefAtkkDmg(MOB enemy, int attack, int defense) {
 	}
 }
 int finalBossAtkDmg(MOB enemy, int attack, int defense) {
-	int damage = 0;
-	int critMod = 1;
+	double damage = 0;
+	double critMod = 1;
 	switch (attack) {
 
 	case 1: // basic attack (stab)
@@ -116,8 +116,8 @@ int finalBossAtkDmg(MOB enemy, int attack, int defense) {
 	}
 }
 double bearAtkDmg(MOB enemy, int attack, int defense) {
-	int damage = 0;
-	int critMod = 1;
+	double damage = 0;
+	double critMod = 1;
 	switch (attack) {
 
 	case 1: // basic attack (stab)

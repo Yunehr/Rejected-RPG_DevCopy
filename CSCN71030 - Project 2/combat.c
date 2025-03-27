@@ -129,19 +129,31 @@ int SelectPlayerMoveset(PC player) {
 	printf("Please Select an Attack Type:\n");
 	switch (player.charclass) {
 	case ROG:
-		return rogueMovesetMenu();
+		return rogueMovesetMenu(player);
 	case WAR:
 		return warriorMovesetMenu();
 	case MAG:
 		return mageMovesetMenu();
 	}
 }
-int rogueMovesetMenu() {
+int rogueMovesetMenu(PC player) {
 	while (1) {
 		int choice;
 		printf("1 = Dagger Throw, 2 = Double Strike, 3 = Piercing Stab, 4 = Blade Dance\nEnter Your Choice: ");
-		if (scanf("%d", &choice) == 1) {
-			return choice; // Valid input, return choice
+		if (scanf("%d", &choice) == 1) { //valid input
+			switch (choice) {
+			case 1:
+				return choice;
+			case 2:
+				if (player.stats[MP] > 5)
+					return choice;
+			case 3:
+				if (player.stats[MP] > 5)
+					return choice;
+			case 4:
+				if (player.stats[MP] > 25)
+					return choice;
+			}
 		}
 		// Flush invalid input
 		printf("Invalid choice. Please enter a number that corresponds to the attack you want to use.\n");
@@ -149,12 +161,24 @@ int rogueMovesetMenu() {
 	}
 	return 1; //default return, should never reach this
 }
-int warriorMovesetMenu() {
+int warriorMovesetMenu(PC player) {
 	while (1) {
 		int choice;
 		printf("1 = Shield Bash, 2 = Focus Strike, 3 = Guard Break, 4 = Berserk\nEnter Your Choice: ");
-		if (scanf("%d", &choice) == 1) {
-			return choice; // Valid input, return choice
+		if (scanf("%d", &choice) == 1) { //valid input
+			switch (choice) {
+			case 1:
+				return choice;
+			case 2:
+				if (player.stats[MP] > 2)
+					return choice;
+			case 3:
+				if (player.stats[MP] > 5)
+					return choice;
+			case 4:
+				if (player.stats[MP] > 12)
+					return choice;
+			}
 		}
 		// Flush invalid input
 		printf("Invalid choice. Please enter a number that corresponds to the attack you want to use.\n");
@@ -162,12 +186,25 @@ int warriorMovesetMenu() {
 	}
 	return 1; //default return, should never reach this
 }
-int mageMovesetMenu() {
+int mageMovesetMenu(PC player) {
 	while (1) {
 		int choice;
 		printf("1 = Magic Missile, 2 = Summon Lightning, 3 = Fireball, 4 = Healing Wave\nEnter Your Choice: ");
 		if (scanf("%d", &choice) == 1) {
-			return choice; // Valid input, return choice
+			switch (choice) { //valid input
+			case 1:
+				return choice;
+			case 2:
+				if (player.stats[MP] > 10)
+					return choice;
+			case 3:
+				if (player.stats[MP] > 15)
+					return choice;
+			case 4:
+				if (player.stats[MP] > 50)
+					return choice;
+			}
+			printf("Not enough Mana!!\n");	//only arrive here if player does not have enough mna for that attak
 		}
 		// Flush invalid input
 		printf("Invalid choice. Please enter a number that corresponds to the attack you want to use.\n");
@@ -187,8 +224,6 @@ double MovesetDamagePC(PC player, MOB enemy, int attack) {
 		return mageAtkDmg(player, attack, enemy.stats[DEF]);
 	}
 }
-
-
 
 double rogueAtkkDmg(PC player, int attack, int defense) {
 	double damage = 0;
@@ -241,8 +276,6 @@ double rogueAtkkDmg(PC player, int attack, int defense) {
 		return damage;
 	}
 }
-
-
 
 double warriorAtkDmg(PC player, int attack, MOB enemy) {	//TODO: Implement more attacks
 	double damage = 0;
@@ -340,7 +373,7 @@ double mageAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more a
 	case 4: // Healing Wave
 		//this does no dmg
 		printf("You Healed yourself, you dealt no damage");
-
+		increaseStatPC(&player, MP, -50); // mana cost = 15
 		if (damage < 0)
 			damage = 0;
 		return damage;
