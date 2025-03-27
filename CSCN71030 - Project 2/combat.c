@@ -38,7 +38,7 @@ int combatLoop(PC player, MOB enemy) {
 		//Player Moves First
 		if (hitCheckPC(player)) {
 			//roll for damage
-			double damagePC = MovesetDamagePC(&player, enemy, attackPC);
+			double damagePC = MovesetDamagePC(&player, &enemy, attackPC);
 
 			//Choose an attack action of the 6 based on the player character.
 			//printf(battleMoves[player.charclass][RNG(5, 0)]);
@@ -214,14 +214,14 @@ int mageMovesetMenu(PC player) {
 }
 
 //Moveset Damage Calculations
-double MovesetDamagePC(PC* player, MOB enemy, int attack) {
+double MovesetDamagePC(PC* player, MOB* enemy, int attack) {
 	switch (player->charclass) {
 	case ROG:
-		return rogueAtkkDmg(player, attack, enemy.stats[DEF]);
+		return rogueAtkkDmg(player, attack, enemy->stats[DEF]);
 	case WAR:
 		return warriorAtkDmg(player, attack, enemy);
 	case MAG:
-		return mageAtkDmg(player, attack, enemy.stats[DEF]);
+		return mageAtkDmg(player, attack, enemy->stats[DEF]);
 	}
 }
 
@@ -277,7 +277,7 @@ double rogueAtkkDmg(PC* player, int attack, int defense) {
 	}
 }
 
-double warriorAtkDmg(PC* player, int attack, MOB enemy) {	//TODO: Implement more attacks
+double warriorAtkDmg(PC* player, int attack, MOB* enemy) {	//TODO: Implement more attacks
 	double damage = 0;
 	double critMod = 1;
 	switch (attack) {
@@ -286,7 +286,7 @@ double warriorAtkDmg(PC* player, int attack, MOB enemy) {	//TODO: Implement more
 		critMod = critHit(10, 1.5); //10% crit chance, multiplies damage by 1.5
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
-		damage = (player->stats[STR] * critMod) - enemy.stats[DEF];
+		damage = (player->stats[STR] * critMod) - enemy->stats[DEF];
 
 		if (damage < 0)
 			damage = 0;
@@ -296,7 +296,7 @@ double warriorAtkDmg(PC* player, int attack, MOB enemy) {	//TODO: Implement more
 		critMod = critHit(10, 2); //10% crit chance, multiplies damage by 2
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
-		damage = ((1.5 * player->stats[STR]) * critMod) - enemy.stats[DEF];
+		damage = ((1.5 * player->stats[STR]) * critMod) - enemy->stats[DEF];
 		increaseStatPC(player, MP, -2); // mana cost = 2
 
 		if (damage < 0)
@@ -307,20 +307,20 @@ double warriorAtkDmg(PC* player, int attack, MOB enemy) {	//TODO: Implement more
 		critMod = critHit(15, 2); //15% crit chance, multiplies damage by 2
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
-		damage = ((0.5 * player->stats[STR]) * critMod) - enemy.stats[DEF];
+		damage = ((0.5 * player->stats[STR]) * critMod) - enemy->stats[DEF];
 		increaseStatPC(player, MP, -5); // mana cost = 5
-		increaseStatMOB(&enemy, DEF, 2); // retuce enemy dafense permanently
+		increaseStatMOB(enemy, DEF, -2); // retuce enemy dafense permanently
 
 		if (damage < 0)
 			damage = 0;
 		return damage;
 
 	case 4: // Berserk
-		printf("You burn your life essence and fall into a berserk fury!\n unleashing an attack of unknown power at the %s\n", enemy.name);
+		printf("You burn your life essence and fall into a berserk fury!\n unleashing an attack of unknown power at the %s\n", enemy->name);
 		critMod = critHit(20, 2.5); //20% crit chance, multiplies damage by 2.5
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
-		damage = ((2 * player->stats[STR]) * critMod) - (enemy.stats[DEF] / 2);	// attack ignores some defense & max dmg output is 4.5 times original value
+		damage = ((2 * player->stats[STR]) * critMod) - (enemy->stats[DEF] / 2);	// attack ignores some defense & max dmg output is 4.5 times original value
 
 		increaseStatPC(player, MP, -12); // mana cost = 15
 		printf("After the strike, clarity comes to your mind once more...\nBut in that moment you realise, you will not be able to do an attack like that again\n");

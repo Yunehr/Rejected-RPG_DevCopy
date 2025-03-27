@@ -21,9 +21,9 @@ int rogueMovesetMenu(PC player);
 int warriorMovesetMenu(PC player);
 int mageMovesetMenu(PC player);
 
-double MovesetDamagePC(PC* player, MOB enemy, int attackPC);
+double MovesetDamagePC(PC* player, MOB* enemy, int attackPC);
 double rogueAtkkDmg(PC* player, int attack, int defense);
-double warriorAtkDmg(PC* player, int attack, MOB enemy);
+double warriorAtkDmg(PC* player, int attack, MOB* enemy);
 double mageAtkDmg(PC* player, int attack, int defense);
 
 double critHit(int chance, double multi);
