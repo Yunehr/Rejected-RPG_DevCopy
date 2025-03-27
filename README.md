@@ -64,6 +64,11 @@ From battles to custom characters, we're building an **immersive experience** wi
 
 ### Update v1.0.0
 - Combat and Character Modules are fully implemented and tested
+- Story is fully functional
+- Minor Bugfixes
+
+- ### Update v1.0.1
+- Updated UI for the main menu
 - Minor Bugfixes
 
 # Contributors 
