@@ -43,7 +43,7 @@ int main(int argc, char* argv[]) {
 	fclose(saveFile);
 
 	// starting the game
-	startCheck = mainMenu();
+	startCheck = mainMenuStart();
 
 	// checks for main menu selection
 	if (startCheck == 1) {

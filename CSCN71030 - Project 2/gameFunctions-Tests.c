@@ -12,7 +12,7 @@
 
 // choses new game option within main menu, none, return 1
 bool mainMenuNewGame() {
-	int result = mainMenu();
+	int result = mainMenuStart();
 	if (result == 1) // upon new game selection return value is 1
 		return true;
 	
@@ -21,7 +21,7 @@ bool mainMenuNewGame() {
 
 // choses load game option within main menu, none, return 2
 bool mainMenuLoadGame() {
-	int result = mainMenu();
+	int result = mainMenuStart();
 	if (result == 2) // upon load game selection return value is 1
 		return true;
 
@@ -30,7 +30,7 @@ bool mainMenuLoadGame() {
 
 // choses exit option within main menu, none, return 0
 bool mainMenuExit() {
-	int result = mainMenu();
+	int result = mainMenuStart();
 	if (result == 0) // upon exit selection value is 0
 		return true;
 
