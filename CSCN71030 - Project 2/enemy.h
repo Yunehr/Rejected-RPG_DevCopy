@@ -8,10 +8,10 @@
 #include "globals.h"
 
 
-#define ENEMY_TYPES		2
+#define ENEMY_TYPES		3
 
 
-typedef enum boss { FIN = 0, THIEF = 1 }BOSS;
+typedef enum boss { FIN = 0, THIEF = 1, BEAR =2 }BOSS;
 
 typedef struct enemy {
 	char name[MAX_NAME];	// Boss Bunny, thief
@@ -30,7 +30,9 @@ MOB updateStatsMOB(MOB enemy, int arr[]);
 int SelectMOBMoveset(MOB enemy, int combatRound); 
 int thiefMoveset(int combatRound);
 int FinalBossMoveset(int combatRound);
+int bearMoveset(int combatRound);
 
 int MovesetDamageMOB(MOB enemy, int defense, int attack);
 int thiefAtkkDmg(MOB enemy, int attack, int defense); 
 int finalBossAtkDmg(MOB enemy, int attack, int defense);
+double bearAtkDmg(MOB enemy, int attack, int defense);

@@ -163,7 +163,7 @@ int rogueAtkkDmg(PC player, int attack, int defense) {	//TODO: Implement more at
 		critMod = critHit(10, 2); //10% crit chance, multiplies damage by 2
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
-		damage = (player.stats[STR] - defense) * critMod;
+		damage = (player.stats[STR] * critMod) - defense;
 		return damage;
 	}
 }
@@ -176,7 +176,7 @@ int warriorAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more a
 		critMod = critHit(10, 1.5); //10% crit chance, multiplies damage by 1.5
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
-		damage = (player.stats[STR] - defense) * critMod;
+		damage = (player.stats[STR] * critMod) - defense;
 		return damage;
 	}
 }
@@ -189,7 +189,7 @@ int mageAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more atta
 		critMod = critHit(5, 2.2); //5% crit chance, multiplies damage by 2.2
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
-		damage = (player.stats[INTEL] - (defense/2)) * critMod;
+		damage = (player.stats[STR] * critMod) - defense;
 		return damage;
 	}
 }
