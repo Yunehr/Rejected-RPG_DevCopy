@@ -39,12 +39,12 @@ int rogueMovesetMenu();
 int warriorMovesetMenu();
 int mageMovesetMenu();
 
-int MovesetDamagePC(PC player, int defense, int attackPC);
-int rogueAtkkDmg(PC player, int attack, int defense);
-int warriorAtkDmg(PC player, int attack, int defense);
-int mageAtkDmg(PC player, int attack, int defense);
+double MovesetDamagePC(PC player, int defense, int attackPC);
+double rogueAtkkDmg(PC player, int attack, int defense);
+double warriorAtkDmg(PC player, int attack, int defense);
+double mageAtkDmg(PC player, int attack, int defense);
 
-int critHit(int chance, int multi);
+double critHit(int chance, double multi);
 
 //Other
 void printCharacter(PC player);

@@ -18,8 +18,8 @@ int combatLoop(PC player, MOB enemy) {
 		"Mage attack 4 and ","Mage attack 5 and ","Mage attack 6 and " }
 	};*/
 	int combatRound = 1;
-	int playerHP = player.stats[0];
-	int enemyHP = enemy.stats[0];
+	double playerHP = player.stats[0];
+	double enemyHP = enemy.stats[0];
 	printf("The Combat Begin!\n");
 	Sleep(1000);
 	while (combatRound <= 20) {
@@ -30,7 +30,7 @@ int combatLoop(PC player, MOB enemy) {
 		//Player Moves First
 		if (hitCheckPC(player)) {
 			//roll for damage
-			int damagePC = MovesetDamagePC(player, enemy.stats[DEF], attackPC);
+			double damagePC = MovesetDamagePC(player, enemy.stats[DEF], attackPC);
 
 			//Choose an attack action of the 6 based on the player character.
 			//printf(battleMoves[player.charclass][RNG(5, 0)]);
@@ -46,7 +46,7 @@ int combatLoop(PC player, MOB enemy) {
 		//enemy moves second
 		if (hitCheckMOB(enemy)) {
 			//roll for damage
-			int damageMOB = MovesetDamageMOB(enemy, player.stats[DEF], attackMOB);
+			double damageMOB = MovesetDamageMOB(enemy, player.stats[DEF], attackMOB);
 			printf("%s attack the %s, deal %d damage!\n", enemy.name, player.name, damageMOB);
 			//deal damage
 			playerHP = playerHP - damageMOB; //this replaced takeDamage()

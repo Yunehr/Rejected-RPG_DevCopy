@@ -144,7 +144,7 @@ int mageMovesetMenu() {
 }
 
 //Moveset Damage Calculations
-int MovesetDamagePC(PC player, int defense, int attack) {
+double MovesetDamagePC(PC player, int defense, int attack) {
 	switch (player.charclass) {
 	case ROG:
 		return rogueAtkkDmg(player, attack, defense);
@@ -154,9 +154,9 @@ int MovesetDamagePC(PC player, int defense, int attack) {
 		return mageAtkDmg(player, attack, defense);
 	}
 }
-int rogueAtkkDmg(PC player, int attack, int defense) {	//TODO: Implement more attacks, and crit chance
-	int damage = 0;
-	int critMod = 1;
+double rogueAtkkDmg(PC player, int attack, int defense) {	//TODO: Implement more attacks, and crit chance
+	double damage = 0;
+	double critMod = 1;
 	switch (attack) {
 
 	case 1: // basic attack (stab)
@@ -167,9 +167,9 @@ int rogueAtkkDmg(PC player, int attack, int defense) {	//TODO: Implement more at
 		return damage;
 	}
 }
-int warriorAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more attacks, and crit chance
-	int damage = 0;
-	int critMod = 1;
+double warriorAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more attacks, and crit chance
+	double damage = 0;
+	double critMod = 1;
 	switch (attack) {
 
 	case 1: // basic attack (slash)
@@ -180,9 +180,9 @@ int warriorAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more a
 		return damage;
 	}
 }
-int mageAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more attacks, and crit chance
-	int damage = 0;
-	int critMod = 1;
+double mageAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more attacks, and crit chance
+	double damage = 0;
+	double critMod = 1;
 	switch (attack) {
 
 	case 1: // basic attack = (Magic Missile)
@@ -194,7 +194,7 @@ int mageAtkDmg(PC player, int attack, int defense) {	//TODO: Implement more atta
 	}
 }
 
-int critHit(int chance, int multi) { //insert the % chance of a crit occuring and the resulting multiplier as an argument
+double critHit(int chance, double multi) { //insert the % chance of a crit occuring and the resulting multiplier as an argument
 	int crit = RNG(100, 1);
 	if (crit > (100-chance)) { //10% crit chance
 		return 1*multi;
