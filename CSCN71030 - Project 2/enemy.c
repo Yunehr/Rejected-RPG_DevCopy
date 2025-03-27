@@ -6,6 +6,7 @@
 #include <string.h>
 #include "enemy.h"
 #include "PlayerCharacter.h"
+#include "combat.h"
 #include "RNG.h"
 
 
@@ -24,11 +25,11 @@ MOB setEnemy(BOSS c) {		//these current stats are based on character stats since
 	switch (c) {
 		case FIN:
 		strncpy(newMOB.name, "Boss Bunny", MAX_NAME);
-		newMOB.type = ROG;
+		newMOB.type = FIN;
 		return updateStatsMOB(newMOB, Enemies[c]);
 	case THIEF:
 		strncpy(newMOB.name, "Thief", MAX_NAME);
-		newMOB.type = ROG;
+		newMOB.type = THIEF;
 		return updateStatsMOB(newMOB, Enemies[c]);
 	case BEAR:
 		strncpy(newMOB.name, "Grizzly Bear", MAX_NAME);
@@ -48,6 +49,10 @@ MOB updateStatsMOB(MOB enemy, int arr[]) {
 	return enemy;
 }
 
+//Update stat function to increase/decrease individual stats easily
+void increaseStatMOB(MOB* enemy, STAT type, int mod) {
+	enemy->stats[type] += mod;
+}
 
 // Combat Integration
 

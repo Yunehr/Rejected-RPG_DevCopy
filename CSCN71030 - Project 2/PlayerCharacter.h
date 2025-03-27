@@ -10,7 +10,6 @@
 #define PLAYER_CLASSES	3
 
 typedef enum type { ROG = 0, WAR = 1, MAG = 2 }TYPE;
-typedef enum stat { HP = 0, MP = 1, STR = 2, INTEL = 3, DEF = 4, SPD = 5 }STAT;
 
 typedef struct PlayerCharacter {
 	char name[MAX_NAME];	// Warrior, Rogue, or Mage
@@ -30,21 +29,21 @@ PC setCharacter(int c);
 
 
 PC updateStatsPC(PC player, int arr[]);
-void increaseStatPC(PC* player, STAT type, int mod);
+void increaseStatPC(PC* player, int type, int mod);
 
 
-// Combat Movesets
-int SelectPlayerMoveset(PC player);
-int rogueMovesetMenu();
-int warriorMovesetMenu();
-int mageMovesetMenu();
-
-double MovesetDamagePC(PC player, int defense, int attackPC);
-double rogueAtkkDmg(PC player, int attack, int defense);
-double warriorAtkDmg(PC player, int attack, int defense);
-double mageAtkDmg(PC player, int attack, int defense);
-
-double critHit(int chance, double multi);
+//// Combat Movesets
+//int SelectPlayerMoveset(PC player);
+//int rogueMovesetMenu();
+//int warriorMovesetMenu();
+//int mageMovesetMenu();
+//
+//double MovesetDamagePC(PC player, MOB enemy, int attackPC);
+//double rogueAtkkDmg(PC player, int attack, int defense);
+//double warriorAtkDmg(PC player, int attack, MOB enemy);
+//double mageAtkDmg(PC player, int attack, int defense);
+//
+//double critHit(int chance, double multi);
 
 //Other
 void printCharacter(PC player);
