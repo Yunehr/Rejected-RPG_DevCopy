@@ -291,7 +291,7 @@ void actTwo(PC* player) {
             case 3:
             {
                 printf("A shadow lunges at you from the dark! You barely raise your arms before the fight begins.\n");
-                // Insert combat function
+                combatLoop(player, setEnemy(BEAR));
                 break;
             }
         }
@@ -369,7 +369,6 @@ void actThree(PC* player) {
 void finalBoss(PC* player) {
     checkPoint(101);
     printf("The earth splits beneath your feet. The sky darkens. The final confrontation begins. \n");
-    //insert combat function
     combatLoop(player, setEnemy(FIN));
     return;
 }
