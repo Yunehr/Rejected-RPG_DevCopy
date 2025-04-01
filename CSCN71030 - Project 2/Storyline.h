@@ -5,6 +5,7 @@
 #include "PlayerCharacter.h"
 #include "RNG.h"
 #include "combat.h"
+#include "screens.h"
 
 void storyBegins(PC *player);
 void storyBeginsAgain(PC *player);

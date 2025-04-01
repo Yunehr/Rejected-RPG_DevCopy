@@ -171,7 +171,8 @@ void actOne(PC* player) {
         printf("The woods thicken,the path narrows and soon, a figure emerges from the shadows.\n");
         Sleep(2000);
         printf("A thief blocks your path, blade drawn. A fight? Just what you've been waiting for.\n");
-        combatLoop(player, setEnemy(THIEF));
+        if (combatLoop(player, setEnemy(THIEF)) == 1)
+            gameOver();
     }
     else {
         printf("You're on an adventure, no time for distractions.\n");
@@ -291,7 +292,8 @@ void actTwo(PC* player) {
             case 3:
             {
                 printf("A shadow lunges at you from the dark! You barely raise your arms before the fight begins.\n");
-                combatLoop(player, setEnemy(BEAR));
+                if (combatLoop(player, setEnemy(BEAR)) == 1)
+                    gameOver();
                 break;
             }
         }
@@ -369,6 +371,9 @@ void actThree(PC* player) {
 void finalBoss(PC* player) {
     checkPoint(101);
     printf("The earth splits beneath your feet. The sky darkens. The final confrontation begins. \n");
-    combatLoop(player, setEnemy(FIN));
+    if (combatLoop(player, setEnemy(FIN)) == 1)
+        gameOver();
+    else
+        gameWin();
     return;
 }
