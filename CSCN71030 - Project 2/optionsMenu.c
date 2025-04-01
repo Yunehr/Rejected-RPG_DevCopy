@@ -11,7 +11,7 @@ int optionsMenu(PC player) {
 	int selection = 0;							// variable for selection
 
 	// message to make menu look better
-	printf("\nYour journey is far from over, but even the greatest of heros must rest.\n\n");
+	printf("\n\n\nYour journey is far from over, but even the greatest of heros must rest.\n\n");
 	printf("Your Character\n");
 	printCharacter(player);						// shows ur stats
 
