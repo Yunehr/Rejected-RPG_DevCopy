@@ -30,7 +30,7 @@ int optionsMenu(PC player) {
 				break;
 		}
 
-	} while (selection == 2);
+	} while (selection > 2 || selection < 0);
 
 	return -1;
 }
