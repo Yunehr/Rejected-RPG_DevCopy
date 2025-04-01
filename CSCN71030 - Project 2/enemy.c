@@ -13,11 +13,11 @@
 // enemy creation Creation
 MOB setEnemy(BOSS c) {		//these current stats are based on character stats since we do not have stats designed yet
 	MOB newMOB = { 0 };
-	int Enemies[ENEMY_TYPES][STATS_ARRAY] = { { 120, 25, 20, 5, 18, 5 }, { 50, 50, 12, 10, 10, 20} , { 75, 20, 18, 1, 12, 5 } };
+	int Enemies[ENEMY_TYPES][STATS_ARRAY] = { { 110, 25, 22, 5, 18, 5 }, { 50, 50, 12, 10, 10, 20} , { 75, 20, 18, 1, 12, 5 } };
 	//Stats Order:		THIEF	FIN		BEAR
-	//	Health			50,		100		75
+	//	Health			50,		110		75
 	//	Mana			50,		25		20
-	//	Strength		15,		20		18
+	//	Strength		15,		25		18
 	//	Intelligence	10,		5		1
 	//  Defence			10,		15		12
 	//	Speed			20,		5		5
@@ -99,6 +99,8 @@ int thiefAtkkDmg(MOB enemy, int attack, int defense) {
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
 		damage = (enemy.stats[STR] * critMod) - defense;
+		if (damage < 0)
+			damage = 0;	//prevents negative numbers
 		return damage;
 	}
 }
@@ -112,6 +114,8 @@ int finalBossAtkDmg(MOB enemy, int attack, int defense) {
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
 		damage = (enemy.stats[STR] * critMod) - defense;
+		if (damage < 0)
+			damage = 0;	//prevents negative numbers
 		return damage;
 	}
 }
@@ -125,6 +129,8 @@ double bearAtkDmg(MOB enemy, int attack, int defense) {
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
 		damage = (enemy.stats[STR] * critMod) - defense;
+		if (damage < 0)
+			damage = 0;	//prevents negative numbers
 		return damage;
 	}
 }

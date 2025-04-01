@@ -31,8 +31,9 @@ int combatLoop(PC* player, MOB enemy) {
 		//mage ultimate check
 		if (player->charclass == MAG && attackPC == 4) {
 			double missingHP = player->stats[HP] - playerHP;
-			printf("Although you could only do it once... You used half your Mana and heal yourself by %f", (missingHP/2));
-			playerHP += missingHP / 2;	// heal HP in combat by 50% missing hp
+			printf("Although you could only do it once... You used half your Mana and heal yourself by %f\n", (missingHP/2));
+			playerHP += (missingHP / 2);	// heal HP in combat by 50% missing hp
+			increaseStatPC(player, MP, -50); // mana cost = 15
 		}
 
 		//Player Moves First
@@ -146,7 +147,7 @@ int rogueMovesetMenu(PC player) {
 				return choice;
 			case 2:
 				if (player.stats[MP] > 5)
-					return choice;
+					return choice;	
 			case 3:
 				if (player.stats[MP] > 5)
 					return choice;
@@ -154,6 +155,7 @@ int rogueMovesetMenu(PC player) {
 				if (player.stats[MP] > 25)
 					return choice;
 			}
+			printf("Not Enough Mana for this attack\n");
 		}
 		// Flush invalid input
 		printf("Invalid choice. Please enter a number that corresponds to the attack you want to use.\n");
@@ -164,7 +166,7 @@ int rogueMovesetMenu(PC player) {
 int warriorMovesetMenu(PC player) {
 	while (1) {
 		int choice;
-		printf("1 = Shield Bash, 2 = Focus Strike, 3 = Guard Break, 4 = Berserk\nEnter Your Choice: ");
+		printf("1 = Basic Slash, 2 = Focus Strike, 3 = Guard Break, 4 = Berserk\nEnter Your Choice: ");
 		if (scanf("%d", &choice) == 1) { //valid input
 			switch (choice) {
 			case 1:
@@ -179,6 +181,7 @@ int warriorMovesetMenu(PC player) {
 				if (player.stats[MP] > 12)
 					return choice;
 			}
+			printf("Not Enough Mana for this attack\n");
 		}
 		// Flush invalid input
 		printf("Invalid choice. Please enter a number that corresponds to the attack you want to use.\n");
@@ -204,7 +207,7 @@ int mageMovesetMenu(PC player) {
 				if (player.stats[MP] > 50)
 					return choice;
 			}
-			printf("Not enough Mana!!\n");	//only arrive here if player does not have enough mna for that attak
+			printf("Not Enough Mana for this attack\n");	//only arrive here if player does not have enough mna for that attak
 		}
 		// Flush invalid input
 		printf("Invalid choice. Please enter a number that corresponds to the attack you want to use.\n");
@@ -231,6 +234,7 @@ double rogueAtkkDmg(PC* player, int attack, int defense) {
 	switch (attack) {
 
 	case 1: // Dagger Throw -- basic attack
+		printf("You throw your dagger at the enemy!\n");
 		critMod = critHit(10, 2); //10% crit chance, multiplies damage by 2
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
@@ -238,6 +242,7 @@ double rogueAtkkDmg(PC* player, int attack, int defense) {
 		return damage;
 
 	case 2:	// Double strike
+		printf("With quick finesse, You make two strikes against your foe!\n");
 		for (int i = 0; i < 2; i++) {
 			critMod = critHit(10, 2); //10% crit chance, multiplies damage by 2
 			if (critMod > 1)
@@ -251,6 +256,7 @@ double rogueAtkkDmg(PC* player, int attack, int defense) {
 		return damage;
 
 	case 3:	// Piercing Stab
+		printf("You strike a gap in the enemies armor\n");
 		critMod = critHit(10, 1.5); //10% crit chance, multiplies damage by 1.5
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
@@ -262,6 +268,7 @@ double rogueAtkkDmg(PC* player, int attack, int defense) {
 		return damage;
 
 	case 4: // Blade Dance
+		printf("You enter a trance, striking at multiple weak points in the enemies armor\nunleashing a flurry of attacks at your foe");
 		for (int i = 0; i < RNG(6, 4); i++) {
 			critMod = critHit(30, 2); //30% crit chance, multiplies damage by 1.5
 			if (critMod > 1)
@@ -270,6 +277,7 @@ double rogueAtkkDmg(PC* player, int attack, int defense) {
 			defense--; //this is mainly to test, but ultimate is supposed to deal a ton of dmg
 		}
 		increaseStatPC(player, MP, -25); // mana cost of using ultimate is 1/2 starting mana
+		printf("Clarity comes to your mind once more...\nBut in that moment you realise, you will not be able to do an attack like that again\n");
 
 		if (damage < 0)
 			damage = 0;
@@ -277,12 +285,13 @@ double rogueAtkkDmg(PC* player, int attack, int defense) {
 	}
 }
 
-double warriorAtkDmg(PC* player, int attack, MOB* enemy) {	//TODO: Implement more attacks
+double warriorAtkDmg(PC* player, int attack, MOB* enemy) {	
 	double damage = 0;
 	double critMod = 1;
 	switch (attack) {
 
-	case 1: // Shiels Bash
+	case 1: // Basic Slash
+		printf("You make a regular strike against your foe\n");
 		critMod = critHit(10, 1.5); //10% crit chance, multiplies damage by 1.5
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
@@ -293,6 +302,7 @@ double warriorAtkDmg(PC* player, int attack, MOB* enemy) {	//TODO: Implement mor
 		return damage;
 
 	case 2:	// Focus Strike
+		printf("You take an extra second to focus your mind before you strike\n");
 		critMod = critHit(10, 2); //10% crit chance, multiplies damage by 2
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
@@ -304,6 +314,7 @@ double warriorAtkDmg(PC* player, int attack, MOB* enemy) {	//TODO: Implement mor
 		return damage;
 
 	case 3:	// Guard Break
+		printf("You break a piece of the %s guard, Permanently reducing their defence by 2\n", enemy->name);
 		critMod = critHit(15, 2); //15% crit chance, multiplies damage by 2
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
@@ -316,7 +327,7 @@ double warriorAtkDmg(PC* player, int attack, MOB* enemy) {	//TODO: Implement mor
 		return damage;
 
 	case 4: // Berserk
-		printf("You burn your life essence and fall into a berserk fury!\n unleashing an attack of unknown power at the %s\n", enemy->name);
+		printf("You burn your life essence and fall into a berserk fury!\nunleashing an attack of unknown power at the %s\n", enemy->name);
 		critMod = critHit(20, 2.5); //20% crit chance, multiplies damage by 2.5
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
@@ -339,6 +350,7 @@ double mageAtkDmg(PC* player, int attack, int defense) {	//TODO: Implement more 
 	switch (attack) {
 
 	case 1: // Magic Missile
+		printf("You cast the most basic attack spell you know. Shooting a magic Missile at your foe\n");
 		critMod = critHit(8, 2); //8% crit chance, multiplies damage by 2
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
@@ -349,6 +361,7 @@ double mageAtkDmg(PC* player, int attack, int defense) {	//TODO: Implement more 
 		return damage;
 
 	case 2:	// Summon Lightning
+		printf("You summon a magical cloud above the head of your enemy and summon Lightning to smite thee\n");
 		critMod = critHit(15, 2); //15% crit chance, multiplies damage by 2
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
@@ -360,10 +373,11 @@ double mageAtkDmg(PC* player, int attack, int defense) {	//TODO: Implement more 
 		return damage;
 
 	case 3:	// FIREBALL
+		printf("I never asked how big the room was... I said\nI CAST FIREBALL!!!\n");
 		critMod = critHit(10, 2.5); //10% crit chance, multiplies damage by 2.5
 		if (critMod > 1)
 			printf("CRITICAL HIT!\n");
-		damage = ((1.2 * player->stats[INTEL]) * critMod) - (defense);
+		damage = ((1.2 * player->stats[INTEL]) * critMod) - (0.7 * defense);
 		increaseStatPC(player, MP, -15); // mana cost = 15
 
 		if (damage < 0)
@@ -372,8 +386,6 @@ double mageAtkDmg(PC* player, int attack, int defense) {	//TODO: Implement more 
 
 	case 4: // Healing Wave
 		//this does no dmg
-		printf("You Healed yourself, you dealt no damage");
-		increaseStatPC(player, MP, -50); // mana cost = 15
 		if (damage < 0)
 			damage = 0;
 		return damage;
