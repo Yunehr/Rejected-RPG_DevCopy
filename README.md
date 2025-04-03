@@ -16,7 +16,7 @@ From battles to custom characters, we're building an **immersive experience** wi
 
 ## How to Use!!
 1. Clone Github Repo
-2. Go to Properties/Debugging and Update your Command Line Arguments to <name> (where <name> is the name you want for your save file)
+2. Go to Properties/Debugging and Update your Command Line Arguments to < name > (where < name > is the name you want for your save file)
 
 # Update History
 
