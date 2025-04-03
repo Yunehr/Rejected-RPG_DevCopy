@@ -10,13 +10,17 @@ From battles to custom characters, we're building an **immersive experience** wi
 **Development is ongoing – stay tuned for updates!**
 
 ## Planned Features
-- Combat System
-- Custom Storyline
-- Save/Load functionality
+- TBD
+
+## Planned Updates
+- General UI Update
+- Selection via arrow keys
 
 ## How to Use!!
-1. Clone Github Repo
-2. Go to Properties/Debugging and Update your Command Line Arguments to < name > (where < name > is the name you want for your save file)
+1. Clone The GitHub Repo
+2. Go to Properties/Debugging and update your Command Line Arguments to < name > (where < name > is the name you want for your save file)
+
+*Note: Currently Designed For Visual Studio 2022 Debugging mode, A proper release is possible but not planned*
 
 # Update History
 
