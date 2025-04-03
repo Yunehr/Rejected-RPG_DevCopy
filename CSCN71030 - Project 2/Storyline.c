@@ -78,6 +78,11 @@ void storyBegins(PC* player) {
         Sleep(2000);
         printf("You wake up in the woods again, battered and bruised. (Lose -2 HP) \n");
         Sleep(3000);
+        increaseStatPC(player, HP, -2);
+        if (player->stats[HP] <= 0) {
+            gameOver();
+            exit(EXIT_SUCCESS);
+        }
         storyBeginsAgain(player);
     }
     return;
@@ -120,6 +125,11 @@ void storyBeginsAgain(PC* player) {
         Sleep(2000);
         printf("You wake up in the woods again, battered and bruised. (Lose -2 HP) \n");//Need to add in function to remove health
         Sleep(3000);
+        increaseStatPC(player, HP, -2);
+        if (player->stats[HP] <= 0) {
+            gameOver();
+            exit(EXIT_SUCCESS);
+        }
         storyBeginsAgain(player);
     }
     return;
